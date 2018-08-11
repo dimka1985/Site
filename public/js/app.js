@@ -884,7 +884,7 @@
       }
 
       function getSize (axis, body, html, computedStyle) {
-        return Math.max(body['offset' + axis], body['scroll' + axis], html['client' + axis], html['offset' + axis], html['scroll' + axis], isIE(10) ? parseInt(html['offset' + axis]) + parseInt(computedStyle['margin' + (axis === 'Height' ? 'Top' : 'Left')]) + parseInt(computedStyle['margin' + (axis === 'Height' ? 'Bottom' : 'Right')]) : 0)
+        return Math.max(body['offset' + axis], body['scroll' + axis], html['client' + axis], html['offset' + axis], html['scroll' + axis], isIE(10) ? parseInt(html['offset' + axis]) + parseInt(computedStyle['margin' + (axis === 'Height' ? 'Top' : 'Left')]) + parseInt(computedStyle['margin' + (axis === 'Height' ? 'Bottom' : 'Right')]) : 0);
       }
 
       function getWindowSizes (document) {
@@ -1000,7 +1000,7 @@
         };
 
         // subtract scrollbar size from sizes
-        var sizes = element.nodeName === 'HTML' ? getWindowSizes(element.ownerDocument) : {}
+        var sizes = element.nodeName === 'HTML' ? getWindowSizes(element.ownerDocument) : {};
         var width = sizes.width || element.clientWidth || result.right - result.left;
         var height = sizes.height || element.clientHeight || result.bottom - result.top;
 
@@ -1188,12 +1188,12 @@
         }
 
         // Add paddings
-        padding = padding || 0
-        var isPaddingNumber = typeof padding === 'number'
-        boundaries.left += isPaddingNumber ? padding : padding.left || 0
-        boundaries.top += isPaddingNumber ? padding : padding.top || 0
-        boundaries.right -= isPaddingNumber ? padding : padding.right || 0
-        boundaries.bottom -= isPaddingNumber ? padding : padding.bottom || 0
+        padding = padding || 0;
+        var isPaddingNumber = typeof padding === 'number';
+        boundaries.left += isPaddingNumber ? padding : padding.left || 0;
+        boundaries.top += isPaddingNumber ? padding : padding.top || 0;
+        boundaries.right -= isPaddingNumber ? padding : padding.right || 0;
+        boundaries.bottom -= isPaddingNumber ? padding : padding.bottom || 0;
 
         return boundaries;
       }
@@ -1805,18 +1805,18 @@
           // when offsetParent is <html> the positioning is relative to the bottom of the screen (excluding the scrollbar)
           // and not the bottom of the html element
           if (offsetParent.nodeName === 'HTML') {
-            top = -offsetParent.clientHeight + offsets.bottom
+            top = -offsetParent.clientHeight + offsets.bottom;
           } else {
-            top = -offsetParentRect.height + offsets.bottom
+            top = -offsetParentRect.height + offsets.bottom;
           }
         } else {
           top = offsets.top;
         }
         if (sideB === 'right') {
           if (offsetParent.nodeName === 'HTML') {
-            left = -offsetParent.clientWidth + offsets.right
+            left = -offsetParent.clientWidth + offsets.right;
           } else {
-            left = -offsetParentRect.width + offsets.right
+            left = -offsetParentRect.width + offsets.right;
           }
         } else {
           left = offsets.left;
@@ -46270,7 +46270,7 @@
         value: FunctionalRenderContext
       });
 
-      Vue.version = '2.5.17'
+      Vue.version = '2.5.17';
 
       /*  */
 
