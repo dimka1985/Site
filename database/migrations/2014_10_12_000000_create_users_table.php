@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('socialuser_id')->nullable();
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

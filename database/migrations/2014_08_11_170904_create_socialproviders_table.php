@@ -18,6 +18,7 @@ class CreateSocialprovidersTable extends Migration
             $table->string('provider', 20);
             $table->boolean('is_active')->default(true);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
