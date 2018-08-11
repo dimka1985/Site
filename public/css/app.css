@@ -1,8 +1,5 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,700&amp;
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=cyrillic);
 
-subset=cyrillic
-)
-;
 :root {
     --blue: #3490dc;
     --indigo: #6574cd;
