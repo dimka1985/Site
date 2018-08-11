@@ -2,10 +2,10 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use GeneaLabs\LaravelModelCaching\CachedModel;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Socialprovider extends Model
+class Socialprovider extends CachedModel
 {
     use SoftDeletes;
 

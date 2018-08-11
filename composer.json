@@ -12,6 +12,7 @@
     "algolia/algoliasearch-client-php": "^1.27",
     "doctrine/dbal": "^2.8",
     "fideloper/proxy": "^4.0",
+    "genealabs/laravel-model-caching": "^0.2.64",
     "guzzlehttp/guzzle": "^6.3",
     "laravel/framework": "5.6.*",
     "laravel/horizon": "^1.3",
