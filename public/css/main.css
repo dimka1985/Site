@@ -1,0 +1,104 @@
+/* col */
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+.full {
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+}
+
+header {
+    background: url("../img/logo.jpg") no-repeat fixed top left/cover;
+}
+
+.header-video, .header-photos {
+    overflow: hidden;
+    /*background: url("../img/okgroup-logo.jpg") no-repeat fixed top left/cover;*/
+}
+
+header video {
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.overlay-header {
+    opacity: .7;
+    background: #1c1d20;
+}
+
+header h1 {
+    font-size: 2rem;
+}
+
+.header-text {
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.price {
+    width: 140px;
+    height: 140px;
+    line-height: 140px;
+    margin: auto;
+    border-radius: 50%;
+    border: 2px solid #6195FF;
+}
+
+.jumbotron-list {
+    list-style-type: none;
+}
+
+main .card-body:hover {
+    background-color: antiquewhite;
+}
+
+.img-galery img:hover {
+    border-color: blue;
+}
+
+footer .jumbotron {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    margin-bottom: 0;
+}
+
+/* col-sm */
+@media (min-width: 576px) {
+    header h1 {
+        font-size: 2.25rem;
+    }
+}
+
+/* col-md */
+@media (min-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* col-lg */
+@media (min-width: 992px) {
+    .nav-item {
+        border-bottom: 2px solid transparent;
+    }
+
+    .nav-item:hover, .dropdown-item:hover {
+        border-bottom: 2px solid blue;
+    }
+
+    header h1 {
+        font-size: 2.75rem;
+    }
+}
+
+/* col-xl */
+@media (min-width: 1200px) {
+    header h1 {
+        font-size: 3.25rem;
+    }
+}
