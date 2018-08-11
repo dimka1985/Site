@@ -19,6 +19,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'socialuser_id',
     ];
 
     /**
@@ -30,4 +31,12 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
+
+    /**
+     * Get the socialprovider that owns the user.
+     */
+    public function socialprovider()
+    {
+        return $this->belongsTo(Socialprovider::class);
+    }
 }
