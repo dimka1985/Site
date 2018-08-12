@@ -1,71 +1,101 @@
 @extends('layouts.app')
 
+@section('title')
+    @parent | {{ __('Reset password page') }}
+@endsection
+
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('Reset Password') }}</div>
+                    <div class="card-header">{{ __('Reset password') }}</div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('password.request') }}"
-                              aria-label="{{ __('Reset Password') }}">
-                            @csrf
+                        @include('includes.sessions')
 
-                            <input type="hidden" name="token" value="{{ $token }}">
+                        {{ Form::open(['route' => 'password.request', 'aria-label' => __('Reset password')]) }}
+
+                        {{ Form::hidden('token', $token) }}
 
                             <div class="form-group row">
-                                <label for="email"
-                                       class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                                {{ Form::label('email', __('E-Mail address'), ['class' => 'col-md-4 col-form-label
+                                text-md-right']) }}
 
                                 <div class="col-md-6">
-                                    <input id="email" type="email"
-                                           class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
-                                           name="email" value="{{ $email ?? old('email') }}" required autofocus>
+                                    <div class="input-group">
+                                        {{ Form::email('email', ($email ?? old('email')), ['class' => 'form-control'
+                                        . ($errors->has('email') ? ' is-invalid' : ''), 'placeholder' =>
+                                        __('Enter your E-Mail address'), 'minlength' => '3', 'maxlength' => '255',
+                                        'required', 'autofocus']) }}
+
+                                        <div class="input-group-append">
+                                            <span class="input-group-text"><i class="fa fa-envelope-o"></i></span>
+                                        </div>
+                                    </div>
 
                                     @if ($errors->has('email'))
                                         <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
+                                            <strong>{{ $errors->first('email') }}</strong>
+                                        </span>
                                     @endif
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label for="password"
-                                       class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                                {{ Form::label('password', __('Password'), ['class' => 'col-md-4 col-form-label
+                                text-md-right']) }}
 
                                 <div class="col-md-6">
-                                    <input id="password" type="password"
-                                           class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}"
-                                           name="password" required>
+                                    <div class="input-group">
+                                        {{ Form::password('password', ['class' => 'form-control' . ($errors->has
+                                        ('password') ? ' is-invalid' : ''), 'placeholder' =>
+                                        __('Enter your password'), 'minlength' => '6', 'maxlength' => '30',
+                                        'required']) }}
+
+                                        <div class="input-group-append">
+                                            <span class="input-group-text"><i class="fa fa-key"></i></span>
+                                        </div>
+                                    </div>
 
                                     @if ($errors->has('password'))
                                         <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
+                                            <strong>{{ $errors->first('password') }}</strong>
+                                        </span>
                                     @endif
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label for="password-confirm"
-                                       class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                                {{ Form::label('password-confirmation', __('Confirm password'), ['class' => 'col-md-4
+                                col-form-label text-md-right']) }}
 
                                 <div class="col-md-6">
-                                    <input id="password-confirm" type="password" class="form-control"
-                                           name="password_confirmation" required>
+                                    <div class="input-group">
+                                        {{ Form::password('password-confirmation', ['class' => 'form-control',
+                                        'placeholder' => __('Confirm your password'), 'minlength' => '6', 'maxlength'
+                                         => '30', 'required']) }}
+
+                                        <div class="input-group-append">
+                                            <span class="input-group-text"><i class="fa fa-key"></i></span>
+                                        </div>
+                                    </div>
+
+                                    @if ($errors->has('password-confirmation'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('password-confirmation') }}</strong>
+                                        </span>
+                                    @endif
                                 </div>
                             </div>
 
                             <div class="form-group row mb-0">
                                 <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        {{ __('Reset Password') }}
-                                    </button>
+                                    {{ Form::submit(__('Reset password'), ['class' => 'btn btn-primary']) }}
                                 </div>
                             </div>
-                        </form>
+
+                        {{ Form::close() }}
                     </div>
                 </div>
             </div>

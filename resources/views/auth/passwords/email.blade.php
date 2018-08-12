@@ -1,48 +1,52 @@
 @extends('layouts.app')
 
+@section('title')
+    @parent | {{ __('Reset password request page') }}
+@endsection
+
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('Reset Password') }}</div>
+                    <div class="card-header">{{ __('Reset password request') }}</div>
 
                     <div class="card-body">
-                        @if (session('status'))
-                            <div class="alert alert-success" role="alert">
-                                {{ session('status') }}
-                            </div>
-                        @endif
+                        @include('includes.sessions')
 
-                        <form method="POST" action="{{ route('password.email') }}"
-                              aria-label="{{ __('Reset Password') }}">
-                            @csrf
+                        {{ Form::open(['route' => 'password.email', 'aria-label' => __('Reset password request')]) }}
 
                             <div class="form-group row">
-                                <label for="email"
-                                       class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                                {{ Form::label('email', __('E-Mail address'), ['class' => 'col-md-4 col-form-label
+                                text-md-right']) }}
 
                                 <div class="col-md-6">
-                                    <input id="email" type="email"
-                                           class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
-                                           name="email" value="{{ old('email') }}" required>
+                                    <div class="input-group">
+                                        {{ Form::email('email', old('email'), ['class' => 'form-control' .
+                                        ($errors->has('email') ? ' is-invalid' : ''), 'placeholder' =>
+                                        __('Enter your E-Mail address'), 'minlength' => '3', 'maxlength' => '255',
+                                        'required', 'autofocus']) }}
+
+                                        <div class="input-group-append">
+                                            <span class="input-group-text"><i class="fa fa-envelope-o"></i></span>
+                                        </div>
+                                    </div>
 
                                     @if ($errors->has('email'))
                                         <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
+                                            <strong>{{ $errors->first('email') }}</strong>
+                                        </span>
                                     @endif
                                 </div>
                             </div>
 
                             <div class="form-group row mb-0">
                                 <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        {{ __('Send Password Reset Link') }}
-                                    </button>
+                                    {{ Form::submit(__('Send password reset link'), ['class' => 'btn btn-primary']) }}
                                 </div>
                             </div>
-                        </form>
+
+                        {{ Form::close() }}
                     </div>
                 </div>
             </div>
