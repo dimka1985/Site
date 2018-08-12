@@ -53074,6 +53074,7 @@ type StyleObjectPart = {
     exports = module.exports = __webpack_require__(4)(false);
 // imports
 
+
 // module
     exports.push([module.i, "\n.action-link[data-v-5d1d7d82] {\n    cursor: pointer;\n}\n", ""]);
 
@@ -53337,8 +53338,8 @@ type StyleObjectPart = {
     /* harmony default export */
     __webpack_exports__["default"] = ({
       /*
-     * The component's data.
-     */
+   * The component's data.
+   */
       data: function data () {
         return {
           clients: [],
@@ -53530,17 +53531,17 @@ type StyleObjectPart = {
                     return _c("tr", [
                       _c("td", {staticStyle: {"vertical-align": "middle"}}, [
                         _vm._v(
-                          "\n                            " +
+                          "\n                        " +
                           _vm._s(client.id) +
-                          "\n                        "
+                          "\n                    "
                         )
                       ]),
                       _vm._v(" "),
                       _c("td", {staticStyle: {"vertical-align": "middle"}}, [
                         _vm._v(
-                          "\n                            " +
+                          "\n                        " +
                           _vm._s(client.name) +
-                          "\n                        "
+                          "\n                    "
                         )
                       ]),
                       _vm._v(" "),
@@ -53562,7 +53563,7 @@ type StyleObjectPart = {
                           },
                           [
                             _vm._v(
-                              "\n                                Edit\n                            "
+                              "\n                            Edit\n                        "
                             )
                           ]
                         )
@@ -53581,7 +53582,7 @@ type StyleObjectPart = {
                           },
                           [
                             _vm._v(
-                              "\n                                Delete\n                            "
+                              "\n                            Delete\n                        "
                             )
                           ]
                         )
@@ -54120,6 +54121,7 @@ type StyleObjectPart = {
     exports = module.exports = __webpack_require__(4)(false);
 // imports
 
+
 // module
     exports.push([module.i, "\n.action-link[data-v-2ee9fe67] {\n    cursor: pointer;\n}\n", ""]);
 
@@ -54188,8 +54190,8 @@ type StyleObjectPart = {
     /* harmony default export */
     __webpack_exports__["default"] = ({
       /*
-     * The component's data.
-     */
+   * The component's data.
+   */
       data: function data () {
         return {
           tokens: []
@@ -54272,9 +54274,9 @@ type StyleObjectPart = {
                           {staticStyle: {"vertical-align": "middle"}},
                           [
                             _vm._v(
-                              "\n                                " +
+                              "\n                            " +
                               _vm._s(token.client.name) +
-                              "\n                            "
+                              "\n                        "
                             )
                           ]
                         ),
@@ -54311,7 +54313,7 @@ type StyleObjectPart = {
                               },
                               [
                                 _vm._v(
-                                  "\n                                    Revoke\n                                "
+                                  "\n                                Revoke\n                            "
                                 )
                               ]
                             )
@@ -54441,6 +54443,7 @@ type StyleObjectPart = {
 
     exports = module.exports = __webpack_require__(4)(false);
 // imports
+
 
 // module
     exports.push([module.i, "\n.action-link[data-v-89c53f18] {\n    cursor: pointer;\n}\n", ""]);
@@ -54612,12 +54615,14 @@ type StyleObjectPart = {
 //
 //
 //
+//
+//
 
     /* harmony default export */
     __webpack_exports__["default"] = ({
       /*
-     * The component's data.
-     */
+   * The component's data.
+   */
       data: function data () {
         return {
           accessToken: null,
@@ -54828,9 +54833,9 @@ type StyleObjectPart = {
                           {staticStyle: {"vertical-align": "middle"}},
                           [
                             _vm._v(
-                              "\n                                " +
+                              "\n                            " +
                               _vm._s(token.name) +
-                              "\n                            "
+                              "\n                        "
                             )
                           ]
                         ),
@@ -54851,7 +54856,7 @@ type StyleObjectPart = {
                               },
                               [
                                 _vm._v(
-                                  "\n                                    Delete\n                                "
+                                  "\n                                Delete\n                            "
                                 )
                               ]
                             )
@@ -54972,7 +54977,7 @@ type StyleObjectPart = {
                                       }
                                     }),
                                     _vm._v(
-                                      "\n\n                                                " +
+                                      "\n\n                                            " +
                                       _vm._s(scope.id) +
                                       "\n                                        "
                                     )
@@ -55030,7 +55035,7 @@ type StyleObjectPart = {
                 _c("div", {staticClass: "modal-body"}, [
                   _c("p", [
                     _vm._v(
-                      "\n                        Here is your new personal access token. This is the only time it will be shown so don't lose it!\n                        You may now use this token to make API requests.\n                    "
+                      "\n                        Here is your new personal access token. This is the only time it will be shown so don't lose\n                        it!\n                        You may now use this token to make API requests.\n                    "
                     )
                   ]),
                   _vm._v(" "),

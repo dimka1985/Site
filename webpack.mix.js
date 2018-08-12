@@ -13,6 +13,10 @@ let mix = require('laravel-mix')
 
 mix.js('resources/assets/js/app.js', 'public/js')
   .sass('resources/assets/sass/app.scss', 'public/css')
+  .styles([
+    'resources/assets/css/main.css',
+    'resources/assets/css/news.css'
+  ], 'public/css/style.css')
 
 if (mix.inProduction()) {
   mix.version()
