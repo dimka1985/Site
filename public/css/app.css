@@ -1,5 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,700&subset=cyrillic);
 
+@charset "UTF-8";
+
 /*!
  * Bootstrap v4.1.3 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
@@ -4311,6 +4313,10 @@ input[type="button"].btn-block {
 
 .custom-file-input:lang(en) ~ .custom-file-label::after {
   content: "Browse";
+}
+
+.custom-file-input:lang(ru) ~ .custom-file-label::after {
+    content: "\41E\431\437\43E\440";
 }
 
 .custom-file-label {
