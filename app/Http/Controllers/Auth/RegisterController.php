@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Services\FileUploader;
 use App\Socialprovider;
 use App\User;
 use Auth;
@@ -35,13 +36,22 @@ class RegisterController extends Controller
     protected $redirectTo = '/home';
 
     /**
+     * FileUploader instance.
+     *
+     * @var \App\Http\Services\FileUploader
+     */
+    protected $uploader;
+
+    /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(FileUploader $uploader)
     {
         $this->middleware('guest');
+
+        $this->uploader = $uploader;
     }
 
     /**
@@ -143,12 +153,17 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user = User::create([
             'name' => $data['name'],
             'company' => $data['company'],
             'phone' => '375' . $data['code'] . $data['phone'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+
+        $user->avatar = $this->uploader->uploadAvatar($user->id, $data['avatar']);
+        $user->save();
+
+        return $user;
     }
 }

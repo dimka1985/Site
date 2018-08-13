@@ -16,7 +16,7 @@ use Illuminate\Http\Middleware\SetCacheHeaders;
 use Illuminate\Routing\Middleware\{SubstituteBindings, ThrottleRequests, ValidateSignature};
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
-use Laravel\Passport\Http\Middleware\{CheckForAnyScope, CheckScopes};
+use Laravel\Passport\Http\Middleware\{CheckClientCredentials, CheckForAnyScope, CheckScopes};
 
 class Kernel extends HttpKernel
 {
@@ -73,6 +73,7 @@ class Kernel extends HttpKernel
         'guest' => RedirectIfAuthenticated::class,
         'signed' => ValidateSignature::class,
         'throttle' => ThrottleRequests::class,
+        'client' => CheckClientCredentials::class,
         'scopes' => CheckScopes::class,
         'scope' => CheckForAnyScope::class,
     ];
