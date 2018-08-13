@@ -37,10 +37,11 @@
     <!-- Styles -->
     @section('styles')
         <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/main.css') }}" rel="stylesheet">
     @show
 </head>
 <body>
-<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+<nav class="navbar fixed-top navbar-expand-xl navbar-light bg-light">
     <div class="container">
         {!! Html::linkWithHtml(route('home'), '<img src="' . asset('img/okgroup-logo.jpg') . '"
         width="40" class="d-inline-block align-top" alt="' . config('app.name') . '"> ' .
@@ -51,8 +52,8 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse text-uppercase" id="navbar">
-            <ul class="navbar-nav mr-auto">
+        <div class="collapse navbar-collapse" id="navbar">
+            <ul class="navbar-nav mr-auto text-uppercase">
                 @if (Route::currentRouteName() == 'home')
                     <li class="nav-item active">
                         {!! Html::linkWithHtml(route('home'), '<i class="fas fa-home"></i> ' . __('Home') . '
@@ -103,12 +104,12 @@
                         @endif
 
                         @if (Route::currentRouteName() == 'festivals')
-                            {!! Html::linkWithHtml('#', '<i class="fa fa-globe"></i> '
-                            . __('Festivals') . ' <span class="sr-only">(' . __('Current') . ')</span>', ['class' =>
-                            'dropdown-item active']) !!}
+                                {!! Html::linkWithHtml('#', '<i class="fas fa-globe"></i> '
+                                . __('Festivals') . ' <span class="sr-only">(' . __('Current') . ')</span>', ['class' =>
+                                'dropdown-item active']) !!}
                         @else
-                            {!! Html::linkWithHtml('#', '<i class="fa fa-globe"></i> '
-                            . __('Festivals'), ['class' => 'dropdown-item']) !!}
+                                {!! Html::linkWithHtml('#', '<i class="fas fa-globe"></i> '
+                                . __('Festivals'), ['class' => 'dropdown-item']) !!}
                         @endif
                     </div>
                 </li>
@@ -144,8 +145,7 @@
                 <ul class="navbar-nav ml-auto">
                     @auth
                         <li class="nav-item dropdown">
-                            {!! Html::linkWithHtml('#', Auth::user()->first_name . ' '
-                            . Auth::user()->last_name . ' <span class="caret"></span>', ['class' => 'nav-link dropdown-toggle', 'id' => 'userDropdown', 'role' => 'button', 'data-toggle' => 'dropdown', 'aria-haspopup' => 'true', 'aria-expanded' => 'false', 'v-pre']) !!}
+                            {!! Html::linkWithHtml('#', Auth::user()->name . ' <span class="caret"></span>', ['class' => 'nav-link dropdown-toggle', 'id' => 'userDropdown', 'role' => 'button', 'data-toggle' => 'dropdown', 'aria-haspopup' => 'true', 'aria-expanded' => 'false', 'v-pre']) !!}
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                                 {{ Html::linkRoute('logout', __('Logout'), null, ['class' =>
@@ -249,7 +249,7 @@
                         <li><i class="fas fa-calendar-alt"></i> <a href="#">
                                 {{ __('Events') }}
                             </a></li>
-                        <li><i class="fa fa-globe"></i> <a href="#">
+                        <li><i class="fas fa-globe"></i> <a href="#">
                                 {{ __('Festivals') }}
                             </a></li>
                     </ul>

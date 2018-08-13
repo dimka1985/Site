@@ -9,7 +9,7 @@
 @section('styles')
     @parent
 
-    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/home.css') }}" rel="stylesheet">
 @endsection
 
 @section('keywords', 'ОК, OK, OK Event Group,  OK Group, реклама, продвижение, smm, реклама и продвижение брендов в
@@ -177,11 +177,13 @@
                 <h1>{{ __('Our festivals') }}</h1>
                 <hr class="my-4">
                 <div class="row">
-                    <div class="col">
-                        <h5>GRAND FASHION WEEKEND (13-14 октября 2018г.)</h5>
-                        <a href="#"><img src="{{ asset('img/grand_fashion_weekend_afisha.png') }}" class="img-fluid
-                        img-thumbnail rounded" alt="Наши мероприятия"></a>
-                    </div>
+                    @foreach($festivals as $festival)
+                        <div class="col">
+                            <h5>{{ $festival->name }}GRAND FASHION WEEKEND (13-14 октября 2018г.)</h5>
+                            <a href="#"><img src="{{ asset($festival->image) }}"
+                                             class="img-fluid img-thumbnail rounded" alt="{{ $festival->name }}"></a>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -192,6 +194,21 @@
             <div class="container text-center">
                 <h1>{{ __('History of our events') }}</h1>
                 <hr class="my-4">
+                @foreach($events as $e => $event)
+                    @if ($e / 5 == 0)
+                        <div class="row">
+                            @else
+                                <div class="col-md-6 col-xl-3 mb-5">
+                                    <h5>{{ $event->name }}Dana Fashion Day в «Dana Mall» (2017)</h5>
+                                    <a href="#"><img src="{{ asset($event->image) }}" class="img-fluid
+                                    img-thumbnail rounded" alt="{{ $event->name }}"></a>
+                                </div>
+                            @endif
+
+                            @if ($e / 5 == 0)
+                        </div>
+                    @endif
+                @endforeach
                 <div class="row">
                     <div class="col-md-6 col-xl-3 mb-5">
                         <h5>Dana Fashion Day в «Dana Mall» (2017)</h5>
@@ -219,25 +236,30 @@
                 <h1 class="my-4 text-center">{{ __('Last news') }}:</h1>
                 <hr class="my-4">
                 <div class="card-group">
-                    <div class="card">
-                        <img class="card-img-top" src="{{ asset('img/karnaval.jpg') }}" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title"><strong>Имиджевое мероприятие Dana Fashion Day в «Dana Mall»</strong>
-                            </h5>
-                            <hr>
-                            <p class="card-text">23 декабря состоялось имиджевое мероприятие для ТРЦ Galileo Mall.
-                                Гостям мы предложили окунуться в самое сердце fashion-индустрии: освоить актуальные
-                                модные
-                                тенденции, развлечься и получить море новых впечатлений в яркой творческой атмосфере!
-                            </p>
-                            <a href="#" class="card-link">Читать полностью</a>
+                    @foreach($news as $new)
+                        <div class="card">
+                            <img class="card-img-top" src="{{ asset($new->image) }}" alt="{{ $event->name }}">
+                            <div class="card-body">
+                                <h5 class="card-title"><strong>{{ $event->name }}Имиджевое мероприятие Dana Fashion Day
+                                        в «Dana Mall»</strong>
+                                </h5>
+                                <hr>
+                                <p class="card-text">{{ $event->text }}23 декабря состоялось имиджевое мероприятие для
+                                    ТРЦ Galileo Mall.
+                                    Гостям мы предложили окунуться в самое сердце fashion-индустрии: освоить актуальные
+                                    модные
+                                    тенденции, развлечься и получить море новых впечатлений в яркой творческой
+                                    атмосфере!
+                                </p>
+                                <a href="#" class="card-link">{{ __('Read more') }}</a>
+                            </div>
+                            <div class="card-footer">
+                                <p class="card-text">
+                                    <small class="text-muted">{{ __('Published') }} {{ $event->created_at }}</small>
+                                </p>
+                            </div>
                         </div>
-                        <div class="card-footer">
-                            <p class="card-text">
-                                <small class="text-muted">Опубликовано 2 дня назад</small>
-                            </p>
-                        </div>
-                    </div>
+                    @endforeach
                     <div class="card">
                         <img class="card-img-top" src="{{ asset('img/rushka.jpg') }}" alt="Rushka">
                         <div class="card-body">
