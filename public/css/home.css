@@ -29,10 +29,6 @@ header h1 {
     transform: translateY(-50%);
 }
 
-.jumbotron-list {
-    list-style-type: none;
-}
-
 main .card-body:hover {
     background-color: antiquewhite;
 }
