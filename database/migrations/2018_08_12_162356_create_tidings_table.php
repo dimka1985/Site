@@ -18,6 +18,7 @@ class CreateTidingsTable extends Migration
             $table->string('name');
             $table->string('url');
             $table->text('text');
+            $table->string('image');
             $table->timestamps();
             $table->softDeletes();
         });
