@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
+use Illuminate\Validation\Rule;
 
 class ResetPasswordController extends Controller
 {
@@ -45,7 +46,7 @@ class ResetPasswordController extends Controller
     protected function rules()
     {
         return [
-            'token' => 'required|string',
+            'token' => 'required|string|min:64|max:64',
             'email' => [
                 'required',
                 'string',
