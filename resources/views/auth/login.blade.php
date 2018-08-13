@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <div class="container mt-5">
+    <div class="container my-5">
         <br>
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -18,10 +18,10 @@
                         {{ Form::open(['route' => 'login', 'aria-label' => __('Login')]) }}
 
                         <div class="form-group row">
-                            {{ Form::label('email', __('E-Mail address'), ['class' => 'col-md-4 col-form-label
-                            text-md-right']) }}
+                            {{ Form::label('email', __('E-Mail address'), ['class' => 'col-lg-4 col-form-label
+                            text-lg-right']) }}
 
-                            <div class="col-md-6">
+                            <div class="col-lg-6">
                                 <div class="input-group">
                                     {{ Form::email('email', old('email'), ['class' => 'form-control' .
                                     ($errors->has('email') ? ' is-invalid' : ''), 'placeholder' =>
@@ -31,21 +31,21 @@
                                     <div class="input-group-append">
                                         <span class="input-group-text"><i class="fas fa-envelope"></i></span>
                                     </div>
-                                </div>
 
-                                @if ($errors->has('email'))
-                                    <span class="invalid-feedback" role="alert">
+                                    @if ($errors->has('email'))
+                                        <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('email') }}</strong>
                                         </span>
-                                @endif
+                                    @endif
+                                </div>
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            {{ Form::label('password', __('Password'), ['class' => 'col-md-4 col-form-label
-                            text-md-right']) }}
+                            {{ Form::label('password', __('Password'), ['class' => 'col-lg-4 col-form-label
+                            text-lg-right']) }}
 
-                            <div class="col-md-6">
+                            <div class="col-lg-6">
                                 <div class="input-group">
                                     {{ Form::password('password', ['class' => 'form-control' . ($errors->has
                                     ('password') ? ' is-invalid' : ''), 'placeholder' =>
@@ -55,18 +55,18 @@
                                     <div class="input-group-append">
                                         <span class="input-group-text"><i class="fa fa-key"></i></span>
                                     </div>
-                                </div>
 
-                                @if ($errors->has('password'))
-                                    <span class="invalid-feedback" role="alert">
+                                    @if ($errors->has('password'))
+                                        <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('password') }}</strong>
                                         </span>
-                                @endif
+                                    @endif
+                                </div>
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
+                            <div class="col-lg-6 offset-lg-4">
                                 <div class="checkbox">
                                     <div class="custom-control custom-checkbox">
                                         {{ Form::checkbox('remember', null, (old('remember') ? true : false),
@@ -79,7 +79,7 @@
                         </div>
 
                         <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
+                            <div class="col-lg-8 offset-lg-4">
                                 {{ Form::submit(__('Login'), ['class' => 'btn btn-primary']) }}
 
                                 {{ Html::linkRoute('password.request', __('Forgot your password?'), [], ['class'
@@ -90,7 +90,7 @@
                         <hr>
 
                         <div class="row">
-                            <div class="col-md-8 offset-md-2">
+                            <div class="col-lg-8 offset-lg-2">
                                 <h6 class="text-center">{{ __('Authorize with social networks') }}</h6>
                                 <hr>
                                 @foreach($socialproviders as $socialprovider)
