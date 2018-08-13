@@ -92,7 +92,7 @@ class RegisterController extends Controller
 
         return $socialprovider->users()->create([
             'name' => $user->getName(),
-            'email' => $user->getEmail(),
+            'socialuser_email' => $user->getEmail(),
             'socialuser_id' => $user->getId(),
             'avatar' => $user->getAvatar(),
         ]);
@@ -125,8 +125,7 @@ class RegisterController extends Controller
                 'min:3',
                 'max:255',
                 Rule::unique('users')->where(function ($query) {
-                    return $query->whereNull('socialprovider_id')
-                        ->whereNull('deleted_at');
+                    return $query->whereNull('deleted_at');
                 }),
             ],
             'password' => 'required|string|min:6|max:30|confirmed',

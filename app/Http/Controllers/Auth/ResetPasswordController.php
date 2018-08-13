@@ -46,7 +46,16 @@ class ResetPasswordController extends Controller
     {
         return [
             'token' => 'required|string',
-            'email' => 'required|string|email|min:3|max:255',
+            'email' => [
+                'required',
+                'string',
+                'email',
+                'min:3',
+                'max:255',
+                Rule::exists('users')->where(function ($query) {
+                    $query->whereNull('deleted_at');
+                }),
+            ],
             'password' => 'required|string|min:6|max:30|confirmed',
             'password_confirmation' => 'required|string|min:6|max:30',
         ];

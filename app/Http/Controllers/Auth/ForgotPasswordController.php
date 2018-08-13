@@ -39,6 +39,17 @@ class ForgotPasswordController extends Controller
      */
     protected function validateEmail(Request $request)
     {
-        $this->validate($request, ['email' => 'required|string|email|min:3|max:255']);
+        $this->validate($request, [
+            'email' => [
+                'required',
+                'string',
+                'email',
+                'min:3',
+                'max:255',
+                Rule::exists('users')->where(function ($query) {
+                    $query->whereNull('deleted_at');
+                }),
+            ]
+        ]);
     }
 }

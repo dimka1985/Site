@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->unsignedInteger('socialprovider_id')->nullable();
             $table->foreign('socialprovider_id')->references('id')->on('socialproviders');
             $table->string('socialuser_id')->nullable();
+            $table->string('socialuser_email')->nullable();
             $table->string('avatar')->nullable();
             $table->rememberToken();
             $table->timestamps();
