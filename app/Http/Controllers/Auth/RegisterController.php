@@ -9,6 +9,7 @@ use Auth;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 use Socialite;
 
 class RegisterController extends Controller
@@ -93,6 +94,7 @@ class RegisterController extends Controller
             'name' => $user->getName(),
             'email' => $user->getEmail(),
             'socialuser_id' => $user->getId(),
+            'avatar' => $user->getAvatar(),
         ]);
     }
 
@@ -105,9 +107,32 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
+            'name' => 'required|string|min:1|max:30',
+            'company' => 'nullable|string|min:2|max:50',
+            'code' => [
+                'nullable',
+                'required_with:phone',
+                'string',
+                'min:2',
+                'max:2',
+                'regex:/(17)|(25)|(29)|(33)|(44)/'
+            ],
+            'phone' => 'nullable|required_with:code|string|min:7|max:7|regex:/[0-9]{7}/',
+            'email' => [
+                'required',
+                'string',
+                'email',
+                'min:3',
+                'max:255',
+                Rule::unique('users')->where(function ($query) {
+                    return $query->whereNull('socialprovider_id')
+                        ->whereNull('deleted_at');
+                }),
+            ],
+            'password' => 'required|string|min:6|max:30|confirmed',
+            'password_confirmation' => 'required|string|min:6|max:30',
+            'avatar' => 'nullable|image|mimes:jpeg,png|max:2000',
+            'terms' => 'required|accepted',
         ]);
     }
 
@@ -121,6 +146,8 @@ class RegisterController extends Controller
     {
         return User::create([
             'name' => $data['name'],
+            'company' => $data['company'],
+            'phone' => '375' . $data['code'] . $data['phone'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);

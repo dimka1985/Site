@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Event;
+use App\Festival;
+use App\Tiding;
+
 class HomeController extends Controller
 {
     /**
@@ -21,6 +25,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('home', [
+            'festivals' => Festival::latest()->take(3)->get(),
+            'events' => Event::latest()->take(16)->get(),
+            'news' => Tiding::latest()->take(3)->get(),
+        ]);
     }
 }

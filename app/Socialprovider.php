@@ -35,6 +35,16 @@ class Socialprovider extends CachedModel
     protected $dates = ['deleted_at'];
 
     /**
+     * Get the route key for the model.
+     *
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'provider';
+    }
+
+    /**
      * Get the users for the socialprovider.
      */
     public function users()
