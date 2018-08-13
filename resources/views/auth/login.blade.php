@@ -5,11 +5,12 @@
 @endsection
 
 @section('content')
-    <div class="container">
+    <div class="container mt-5">
+        <br>
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('Authorization') }}</div>
+                    <div class="card-header text-center">{{ __('Authorization') }}</div>
 
                     <div class="card-body">
                         @include('includes.sessions')
@@ -28,7 +29,7 @@
                                     'required', 'autofocus']) }}
 
                                     <div class="input-group-append">
-                                        <span class="input-group-text"><i class="fa fa-envelope-o"></i></span>
+                                        <span class="input-group-text"><i class="fas fa-envelope"></i></span>
                                     </div>
                                 </div>
 
@@ -83,6 +84,20 @@
 
                                 {{ Html::linkRoute('password.request', __('Forgot your password?'), [], ['class'
                                 => 'btn btn-link']) }}
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="row">
+                            <div class="col-md-8 offset-md-2">
+                                <h6 class="text-center">{{ __('Authorize with social networks') }}</h6>
+                                <hr>
+                                @foreach($socialproviders as $socialprovider)
+                                    <a href="{{ url('/auth/' . $socialprovider->provider) }}" class="btn btn-sm
+                                    btn-outline-primary mb-1" role="button"><i class="fab fa-{{
+                                    $socialprovider->provider }}"></i> {{ ucfirst($socialprovider->provider) }}</a>
+                                @endforeach
                             </div>
                         </div>
 

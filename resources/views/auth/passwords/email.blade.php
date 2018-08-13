@@ -9,7 +9,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('Reset password request') }}</div>
+                    <div class="card-header text-center">{{ __('Reset password request') }}</div>
 
                     <div class="card-body">
                         @include('includes.sessions')
@@ -28,7 +28,7 @@
                                         'required', 'autofocus']) }}
 
                                         <div class="input-group-append">
-                                            <span class="input-group-text"><i class="fa fa-envelope-o"></i></span>
+                                            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
                                         </div>
                                     </div>
 

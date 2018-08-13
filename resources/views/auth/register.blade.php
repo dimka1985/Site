@@ -5,11 +5,12 @@
 @endsection
 
 @section('content')
-    <div class="container">
+    <div class="container mt-5">
+        <br>
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('Register') }}</div>
+                    <div class="card-header text-center">{{ __('Register') }}</div>
 
                     <div class="card-body">
                         @include('includes.sessions')
@@ -17,45 +18,23 @@
                         {{ Form::open(['route' => 'register', 'aria-label' => __('Register'), 'files' => true]) }}
 
                         <div class="form-group row">
-                            {{ Form::label('first_name', __('First name'), ['class' => 'col-md-4 col-form-label
-                            text-md-right']) }}
+                            {{ Form::label('name', __('Name') . '*', ['class' => 'col-md-4
+                            col-form-label text-md-right']) }}
 
                             <div class="col-md-6">
                                 <div class="input-group">
-                                    {{ Form::text('first_name', old('first_name'), ['class' => 'form-control' .
-                                    ((count($errors) > 0) ? ($errors->has('first_name') ? ' is-invalid' :
-                                    ' is-valid') : ''), 'placeholder' => __('Enter your first name'), 'minlength' => '1', 'maxlength' => '20', 'required', 'autofocus']) }}
+                                    {{ Form::text('name', old('name'), ['class' => 'form-control' .
+                                    ((count($errors) > 0) ? ($errors->has('name') ? ' is-invalid' :
+                                    ' is-valid') : ''), 'placeholder' => __('Enter your name'), 'minlength' => '1',
+                                    'maxlength' => '30', 'required', 'autofocus']) }}
 
                                     <div class="input-group-append">
-                                        <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                        <span class="input-group-text"><i class="fas fa-user"></i></span>
                                     </div>
 
-                                    @if ($errors->has('first_name'))
+                                    @if ($errors->has('name'))
                                         <span class="invalid-feedback">
-                                                <strong>{{ $errors->first('first_name') }}</strong>
-                                            </span>
-                                    @endif
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            {{ Form::label('last_name', __('Last name'), ['class' => 'col-md-4 col-form-label
-                            text-md-right']) }}
-
-                            <div class="col-md-6">
-                                <div class="input-group">
-                                    {{ Form::text('last_name', old('last_name'), ['class' => 'form-control' .
-                                    ((count($errors) > 0) ? ($errors->has('last_name') ? ' is-invalid' :
-                                    ' is-valid') : ''), 'placeholder' => __('Enter your last name'), 'minlength' => '1', 'maxlength' => '30', 'required']) }}
-
-                                    <div class="input-group-append">
-                                        <span class="input-group-text"><i class="fa fa-user-o"></i></span>
-                                    </div>
-
-                                    @if ($errors->has('last_name'))
-                                        <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $errors->first('last_name') }}</strong>
+                                                <strong>{{ $errors->first('name') }}</strong>
                                             </span>
                                     @endif
                                 </div>
@@ -71,7 +50,7 @@
                                     {{ Form::text('company', old('company'), ['class' => 'form-control' .
                                     ((count($errors) > 0) ? ($errors->has('company') ? ' is-invalid' :
                                     ' is-valid') : ''), 'placeholder' => __('Enter your company'), 'minlength' =>
-                                    '2', 'maxlength' => '50', 'required']) }}
+                                    '2', 'maxlength' => '50']) }}
 
                                     <div class="input-group-append">
                                         <span class="input-group-text"><i class="fas fa-building"></i></span>
@@ -87,7 +66,47 @@
                         </div>
 
                         <div class="form-group row">
-                            {{ Form::label('email', __('E-Mail address'), ['class' => 'col-md-4 col-form-label
+                            {{ Form::label('phone', __('Phone') . ' +375', ['class' => 'col-md-4 col-form-label
+                            text-md-right']) }}
+
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        {{ Form::text('phone', old('code'), ['class' => 'form-control' .
+                                        ((count($errors) > 0) ? ($errors->has('phone') ? ' is-invalid' :
+                                        ' is-valid') : ''), 'placeholder' => __('Code'), 'minlength' =>
+                                        '2', 'maxlength' => '2', 'pattern' => '(17)|(25)|(29)|(33)|(44)']) }}
+                                    </div>
+
+                                    <div class="col-md-9">
+                                        <div class="input-group">
+                                            {{ Form::text(null, old('phone'), ['class' => 'form-control' .
+                                            ((count($errors) > 0) ? ($errors->has('phone') ? ' is-invalid' :
+                                            ' is-valid') : ''), 'placeholder' => __('Enter your phone'), 'minlength' => '7', 'maxlength' => '7', 'pattern' => '[0-9]{7}']) }}
+
+                                            <div class="input-group-append">
+                                                <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                @if ($errors->has('code'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('code') }}</strong>
+                                    </span>
+                                @endif
+
+                                @if ($errors->has('phone'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('phone') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            {{ Form::label('email', __('E-Mail address') . '*', ['class' => 'col-md-4 col-form-label
                             text-md-right']) }}
 
                             <div class="col-md-6">
@@ -97,7 +116,7 @@
                                     ' is-valid') : ''), 'placeholder' => __('Enter your E-Mail address'), 'minlength' => '3', 'maxlength' => '255', 'required']) }}
 
                                     <div class="input-group-append">
-                                        <span class="input-group-text"><i class="fa fa-envelope-o"></i></span>
+                                        <span class="input-group-text"><i class="fas fa-envelope"></i></span>
                                     </div>
 
                                     @if ($errors->has('email'))
@@ -110,7 +129,7 @@
                         </div>
 
                         <div class="form-group row">
-                            {{ Form::label('password', __('Password'), ['class' => 'col-md-4 col-form-label
+                            {{ Form::label('password', __('Password') . '*', ['class' => 'col-md-4 col-form-label
                             text-md-right']) }}
 
                             <div class="col-md-6">
@@ -132,7 +151,7 @@
                         </div>
 
                         <div class="form-group row">
-                            {{ Form::label('password_confirmation', __('Confirm password'), ['class' => 'col-md-4 col-form-label text-md-right']) }}
+                            {{ Form::label('password_confirmation', __('Confirm password') . '*', ['class' => 'col-md-4 col-form-label text-md-right']) }}
 
                             <div class="col-md-6">
                                 <div class="input-group">
@@ -162,7 +181,7 @@
                                 <div class="custom-file">
                                     {{ Form::file('avatar', ['class' => 'custom-file-input' .
                                     ((count($errors) > 0) ? ($errors->has('avatar') ? ' is-invalid' :
-                                    ' is-valid') : ''), 'required']) }}
+                                    ' is-valid') : '')]) }}
 
                                     {{ Form::label('avatar', __('Choose file'), ['class' => 'custom-file-label',
                                     'lang' => 'ru']) }}
@@ -201,6 +220,20 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 {{ Form::submit(__('Register'), ['class' => 'btn btn-primary']) }}
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="row">
+                            <div class="col-md-8 offset-md-2">
+                                <h6 class="text-center">{{ __('Authorize with social networks') }}</h6>
+                                <hr>
+                                @foreach($socialproviders as $socialprovider)
+                                    <a href="{{ url('/auth/' . $socialprovider->provider) }}" class="btn btn-sm
+                                    btn-outline-primary mb-1" role="button"><i class="fab fa-{{
+                                    $socialprovider->provider }}"></i> {{ ucfirst($socialprovider->provider) }}</a>
+                                @endforeach
                             </div>
                         </div>
 
