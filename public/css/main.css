@@ -4,6 +4,12 @@ body {
     font-size: 16px;
 }
 
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
 .full {
     width: 100vw;
     height: 100vh;

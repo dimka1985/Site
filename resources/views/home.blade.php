@@ -1,9 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    @parent
-
-    Реклама и продвижение брендов в Беларуси
+    @parent | Реклама и продвижение брендов в Беларуси
 @endsection
 
 @section('styles')

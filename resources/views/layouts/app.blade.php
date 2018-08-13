@@ -188,8 +188,6 @@
 
 @yield('content')
 
-<hr class="mt-5">
-
 <footer id="contacts">
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
