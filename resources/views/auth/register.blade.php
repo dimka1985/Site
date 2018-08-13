@@ -18,15 +18,15 @@
                         {{ Form::open(['route' => 'register', 'aria-label' => __('Register'), 'files' => true]) }}
 
                         <div class="form-group row">
-                            {{ Form::label('name', __('Name') . '*', ['class' => 'col-md-4
-                            col-form-label text-md-right']) }}
+                            {{ Form::label('name', __('Name') . '*', ['class' => 'col-md-4 col-form-label
+                            text-md-right']) }}
 
                             <div class="col-md-6">
                                 <div class="input-group">
                                     {{ Form::text('name', old('name'), ['class' => 'form-control' .
-                                    ((count($errors) > 0) ? ($errors->has('name') ? ' is-invalid' :
-                                    ' is-valid') : ''), 'placeholder' => __('Enter your name'), 'minlength' => '1',
-                                    'maxlength' => '30', 'required', 'autofocus']) }}
+                                    ((count($errors) > 0) ? ($errors->has('name') ? ' is-invalid' : ' is-valid') :
+                                    ''), 'placeholder' => __('Enter your name'), 'minlength' => '1', 'maxlength' =>
+                                    '30', 'required', 'autofocus']) }}
 
                                     <div class="input-group-append">
                                         <span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -72,36 +72,36 @@
                             <div class="col-md-6">
                                 <div class="row">
                                     <div class="col-md-3">
-                                        {{ Form::text('phone', old('code'), ['class' => 'form-control' .
-                                        ((count($errors) > 0) ? ($errors->has('phone') ? ' is-invalid' :
+                                        {{ Form::text('code', old('code'), ['class' => 'form-control' .
+                                        ((count($errors) > 0) ? ($errors->has('code') ? ' is-invalid' :
                                         ' is-valid') : ''), 'placeholder' => __('Code'), 'minlength' =>
                                         '2', 'maxlength' => '2', 'pattern' => '(17)|(25)|(29)|(33)|(44)']) }}
+
+                                        @if ($errors->has('code'))
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $errors->first('code') }}</strong>
+                                            </span>
+                                        @endif
                                     </div>
 
                                     <div class="col-md-9">
                                         <div class="input-group">
-                                            {{ Form::text(null, old('phone'), ['class' => 'form-control' .
+                                            {{ Form::text('phone', old('phone'), ['class' => 'form-control' .
                                             ((count($errors) > 0) ? ($errors->has('phone') ? ' is-invalid' :
                                             ' is-valid') : ''), 'placeholder' => __('Enter your phone'), 'minlength' => '7', 'maxlength' => '7', 'pattern' => '[0-9]{7}']) }}
 
                                             <div class="input-group-append">
                                                 <span class="input-group-text"><i class="fas fa-phone"></i></span>
                                             </div>
+
+                                            @if ($errors->has('phone'))
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $errors->first('phone') }}</strong>
+                                                </span>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
-
-                                @if ($errors->has('code'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('code') }}</strong>
-                                    </span>
-                                @endif
-
-                                @if ($errors->has('phone'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('phone') }}</strong>
-                                    </span>
-                                @endif
                             </div>
                         </div>
 
