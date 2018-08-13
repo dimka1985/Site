@@ -94,7 +94,7 @@ class RegisterController extends Controller
             'name' => $user->getName(),
             'socialuser_email' => $user->getEmail(),
             'socialuser_id' => $user->getId(),
-            'avatar' => $user->getAvatar(),
+            'socialuser_avatar' => $user->getAvatar(),
         ]);
     }
 

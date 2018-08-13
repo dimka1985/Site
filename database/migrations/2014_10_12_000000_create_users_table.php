@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->foreign('socialprovider_id')->references('id')->on('socialproviders');
             $table->string('socialuser_id')->nullable();
             $table->string('socialuser_email')->nullable();
+            $table->string('socialuser_avatar')->nullable();
             $table->string('avatar')->nullable();
             $table->rememberToken();
             $table->timestamps();
