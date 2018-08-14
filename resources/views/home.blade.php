@@ -20,14 +20,14 @@
         @include('includes.sessions')
 
         <header class="full">
-            <div class="header-video full position-absolute">
-                {{--<video playsinline
+            {{--<div class="full position-absolute">
+                <video playsinline
                        poster="https://scontent-frt3-1.cdninstagram.com/vp/5a8e3ac631411b349c67b357d22f4e49/5B5A47A0/t51.2885-15/e15/35616370_235228623755377_8120839775759368192_n.jpg"
                        autoplay="autoplay" loop="loop" preload="auto" muted
-                       src="https://scontent-frt3-1.cdninstagram.com/vp/8188f5c06cb7a67f3df238a9131fad3d/5B5A3152/t50.2886-16/36650570_193919444623395_779771425920647168_n.mp4"></video>--}}
-            </div>
+                       src="https://scontent-frt3-1.cdninstagram.com/vp/8188f5c06cb7a67f3df238a9131fad3d/5B5A3152/t50.2886-16/36650570_193919444623395_779771425920647168_n.mp4"></video>
+            </div>--}}
 
-            <div class="overlay-header full">
+            <div class="full overlay-header">
                 <div class="header-text position-absolute text-center text-white">
                     <div class="container">
                         <div class="row">
@@ -35,7 +35,8 @@
                                 <h1 class="mb-5">{{ config('app.name') }}</h1>
                                 <p class="lead mb-4">Мы занимаемся рекламой и продвижением брендов, помогаем в
                                     организации мероприятий для вашей компании и проводим крупные фестивали!</p>
-                                <a class="btn btn-lg btn-primary" href="company.html" role="button">Узнать больше</a>
+                                <a class="btn btn-lg btn-primary" href="{{ route('company') }}" role="button">{{
+                                __('Learn more') }}</a>
                             </div>
                         </div>
                     </div>
@@ -64,7 +65,11 @@
                                         рекламы и продвижения</p>
                                 </li>
                                 <li class="text-primary">
-                                    <p><i class="far fa-check-circle"></i> Проводим крупнейшие мероприятия</p>
+                                    <p><i class="far fa-check-circle"></i> Поможем подготовить и провести Ваше
+                                        мероприятие</p>
+                                </li>
+                                <li class="text-primary">
+                                    <p><i class="far fa-check-circle"></i> Проводим крупнейшие фестивали</p>
                                 </li>
                                 <li class="text-primary">
                                     <p><i class="far fa-check-circle"></i> И многое другое</p>
@@ -99,7 +104,7 @@
 
         <main>
             <div class="container text-center">
-                <h1 class="my-4">Мы предлагаем следующие услуги:</h1>
+                <h1 class="my-4">{{ __('We offer the following services') }}:</h1>
                 <hr class="my-4">
                 <div class="row">
                     <div class="card-deck">
@@ -109,13 +114,13 @@
                                 <div class="card-body">
                                     <h4 class="card-title">Реклама компаний</h4>
                                     <hr class="my-3">
-                                    <p class="card-text">Осуществляем разноплановую рекламу Ваших брендов среди широкой
-                                        целевой аудитории.</p>
+                                    <p class="card-text">Осуществляем разноплановую рекламу Ваших брендов среди
+                                        широкой целевой аудитории.</p>
                                 </div>
                                 <div class="card-footer">
-                                    <a href="#" class="card-link">Узнать больше</a>
+                                    <a href="#" class="card-link">{{ __('Learn more') }}</a>
                                     <hr>
-                                    <a href="#" class="btn btn-primary text-uppercase">Заказать!</a>
+                                    <a href="#" class="btn btn-primary text-uppercase">{{ __('Order now!') }}</a>
                                 </div>
                             </div>
                         </div>
@@ -126,13 +131,12 @@
                                     <h4 class="card-title">SMM продвижение</h4>
                                     <hr class="my-3">
                                     <p class="card-text">Выполняем продвижение Ваших брендов в различных социальных
-                                        сетях
-                                        Интернета.</p>
+                                        сетях Интернета.</p>
                                 </div>
                                 <div class="card-footer">
-                                    <a href="#" class="card-link">Узнать больше</a>
+                                    <a href="#" class="card-link">{{ __('Learn more') }}</a>
                                     <hr>
-                                    <a href="#" class="btn btn-primary text-uppercase">Заказать!</a>
+                                    <a href="#" class="btn btn-primary text-uppercase">{{ __('Order now!') }}</a>
                                 </div>
                             </div>
                         </div>
@@ -146,9 +150,9 @@
                                         мероприятий.</p>
                                 </div>
                                 <div class="card-footer">
-                                    <a href="#" class="card-link">Узнать больше</a>
+                                    <a href="#" class="card-link">{{ __('Learn more') }}</a>
                                     <hr>
-                                    <a href="#" class="btn btn-primary text-uppercase">Заказать!</a>
+                                    <a href="#" class="btn btn-primary text-uppercase">{{ __('Order now!') }}</a>
                                 </div>
                             </div>
                         </div>
@@ -158,13 +162,13 @@
                                 <div class="card-body">
                                     <h4 class="card-title">Крупные фестивали</h4>
                                     <hr class="my-3">
-                                    <p class="card-text">Проводим крупные рекламные мероприятия с участием разнообразных
-                                        компаний.</p>
+                                    <p class="card-text">Проводим крупные рекламные мероприятия с участием
+                                        разнообразных компаний.</p>
                                 </div>
                                 <div class="card-footer">
-                                    <a href="#" class="card-link">Узнать больше</a>
+                                    <a href="#" class="card-link">{{ __('Learn more') }}</a>
                                     <hr>
-                                    <a href="#" class="btn btn-primary text-uppercase">Заказать!</a>
+                                    <a href="#" class="btn btn-primary text-uppercase">{{ __('Order now!') }}</a>
                                 </div>
                             </div>
                         </div>
@@ -181,7 +185,7 @@
                     <div class="row">
                         @foreach($festivals as $festival)
                             <div class="col">
-                                <h5>{{ $festival->name }}GRAND FASHION WEEKEND (13-14 октября 2018г.)</h5>
+                                <h5>{{ $festival->name }} ({{ $festival->date }})</h5>
                                 <a href="#"><img src="{{ asset($festival->image) }}"
                                                  class="img-fluid img-thumbnail rounded"
                                                  alt="{{ $festival->name }}"></a>
@@ -198,37 +202,20 @@
                     <h1>{{ __('History of our events') }}</h1>
                     <hr class="my-4">
                     @foreach($events as $e => $event)
-                        @if ($e / 5 == 0)
+                        @if ($e / 4 == 0)
                             <div class="row">
-                                @else
-                                    <div class="col-md-6 col-xl-3 mb-5">
-                                        <h5>{{ $event->name }}Dana Fashion Day в «Dana Mall» (2017)</h5>
-                                        <a href="#"><img src="{{ asset($event->image) }}" class="img-fluid
-                                    img-thumbnail rounded" alt="{{ $event->name }}"></a>
-                                    </div>
                                 @endif
+                                <div class="col-md-6 col-xl-3 mb-5">
+                                    <h5>{{ $event->name }}</h5>
+                                    <a href="{{ route('events', ['event' => $event->url]) }}"><img src="{{ asset
+                                    ($event->image) }}" class="img-fluid img-thumbnail rounded" alt="{{
+                                    $event->name }}" title="Нажмите чтобы узнать больше"></a>
+                                </div>
 
-                                @if ($e / 5 == 0)
+                                @if (($e != 0) && ($e / 3 == 0))
                             </div>
                         @endif
                     @endforeach
-                    <div class="row">
-                        <div class="col-md-6 col-xl-3 mb-5">
-                            <h5>Dana Fashion Day в «Dana Mall» (2017)</h5>
-                            <a href="#"><img src="{{ asset('img/dana_fashion_day.jpg') }}" class="img-fluid img-thumbnail
-                        rounded" alt="Наши мероприятия"></a>
-                        </div>
-                        <div class="col-md-6 col-xl-3 mb-5">
-                            <h5>Шопинг в стиле «Карнавал» в «Galileo Mall»</h5>
-                            <a href="#"><img src="{{ asset('img/karnaval.jpg') }}" class="img-fluid img-thumbnail
-                        rounded" alt="Карнавал"></a>
-                        </div>
-                        <div class="col-md-6 col-xl-3 mb-5">
-                            <h5>Queen of beauty by RUSHKA (2 сезон)</h5>
-                            <a href="#"><img src="{{ asset('img/rushka.jpg') }}" alt="Rushka" class="img-fluid
-                        img-thumbnail rounded"></a>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>

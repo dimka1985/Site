@@ -3,15 +3,10 @@ header {
     background: url("../img/logo.jpg") no-repeat fixed top left/cover;
 }
 
-.header-video, .header-photos {
-    overflow: hidden;
-    /*background: url("../img/okgroup-logo.jpg") no-repeat fixed top left/cover;*/
-}
-
-header video {
+/*header video {
     min-width: 100%;
     min-height: 100%;
-}
+}*/
 
 .overlay-header {
     opacity: .8;

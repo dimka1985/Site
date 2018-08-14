@@ -7,7 +7,6 @@ body {
 .full {
     width: 100vw;
     height: 100vh;
-    max-width: 100%;
 }
 
 .jumbotron-list {
@@ -32,6 +31,15 @@ footer .jumbotron {
 
 /* col-lg */
 @media (min-width: 992px) {
+
+}
+
+/* col-xl */
+@media (min-width: 1200px) {
+    .dropdown-item {
+        border-bottom: 2px solid transparent;
+    }
+
     .nav-item {
         border-bottom: 2px solid transparent;
     }
@@ -39,9 +47,4 @@ footer .jumbotron {
     .nav-item:hover, .dropdown-item:hover {
         border-bottom: 2px solid blue;
     }
-}
-
-/* col-xl */
-@media (min-width: 1200px) {
-
 }

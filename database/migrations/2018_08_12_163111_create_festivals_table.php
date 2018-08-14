@@ -19,6 +19,8 @@ class CreateFestivalsTable extends Migration
             $table->string('url');
             $table->text('text');
             $table->string('image');
+            $table->string('date');
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
             $table->softDeletes();
         });

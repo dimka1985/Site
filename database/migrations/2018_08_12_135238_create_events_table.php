@@ -19,6 +19,7 @@ class CreateEventsTable extends Migration
             $table->string('url');
             $table->text('text');
             $table->string('image');
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
             $table->softDeletes();
         });

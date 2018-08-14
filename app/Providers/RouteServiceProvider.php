@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\{Socialprovider, Socialuser, User};
+use App\{Event, Festival, Socialprovider, Tiding, User};
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Route;
 
@@ -27,7 +27,9 @@ class RouteServiceProvider extends ServiceProvider
         parent::boot();
 
         Route::model('socialprovider', Socialprovider::class);
-        Route::model('socialuser', Socialuser::class);
+        Route::model('event', Event::class);
+        Route::model('festival', Festival::class);
+        Route::model('tiding', Tiding::class);
         Route::model('user', User::class);
     }
 

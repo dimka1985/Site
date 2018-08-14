@@ -33,4 +33,14 @@ class Tiding extends CachedModel
      * @var array
      */
     protected $dates = ['deleted_at'];
+
+    /**
+     * Get the route key for the model.
+     *
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'url';
+    }
 }
