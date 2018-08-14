@@ -15,7 +15,7 @@ class ComposerServiceProvider extends ServiceProvider
     public function boot()
     {
         View::composer(
-            ['auth.login', 'auth.register'],
+            ['auth.*'],
             'App\Http\ViewComposers\AuthComposer'
         );
     }

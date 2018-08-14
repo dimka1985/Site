@@ -158,23 +158,23 @@
                         </li>
                     @else
                         @if (Route::currentRouteName() == 'login')
-                            <li class="nav-item active">
+                            <li class="nav-item active text-uppercase">
                                 {!! Html::linkWithHtml(route('login'), '<i class="fas fa-sign-in-alt"></i> '
                                 . __('Login') . ' <span class="sr-only">(' . __('Current') . ')</span>', ['class' => 'nav-link']) !!}
                             </li>
                         @else
-                            <li class="nav-item">
+                            <li class="nav-item text-uppercase">
                                 {!! Html::linkWithHtml(route('login'), '<i class="fas fa-sign-in-alt"></i> '
                                 . __('Login'), ['class' => 'nav-link']) !!}
                             </li>
                         @endif
                         @if (Route::currentRouteName() == 'register')
-                            <li class="nav-item active">
+                            <li class="nav-item active text-uppercase">
                                 {!! Html::linkWithHtml(route('register'), '<i class="fas fa-user"></i> '
                                 . __('Register') . ' <span class="sr-only">(' . __('Current') . ')</span>', ['class' => 'nav-link']) !!}
                             </li>
                         @else
-                            <li class="nav-item">
+                            <li class="nav-item text-uppercase">
                                 {!! Html::linkWithHtml(route('register'), '<i class="fas fa-user"></i> '
                                 . __('Register'), ['class' => 'nav-link']) !!}
                             </li>

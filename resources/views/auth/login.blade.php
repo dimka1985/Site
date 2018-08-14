@@ -10,7 +10,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header text-center">{{ __('Authorization') }}</div>
+                    <div class="card-header text-center mb-3">{{ __('Authorization') }}</div>
 
                     <div class="card-body">
                         @include('includes.sessions')
@@ -78,7 +78,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row mb-0">
+                        <div class="form-group row">
                             <div class="col-lg-8 offset-lg-4">
                                 {{ Form::submit(__('Login'), ['class' => 'btn btn-primary']) }}
 
@@ -87,12 +87,12 @@
                             </div>
                         </div>
 
-                        <hr>
+                        <hr class="my-4">
 
                         <div class="row">
                             <div class="col-lg-8 offset-lg-2">
                                 <h6 class="text-center">{{ __('Authorize with social networks') }}</h6>
-                                <hr>
+                                <hr class="my-4">
                                 @foreach($socialproviders as $socialprovider)
                                     <a href="{{ url('/auth/' . $socialprovider->provider) }}" class="btn btn-sm
                                     btn-outline-primary mb-1" role="button"><i class="fab fa-{{
@@ -107,4 +107,5 @@
             </div>
         </div>
     </div>
+    <br>
 @endsection

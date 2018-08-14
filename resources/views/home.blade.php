@@ -17,6 +17,8 @@
 
 @section('content')
     <div id="app">
+        @include('includes.sessions')
+
         <header class="full">
             <div class="header-video full position-absolute">
                 {{--<video playsinline
