@@ -258,7 +258,7 @@
                             .com/o_k_group/">OK Event Group Instagram</a></li>
                     </ul>
                 </div>
-                <div class="col-xl-3 col-md-6">
+                <div class="col-xl-2 col-md-6">
                     <h5>{{ __('Our services') }}:</h5>
                     <hr>
                     <ul class="jumbotron-list pl-0">
@@ -276,13 +276,13 @@
                             </a></li>
                     </ul>
                 </div>
-                <div class="col-xl-3 col-md-6">
+                <div class="col-xl-4 col-md-6">
                     <h5>{{ __('Our requisites') }}:</h5>
                     <hr>
                     <p>ИП Куксар Никита Сергеевич<br>
                         Юр. адрес: г.Минск, ул. Филимонова, 12, к.40<br>
                         УНП 193087259<br>
-                        р/с BY31 ALFA 3013 2350 6700 1027 0000 в BYN<br>
+                        р/с BY31 ALFA 3013 2350 6700 1027 0000 BYN<br>
                         ЗАО "Альфа-Банк", ул. Сурганова, 43-47</p>
                 </div>
                 <div class="col-xl-3 col-md-6 mb-3">

@@ -19,12 +19,12 @@
 
                         <div class="row">
                             <div class="offset-lg-2 col-lg-8 mb-3">
-                                <i>* звёздочкой отмечены обязательные поля</i>
+                                <i>* {{ __('Asterisk marked the required fields') }}</i>
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            {{ Form::label('name', __('Name') . '*', ['class' => 'col-lg-4 col-form-label
+                            {{ Form::label('name', __('Full name') . '*', ['class' => 'col-lg-4 col-form-label
                             text-lg-right']) }}
 
                             <div class="col-lg-6">

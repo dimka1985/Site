@@ -25,6 +25,7 @@ class CreateFestivalsTable extends Migration
             $table->date('begin_date');
             $table->date('end_date');
             $table->string('time');
+            $table->string('price');
             $table->boolean('passed')->default(false);
             $table->boolean('is_active')->default(true);
             $table->timestamps();

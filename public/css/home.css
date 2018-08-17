@@ -3,6 +3,12 @@ header {
     background: url("../img/logo.jpg") no-repeat fixed top left/cover;
 }
 
+.img-fit-25 {
+    width: 100%;
+    height: 25vw;
+    object-fit: cover;
+}
+
 /*header video {
     min-width: 100%;
     min-height: 100%;

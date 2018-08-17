@@ -30,22 +30,25 @@
                                                 alt="{{ $festival->name }}"></a>
                                 </div>
                                 <div class="col-lg-8">
-                                    <h5><u>Название</u>: <strong>{{ $festival->heading }}</strong></h5>
-                                    <h5><u>Дата проведения</u>: <strong>{{ \Carbon\Carbon::parse
+                                    <h5><u>{{ __('Name') }}</u>: <strong>{{ $festival->heading }}</strong></h5>
+                                    <h5><u>{{ __('Date') }}</u>: <strong>{{ \Carbon\Carbon::parse
                             ($festival->begin_date)->format('d.m.Y') }} @if ($festival->begin_date !=
                             $festival->end_date)
                                                 - {{ \Carbon\Carbon::parse($festival->end_date)->format('d.m.Y') }} @endif</strong>
                                     </h5>
-                                    <h5><u>Время проведения</u>: <strong>{{ $festival->time }}</strong></h5>
+                                    <h5><u>{{ __('Time') }}</u>: <strong>{{ $festival->time }}</strong></h5>
                                     <h5>
-                                        <u>Место проведения</u>: <strong>{{ $festival->place }}</strong>
+                                        <u>{{ __('Location') }}</u>: <strong>{{ $festival->place }}</strong>
                                     </h5>
                                     <h5>
-                                        <u>Адрес</u>: <strong>{{ $festival->address }}</strong>
+                                        <u>{{ __('Address') }}</u>: <strong>{{ $festival->address }}</strong>
+                                    </h5>
+                                    <h5>
+                                        <u>{{ __('Cost of visit') }}</u>: <strong>{{ $festival->price }}</strong>
                                     </h5>
                                     @if ($festival->passed == false)
                                         <h5><a href="#"
-                                               class="btn btn-primary text-uppercase">{{ __('Participate!') }}</a>
+                                               class="btn btn-primary text-uppercase mb-1">{{ __('Participate!') }}</a>
                                             <a href="#"
                                                class="btn btn-success text-uppercase">{{ __('Want to visit!') }}</a>
                                         </h5>

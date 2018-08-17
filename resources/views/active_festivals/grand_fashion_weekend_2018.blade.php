@@ -72,11 +72,18 @@
                             ($festival->begin_date)->format('d.m.Y') }} @if ($festival->begin_date !=
                             $festival->end_date)
                                         - {{ \Carbon\Carbon::parse($festival->end_date)->format('d.m.Y') }} @endif</h3>
+                                <h4 class="mt-3">{{ __('Cost of visit') }}: {{ $festival->price }}</h4>
                                 <h3 class="mt-3"><a href="#"
                                                     class="btn btn-lg btn-primary text-uppercase mb-1">{{ __('Participate!') }}</a>
                                     <a href="#"
                                        class="btn btn-lg btn-success text-uppercase">{{ __('Want to visit!') }}</a>
                                 </h3>
+                                <h5 class="mt-3">
+                                    <a href="{{ asset('img/festivals/presentations/grand_fashion_weekend_2018/grand_fashion_weekend_2018_afisha.png') }}"
+                                       target="_blank" class="text-white">Посмотреть афишу фестиваля</a> | <a
+                                            href="{{ asset
+                        ('img/festivals/presentations/grand_fashion_weekend_2018/grand_fashion_weekend_2018_top.jpg') }}"
+                                            target="_blank" class="text-white">Посмотреть афишу премии</a></h5>
                             </div>
                         </div>
                     </div>
@@ -433,7 +440,7 @@
             </section>
 
             <section class="slide12 overlay-header position-relative">
-                <img src="{{ asset('img/festivals/presentations/grand_fashion_weekend_2018/grand_fashion_weekend_2018_top_small.png') }}"
+                <img src="{{ asset('img/festivals/presentations/grand_fashion_weekend_2018/grand_fashion_weekend_2018_top_small.jpg') }}"
                      alt="{{ $festival->name }}" class="full">
 
                 <div class="header-text position-absolute text-white">
@@ -443,23 +450,23 @@
                             <div class="row">
                                 <div class="col-6">
                                     <p>Премия «Top of Belarus-2018» - это мероприятие конкурсного типа, основанное на
-                                    голосовании
-                                    Потребителей.
-                                    Премия «Top of Belarus-2018»
-                                    определяет общественное
-                                    признание лучшего товара или
-                                    услуги с присвоением по итогам отбора
-                                    звания победителя в соответствии
-                                    с утвержденными номинациями. 
-                                    Организация и проведение премии помогает клиентам сориентироваться
-                                    в многообразии предлагаемых услуг,
+                                        голосовании
+                                        Потребителей.
+                                        Премия «Top of Belarus-2018»
+                                        определяет общественное
+                                        признание лучшего товара или
+                                        услуги с присвоением по итогам отбора
+                                        звания победителя в соответствии
+                                        с утвержденными номинациями. 
+                                        Организация и проведение премии помогает клиентам сориентироваться
+                                        в многообразии предлагаемых услуг,
                                         а также стимулирует игроков рынка к совершенствованию.</p>
                                 </div>
                                 <div class="col-6">
                                     <h6 class="text-center">Цели и задачи</h6>
                                     <p>Определение лучших представителей индустрии красоты, ведущих свою деятельность на
-                                    территории Республики Беларусь.
-                                    Привлечение внимания потенциальных клиентов к участникам и победителям Премии.
+                                        территории Республики Беларусь.
+                                        Привлечение внимания потенциальных клиентов к участникам и победителям Премии.
                                         Популяризация победителей и партнёров Премии.</p>
                                 </div>
                             </div>
@@ -469,7 +476,7 @@
             </section>
 
             <section class="slide13 overlay-header position-relative">
-                <img src="{{ asset('img/festivals/presentations/grand_fashion_weekend_2018/grand_fashion_weekend_2018_top_small.png') }}"
+                <img src="{{ asset('img/festivals/presentations/grand_fashion_weekend_2018/grand_fashion_weekend_2018_top_small.jpg') }}"
                      alt="{{ $festival->name }}" class="full">
 
                 <div class="header-text position-absolute text-white">
@@ -563,7 +570,7 @@
             </section>
 
             <section class="slide14 overlay-header position-relative">
-                <img src="{{ asset('img/festivals/presentations/grand_fashion_weekend_2018/grand_fashion_weekend_2018_top_small.png') }}"
+                <img src="{{ asset('img/festivals/presentations/grand_fashion_weekend_2018/grand_fashion_weekend_2018_top_small.jpg') }}"
                      alt="{{ $festival->name }}" class="full">
 
                 <div class="header-text position-absolute text-white">
@@ -627,7 +634,7 @@
             </section>
 
             <section class="slide15 overlay-header position-relative">
-                <img src="{{ asset('img/festivals/presentations/grand_fashion_weekend_2018/grand_fashion_weekend_2018_top_small.png') }}"
+                <img src="{{ asset('img/festivals/presentations/grand_fashion_weekend_2018/grand_fashion_weekend_2018_top_small.jpg') }}"
                      alt="{{ $festival->name }}" class="full">
 
                 <div class="header-text position-absolute text-white">
@@ -775,18 +782,11 @@
                 </div>
             </section>
 
-            <div>
+            <div class="mt-3">
                 <a href="#"
                    class="btn btn-lg btn-primary text-uppercase mb-1">{{ __('Participate!') }}</a>
                 <a href="#"
                    class="btn btn-lg btn-success text-uppercase">{{ __('Want to visit!') }}</a>
-            </div>
-
-            <div>
-                <a href="{{ asset('img/festivals/presentations/grand_fashion_weekend_2018
-                /grand_fashion_weekend_2018_afisha.png') }}" target="_blank">Посмотреть афишу фестиваля</a>, <a
-                        href="{{ asset('img/festivals/presentations/grand_fashion_weekend_2018/grand_fashion_weekend_2018_top.png') }}"
-                        target="_blank">Посмотреть афишу премии</a>.
             </div>
         </div>
     </div>

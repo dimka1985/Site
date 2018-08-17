@@ -192,13 +192,15 @@
                                                 - {{ \Carbon\Carbon::parse($festival->end_date)->format('d.m.Y') }}@endif)
                                         </a></strong></h5>
                                 <h5>{{ $festival->place }} {{ $festival->address }}</h5>
+                                <h5>{{ __('Cost of visit') }}: {{ $festival->price }}</h5>
                                 @if ($festival->passed == false)
                                     <h5><a href="#" class="btn btn-primary text-uppercase">{{ __('Participate!') }}</a>
                                         <a href="#"
                                            class="btn btn-success text-uppercase">{{ __('Want to visit!') }}</a></h5>
                                 @endif
                                 <a href="{{ route('festivals.festival', ['festival' => $festival->url]) }}"><img
-                                            src="{{ asset($festival->image) }}" class="img-fluid img-thumbnail rounded"
+                                            src="{{ asset($festival->image) }}" class="img-fluid img-thumbnail
+                                            rounded"
                                             alt="{{ $festival->name }}" width="30%"></a>
                             </div>
                         @endforeach
@@ -241,11 +243,11 @@
                     <div class="card-group">
                         <div class="row no-gutters">
                             @foreach($news as $tiding)
-                                <div class="col-lg-4">
+                                <div class="col-lg">
                                     <div class="card">
                                         <a href="{{ route('news.tiding', ['tiding' => $tiding->url]) }}"><img
-                                                    class="card-img-top" src="{{ asset($tiding->image) }}" alt="{{
-                                            $tiding->name }}"></a>
+                                                    class="card-img-top img-fit-25" src="{{ asset($tiding->image) }}"
+                                                    alt="{{ $tiding->name }}"></a>
                                         <div class="card-body">
                                             <h5 class="card-title"><strong><a href="{{ route('news.tiding', ['tiding' =>
                                     $tiding->url]) }}">{{ $tiding->name }}</a></strong>
