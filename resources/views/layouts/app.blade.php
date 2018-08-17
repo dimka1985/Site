@@ -235,19 +235,22 @@
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-xl-3 col-md-6">
                     <h5>{{ __('Our contacts') }}:</h5>
                     <hr>
                     <ul class="jumbotron-list pl-0">
                         <li><i class="fas fa-phone mr-1"></i> <a href="tel:375445287251">+375 44 528 72 51</a>
-                            Никита
+                            {{ __('Nikita') }}
                         </li>
                         <li><i class="fas fa-phone mr-1"></i> <a href="tel:375445287252">+375 44 528 72 52</a>
-                            Дмитрий
+                            {{ __('Dmitry') }}
                         </li>
                         <li><i class="fas fa-phone mr-1"></i> <a href="tel:375445287253">+375 44 528 72 53</a>
-                            Екатерина
+                            {{ __('Catherine') }}
                         </li>
+                        {{--<li><i class="fas fa-phone mr-1"></i> <a href="tel:375445287253">+375 44 528 72 53</a>
+                            {{ __('Yuri') }}
+                        </li>--}}
                         <li><i class="fas fa-envelope mr-1"></i> <a
                                     href="mailto:okgroup@mail.ru">okgroup@mail.ru</a>
                         </li>
@@ -255,7 +258,7 @@
                             .com/o_k_group/">OK Event Group Instagram</a></li>
                     </ul>
                 </div>
-                <div class="col-md-4">
+                <div class="col-xl-3 col-md-6">
                     <h5>{{ __('Our services') }}:</h5>
                     <hr>
                     <ul class="jumbotron-list pl-0">
@@ -273,20 +276,54 @@
                             </a></li>
                     </ul>
                 </div>
-                <div class="col-md-4">
-                    <h5>Подпишитесь на рассылку:</h5>
+                <div class="col-xl-3 col-md-6">
+                    <h5>{{ __('Our requisites') }}:</h5>
+                    <hr>
+                    <p>ИП Куксар Никита Сергеевич<br>
+                        Юр. адрес: г.Минск, ул. Филимонова, 12, к.40<br>
+                        УНП 193087259<br>
+                        р/с BY31 ALFA 3013 2350 6700 1027 0000 в BYN<br>
+                        ЗАО "Альфа-Банк", ул. Сурганова, 43-47</p>
+                </div>
+                <div class="col-xl-3 col-md-6 mb-3">
+                    <h5>{{ __('Subscribe to our newsletter') }}:</h5>
                     <hr>
 
+                    {{ Form::open(['route' => 'subscribe']) }}
+                    <div class="row">
+                        <div class="col-6 col-md-12 mb-1">
+                            <div class="input-group">
+                                {{ Form::email('sub_email', old('sub_email'), ['class' => 'form-control' .
+                                ($errors->has('sub_email') ? ' is-invalid' : ''), 'placeholder' =>
+                                __('Enter your E-Mail address'), 'minlength' => '3', 'maxlength' => '255',
+                                'required']) }}
+
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                </div>
+
+                                @if ($errors->has('sub_email'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('sub_email') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-12">
+                            {{ Form::submit(__('Subscribe!'), ['class' => 'btn btn-primary']) }}
+                        </div>
+                    </div>
+                    {{ Form::close() }}
                 </div>
+                <hr>
+                @php
+                    date('Y') != 2018 ? $text = ' - ' . date('Y') : $text = ''
+                @endphp
+                <p class="text-center">Copyright © 2018{{ $text }}. {{ __('All rights reserved') }}. {{ __('Design') }}
+                    <a
+                            href="mailto:dmitrytsibylskiy@gmail.com">okgroup.by dmitry</a></p>
             </div>
-            <hr>
-            @php
-                date('Y') != 2018 ? $text = ' - ' . date('Y') : $text = ''
-            @endphp
-            <p class="text-center">Copyright © 2018{{ $text }}. {{ __('All rights reserved') }}. {{ __('Design') }} <a
-                        href="mailto:dmitrytsibylskiy@gmail.com">okgroup.by dmitry</a></p>
         </div>
-    </div>
 </footer>
 
 <script data-skip-moving="true">

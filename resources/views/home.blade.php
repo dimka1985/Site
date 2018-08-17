@@ -239,64 +239,31 @@
                     }}</a></strong></h1>
                     <hr class="my-4">
                     <div class="card-group">
-                        @foreach($news as $new)
-                            <div class="card">
-                                <a href="{{ route('news.tiding', ['tiding' => $new->url]) }}"><img
-                                            class="card-img-top" src="{{ asset($new->image) }}" alt="{{ $new->name
-                                            }}"></a>
-                                <div class="card-body">
-                                    <h5 class="card-title"><strong><a href="{{ route('news.tiding', ['tiding' =>
-                                    $new->url]) }}">{{ $new->name }}</a></strong>
-                                    </h5>
-                                    <hr>
-                                    <p class="card-text">{{ str_limit($new->text, 300, '...') }}</p>
-                                    <a href="{{ route('news.tiding', ['tiding' => $new->url]) }}">{{ __('Read more') }}</a>
+                        <div class="row no-gutters">
+                            @foreach($news as $tiding)
+                                <div class="col-lg-4">
+                                    <div class="card">
+                                        <a href="{{ route('news.tiding', ['tiding' => $tiding->url]) }}"><img
+                                                    class="card-img-top" src="{{ asset($tiding->image) }}" alt="{{
+                                            $tiding->name }}"></a>
+                                        <div class="card-body">
+                                            <h5 class="card-title"><strong><a href="{{ route('news.tiding', ['tiding' =>
+                                    $tiding->url]) }}">{{ $tiding->name }}</a></strong>
+                                            </h5>
+                                            <hr>
+                                            <p class="card-text">{!! str_limit($tiding->text, 200, '...') !!}</p>
+                                            <a href="{{ route('news.tiding', ['tiding' => $tiding->url]) }}">{{ __('Read more') }}</a>
+                                        </div>
+                                        <div class="card-footer">
+                                            <p class="card-text">
+                                                <small class="text-muted">{{ __('Published') }} {{
+                                                \Carbon\Carbon::parse($tiding->created_at)->format('d.m.Y в H:i')
+                                                }}</small>
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="card-footer">
-                                    <p class="card-text">
-                                        <small class="text-muted">{{ __('Published') }} {{ $new->created_at }}</small>
-                                    </p>
-                                </div>
-                            </div>
-                        @endforeach
-                        <div class="card">
-                            <img class="card-img-top" src="{{ asset('img/rushka.jpg') }}" alt="Rushka">
-                            <div class="card-body">
-                                <h5 class="card-title"><strong>Успехи на Queen of beauty by RUSHKA (2 сезон)</strong>
-                                </h5>
-                                <hr>
-                                <p class="card-text">This is a longer card with supporting text below as a natural
-                                    lead-in
-                                    to
-                                    additional
-                                    content. This content is a little bit longer.</p>
-                                <a href="#" class="card-link">Читать полностью</a>
-                            </div>
-                            <div class="card-footer">
-                                <p class="card-text">
-                                    <small class="text-muted">Опубликовано 2 дня назад</small>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <img class="card-img-top" src="{{ asset('img/dana_fashion_day.jpg') }}"
-                                 alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title"><strong>Сумасшедший успех Шопинга в стиле «Карнавал»</strong>
-                                </h5>
-                                <hr>
-                                <p class="card-text">This is a wider card with supporting text below as a natural
-                                    lead-in to
-                                    additional
-                                    content. This card has even longer content than the first to show that equal height
-                                    action.</p>
-                                <a href="#" class="card-link">{{ __('Read more') }}</a>
-                            </div>
-                            <div class="card-footer">
-                                <p class="card-text">
-                                    <small class="text-muted">{{ __('Published') }} 2 дня назад</small>
-                                </p>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>

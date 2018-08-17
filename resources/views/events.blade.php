@@ -5,10 +5,10 @@
 @endsection
 
 @section('content')
-    <div id="app">
+    <div id="app" class="mb-4">
         @include('includes.sessions')
 
-        <div class="container mb-5">
+        <div class="container">
             @if (count($events) > 0)
                 <br>
                 <h1 class="mt-5 text-center">{{ __('Our events') }}</h1>

@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <div id="app">
+    <div id="app" class="mb-4">
         @include('includes.sessions')
 
         <header class="full">
@@ -15,7 +15,7 @@
                     <div class="carousel-inner">
                         @foreach($images as $i => $image)
                             <div class="carousel-item @if ($i == 0) active @endif">
-                                <img class="d-block w-100" src="{{ asset('img/events/' . $event->url . '/' . $image) }}"
+                                <img class="full" src="{{ asset('img/events/' . $event->url . '/' . $image) }}"
                                      alt="{{ $event->name }}">
                             </div>
                         @endforeach
@@ -40,7 +40,9 @@
             <h1 class="my-3 text-center">{{ $event->heading }}</h1>
             <hr class="my-4">
 
-            {!! $event->text !!}
+            <main class="container">
+                {!! $event->text !!}
+            </main>
         </div>
     </div>
 @endsection

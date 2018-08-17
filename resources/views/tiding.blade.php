@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <div id="app">
+    <div id="app" class="mb-4">
         @include('includes.sessions')
 
         <header class="full">
@@ -15,7 +15,7 @@
                     <div class="carousel-inner">
                         @foreach($images as $i => $image)
                             <div class="carousel-item @if ($i == 0) active @endif">
-                                <img class="d-block w-100" src="{{ asset('img/news/' . $tiding->url . '/' . $image) }}"
+                                <img class="full" src="{{ asset('img/news/' . $tiding->url . '/' . $image) }}"
                                      alt="{{ $tiding->name }}">
                             </div>
                         @endforeach
