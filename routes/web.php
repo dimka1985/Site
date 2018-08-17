@@ -17,7 +17,7 @@ Route::get('auth/{socialprovider}', 'Auth\RegisterController@redirectToProvider'
 Route::get('auth/{socialprovider}/callback', 'Auth\RegisterController@handleProviderCallback');
 
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/subscribe', 'HomeController@subscribe')->name('subscribe');
 Route::get('/company', 'HomeController@index')->name('company');
 Route::get('/profile/{user}', 'UserController@profile')->name('profile');
 
