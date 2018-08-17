@@ -10,12 +10,18 @@
         <div class="row justify-content-center">
             <div class="col-xl-8">
                 <div class="card">
-                    <div class="card-header text-center mb-3">{{ __('Register') }}</div>
+                    <div class="card-header text-center">{{ __('Register') }}</div>
 
                     <div class="card-body">
                         @include('includes.sessions')
 
                         {{ Form::open(['route' => 'register', 'aria-label' => __('Register'), 'files' => true]) }}
+
+                        <div class="row">
+                            <div class="offset-lg-2 col-lg-8 mb-3">
+                                <i>* звёздочкой отмечены обязательные поля</i>
+                            </div>
+                        </div>
 
                         <div class="form-group row">
                             {{ Form::label('name', __('Name') . '*', ['class' => 'col-lg-4 col-form-label
@@ -205,7 +211,7 @@
                                         ($errors->has('terms') ? ' is-invalid' : ' is-valid') : ''), 'id' =>
                                         'terms', 'required']) }}
 
-                                        {{ Form::label('terms', __('I agree with terms'), ['class' =>
+                                        {{ Form::label('terms', __('I agree with terms') . '*', ['class' =>
                                         'custom-control-label']) }}
 
                                         @if ($errors->has('terms'))

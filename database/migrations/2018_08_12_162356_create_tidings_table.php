@@ -17,6 +17,7 @@ class CreateTidingsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('url');
+            $table->string('heading');
             $table->text('text');
             $table->string('image');
             $table->boolean('is_active')->default(true);

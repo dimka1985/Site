@@ -19,6 +19,25 @@ Route::get('auth/{socialprovider}/callback', 'Auth\RegisterController@handleProv
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/company', 'HomeController@index')->name('company');
-Route::get('/events/{event}', 'HomeController@index')->name('events');
-Route::get('/festivals/{festival}', 'HomeController@index')->name('festivals');
-Route::get('/news/{tiding}', 'HomeController@index')->name('news');
+Route::get('/profile/{user}', 'UserController@profile')->name('profile');
+
+Route::prefix('events')->group(function () {
+    Route::name('events.')->group(function () {
+        Route::get('/', 'EventController@index')->name('all');
+        Route::get('/{event}', 'EventController@event')->name('event');
+    });
+});
+
+Route::prefix('festivals')->group(function () {
+    Route::name('festivals.')->group(function () {
+        Route::get('/', 'FestivalController@index')->name('all');
+        Route::get('/{festival}', 'FestivalController@festival')->name('festival');
+    });
+});
+
+Route::prefix('news')->group(function () {
+    Route::name('news.')->group(function () {
+        Route::get('/', 'NewsController@index')->name('all');
+        Route::get('/{tiding}', 'NewsController@tiding')->name('tiding');
+    });
+});

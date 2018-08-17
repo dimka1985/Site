@@ -168,7 +168,7 @@
                                 <div class="card-footer">
                                     <a href="#" class="card-link">{{ __('Learn more') }}</a>
                                     <hr>
-                                    <a href="#" class="btn btn-primary text-uppercase">{{ __('Order now!') }}</a>
+                                    <a href="#" class="btn btn-primary text-uppercase">{{ __('Participate!') }}</a>
                                 </div>
                             </div>
                         </div>
@@ -180,15 +180,26 @@
         <section>
             <div class="img-galery jumbotron jumbotron-fluid">
                 <div class="container text-center">
-                    <h1>{{ __('Our festivals') }}</h1>
+                    <h1><strong><a href="{{ route('festivals.all') }}">{{ __('Our festivals') }}</a></strong></h1>
                     <hr class="my-4">
                     <div class="row">
                         @foreach($festivals as $festival)
                             <div class="col">
-                                <h5>{{ $festival->name }} ({{ $festival->date }})</h5>
-                                <a href="#"><img src="{{ asset($festival->image) }}"
-                                                 class="img-fluid img-thumbnail rounded"
-                                                 alt="{{ $festival->name }}"></a>
+                                <h5><strong><a href="{{ route('festivals.festival', ['festival' => $festival->url])
+                                }}">{{ $festival->name }}
+                                            ({{ $festival->time }} {{ \Carbon\Carbon::parse($festival->begin_date)
+                                            ->format('d.m.Y') }}@if ($festival->begin_date != $festival->end_date)
+                                                - {{ \Carbon\Carbon::parse($festival->end_date)->format('d.m.Y') }}@endif)
+                                        </a></strong></h5>
+                                <h5>{{ $festival->place }} {{ $festival->address }}</h5>
+                                @if ($festival->passed == false)
+                                    <h5><a href="#" class="btn btn-primary text-uppercase">{{ __('Participate!') }}</a>
+                                        <a href="#"
+                                           class="btn btn-success text-uppercase">{{ __('Want to visit!') }}</a></h5>
+                                @endif
+                                <a href="{{ route('festivals.festival', ['festival' => $festival->url]) }}"><img
+                                            src="{{ asset($festival->image) }}" class="img-fluid img-thumbnail rounded"
+                                            alt="{{ $festival->name }}" width="30%"></a>
                             </div>
                         @endforeach
                     </div>
@@ -199,17 +210,18 @@
         <section>
             <div class="img-galery">
                 <div class="container text-center">
-                    <h1>{{ __('History of our events') }}</h1>
+                    <h1><strong><a href="{{ route('events.all') }}">{{ __('History of our events') }}</a></strong></h1>
                     <hr class="my-4">
                     @foreach($events as $e => $event)
                         @if ($e / 4 == 0)
                             <div class="row">
                                 @endif
                                 <div class="col-md-6 col-xl-3 mb-5">
-                                    <h5>{{ $event->name }}</h5>
-                                    <a href="{{ route('events', ['event' => $event->url]) }}"><img src="{{ asset
-                                    ($event->image) }}" class="img-fluid img-thumbnail rounded" alt="{{
-                                    $event->name }}" title="Нажмите чтобы узнать больше"></a>
+                                    <h5><strong><a href="{{ route('events.event', ['event' => $event->url]) }}">{{
+                                    $event->name }}</a></strong></h5>
+                                    <a href="{{ route('events.event', ['event' => $event->url]) }}"><img
+                                                src="{{ asset($event->image) }}" class="img-fluid img-thumbnail
+                                                rounded" alt="{{ $event->name }}"></a>
                                 </div>
 
                                 @if (($e != 0) && ($e / 3 == 0))
@@ -223,32 +235,26 @@
         <section>
             <div class="jumbotron jumbotron-fluid">
                 <div class="container">
-                    <h1 class="my-4 text-center">{{ __('Last news') }}:</h1>
+                    <h1 class="my-4 text-center"><strong><a href="{{ route('news.all') }}">{{ __('Last news')
+                    }}</a></strong></h1>
                     <hr class="my-4">
                     <div class="card-group">
                         @foreach($news as $new)
                             <div class="card">
-                                <img class="card-img-top" src="{{ asset($new->image) }}" alt="{{ $event->name }}">
+                                <a href="{{ route('news.tiding', ['tiding' => $new->url]) }}"><img
+                                            class="card-img-top" src="{{ asset($new->image) }}" alt="{{ $new->name
+                                            }}"></a>
                                 <div class="card-body">
-                                    <h5 class="card-title"><strong>{{ $event->name }}Имиджевое мероприятие Dana Fashion
-                                            Day
-                                            в «Dana Mall»</strong>
+                                    <h5 class="card-title"><strong><a href="{{ route('news.tiding', ['tiding' =>
+                                    $new->url]) }}">{{ $new->name }}</a></strong>
                                     </h5>
                                     <hr>
-                                    <p class="card-text">{{ $event->text }}23 декабря состоялось имиджевое мероприятие
-                                        для
-                                        ТРЦ Galileo Mall.
-                                        Гостям мы предложили окунуться в самое сердце fashion-индустрии: освоить
-                                        актуальные
-                                        модные
-                                        тенденции, развлечься и получить море новых впечатлений в яркой творческой
-                                        атмосфере!
-                                    </p>
-                                    <a href="#" class="card-link">{{ __('Read more') }}</a>
+                                    <p class="card-text">{{ str_limit($new->text, 300, '...') }}</p>
+                                    <a href="{{ route('news.tiding', ['tiding' => $new->url]) }}">{{ __('Read more') }}</a>
                                 </div>
                                 <div class="card-footer">
                                     <p class="card-text">
-                                        <small class="text-muted">{{ __('Published') }} {{ $event->created_at }}</small>
+                                        <small class="text-muted">{{ __('Published') }} {{ $new->created_at }}</small>
                                     </p>
                                 </div>
                             </div>

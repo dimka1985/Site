@@ -113,26 +113,51 @@
                         @endif
                     </div>
                 </li>
-                @if (Route::currentRouteName() == 'news')
-                    <li class="nav-item active">
-                        {!! Html::linkWithHtml('news.html', '<i class="fas fa-newspaper"></i> '
-                        . __('News') . ' <span class="sr-only">(' . __('Current') . ')</span>', ['class' =>
-                        'nav-link']) !!}
+                    <li class="nav-item dropdown">
+                        @if (Route::currentRouteName() == 'info')
+                            {!! Html::linkWithHtml('#', '<i class="fas fa-info"></i> '
+                            . __('Info') . ' <span class="sr-only">(' . __('Current') . ')</span>', ['class' =>
+                            'nav-link dropdown-toggle active', 'id' => 'infoDropdown', 'role' => 'button', 'data-toggle' => 'dropdown', 'aria-haspopup' => 'true', 'aria-expanded' => 'false']) !!}
+                        @else
+                            {!! Html::linkWithHtml('#', '<i class="fas fa-info"></i> '
+                            . __('Info'), ['class' => 'nav-link dropdown-toggle', 'id' => 'infoDropdown', 'role'
+                            => 'button', 'data-toggle' => 'dropdown', 'aria-haspopup' => 'true', 'aria-expanded' => 'false']) !!}
+                        @endif
+
+                        <div class="dropdown-menu" aria-labelledby="infoDropdown">
+                            @if (Route::currentRouteName() == 'festivals.all')
+                                {!! Html::linkWithHtml('/festivals', '<i class="fas fa-globe"></i> '
+                                . __('Our festivals') . ' <span class="sr-only">(' . __('Current') . ')</span>', ['class' => 'dropdown-item active']) !!}
+                            @else
+                                {!! Html::linkWithHtml('/festivals', '<i class="fas fa-globe"></i> '
+                                . __('Our festivals'), ['class' => 'dropdown-item']) !!}
+                            @endif
+
+                            @if (Route::currentRouteName() == 'events.all')
+                                {!! Html::linkWithHtml('/events', '<i class="far fa-calendar-alt"></i> '
+                                . __('Our events') . ' <span class="sr-only">(' . __('Current') . ')</span>', ['class' => 'dropdown-item active']) !!}
+                            @else
+                                {!! Html::linkWithHtml('/events', '<i class="far fa-calendar-alt"></i> '
+                                . __('Our events'), ['class' => 'dropdown-item']) !!}
+                            @endif
+
+                            @if (Route::currentRouteName() == 'news.all')
+                                {!! Html::linkWithHtml('/news', '<i class="fas fa-newspaper"></i> ' . __('Our news') . '
+                                <span class="sr-only">(' . __('Current') . ')</span>', ['class' => 'dropdown-item active']) !!}
+                            @else
+                                {!! Html::linkWithHtml('/news', '<i class="fas fa-newspaper"></i> ' . __('Our news'),
+                                ['class' => 'dropdown-item']) !!}
+                            @endif
+                        </div>
                     </li>
-                @else
-                    <li class="nav-item">
-                        {!! Html::linkWithHtml('news.html', '<i class="fas fa-newspaper"></i> '
-                        . __('News'), ['class' => 'nav-link']) !!}
-                    </li>
-                @endif
                 @if (Route::currentRouteName() == 'company')
                     <li class="nav-item active">
-                        {!! Html::linkWithHtml('company.html', '<i class="fas fa-building"></i> '
+                        {!! Html::linkWithHtml('/company', '<i class="fas fa-building"></i> '
                         . __('About us') . ' <span class="sr-only">(' . __('Current') . ')</span>', ['class' => 'nav-link']) !!}
                     </li>
                 @else
                     <li class="nav-item">
-                        {!! Html::linkWithHtml('company.html', '<i class="fas fa-building"></i> '
+                        {!! Html::linkWithHtml('/company', '<i class="fas fa-building"></i> '
                         . __('About us'), ['class' => 'nav-link']) !!}
                     </li>
                 @endif
@@ -145,9 +170,27 @@
                 <ul class="navbar-nav ml-auto">
                     @auth
                         <li class="nav-item dropdown">
-                            {!! Html::linkWithHtml('#', Auth::user()->name . ' <span class="caret"></span>', ['class' => 'nav-link dropdown-toggle', 'id' => 'userDropdown', 'role' => 'button', 'data-toggle' => 'dropdown', 'aria-haspopup' => 'true', 'aria-expanded' => 'false', 'v-pre']) !!}
+                            @if (isset(Auth::user()->avatar))
+                                @php
+                                    $img = '<img src="' . asset('storage/' . Auth::user()->avatar) . '" height="30" class="d-inline-block align-top" alt="' . Auth::user()->name . '"> ';
+                                @endphp
+                            @elseif (isset(Auth::user()->socialuser_avatar))
+                                @php
+                                    $img = '<img src="' . Auth::user()->socialuser_avatar . '" height="30"
+                                    class="d-inline-block align-top" alt="' . Auth::user()->name . '"> ';
+                                @endphp
+                            @else
+                                @php
+                                    $img = '';
+                                @endphp
+                            @endif
+
+                            {!! Html::linkWithHtml('#', $img . Auth::user()->name . ' <span class="caret"></span>',
+                            ['class' => 'nav-link dropdown-toggle', 'id' => 'userDropdown', 'role' => 'button', 'data-toggle' => 'dropdown', 'aria-haspopup' => 'true', 'aria-expanded' => 'false', 'v-pre']) !!}
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                                {{--{{ Html::linkRoute('profile', __('Profile'), ['user' => Auth::user()->is], ['class' => 'dropdown-item']) }}--}}
+
                                 {{ Html::linkRoute('logout', __('Logout'), null, ['class' =>
                                 'dropdown-item', 'onclick' => 'event.preventDefault();
                                 document.getElementById("logout-form").submit();']) }}

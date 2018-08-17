@@ -161,8 +161,10 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
 
-        $user->avatar = $this->uploader->uploadAvatar($user->id, $data['avatar']);
-        $user->save();
+        if (isset($data['avatar'])) {
+            $user->avatar = $this->uploader->uploadAvatar($user->id, $data['avatar']);
+            $user->save();
+        }
 
         return $user;
     }

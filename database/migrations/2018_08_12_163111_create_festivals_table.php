@@ -16,10 +16,16 @@ class CreateFestivalsTable extends Migration
         Schema::create('festivals', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('place');
+            $table->string('address');
             $table->string('url');
+            $table->string('heading');
             $table->text('text');
             $table->string('image');
-            $table->string('date');
+            $table->date('begin_date');
+            $table->date('end_date');
+            $table->string('time');
+            $table->boolean('passed')->default(false);
             $table->boolean('is_active')->default(true);
             $table->timestamps();
             $table->softDeletes();

@@ -26,9 +26,9 @@ class HomeController extends Controller
     public function index()
     {
         return view('home', [
-            'festivals' => Festival::where('is_active', true)->latest()->take(3)->get(),
-            'events' => Event::where('is_active', true)->latest()->take(16)->get(),
-            'news' => Tiding::where('is_active', true)->latest()->take(3)->get(),
+            'festivals' => Festival::where('is_active', true)->take(3)->get(),
+            'events' => Event::where('is_active', true)->take(8)->get(),
+            'news' => Tiding::where('is_active', true)->take(3)->get(),
         ]);
     }
 }

@@ -7,6 +7,28 @@ body {
 .full {
     width: 100vw;
     height: 100vh;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.overlay-header {
+    opacity: .8;
+    background: #1c1d20;
+}
+
+header h1 {
+    font-size: 2.5rem;
+}
+
+.header-text {
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+a img:hover {
+    border-color: blue;
 }
 
 .jumbotron-list {
@@ -21,21 +43,31 @@ footer .jumbotron {
 
 /* col-sm */
 @media (min-width: 576px) {
-
+    header h1 {
+        font-size: 3rem;
+    }
 }
 
 /* col-md */
 @media (min-width: 768px) {
-
+    header h1 {
+        font-size: 3.5rem;
+    }
 }
 
 /* col-lg */
 @media (min-width: 992px) {
-
+    header h1 {
+        font-size: 4rem;
+    }
 }
 
 /* col-xl */
 @media (min-width: 1200px) {
+    header h1 {
+        font-size: 4.5rem;
+    }
+
     .dropdown-item {
         border-bottom: 2px solid transparent;
     }
