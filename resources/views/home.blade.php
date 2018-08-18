@@ -199,9 +199,9 @@
                                 <h5>{{ $festival->place }} {{ $festival->address }}</h5>
                                 <h6>{{ __('Cost of visit') }}: {{ $festival->price }}</h6>
                                 @if ($festival->passed == false)
-                                    <h5><a href="#" class="btn btn-primary text-uppercase">{{ __('Participate!') }}</a>
-                                        <a href="#"
-                                           class="btn btn-success text-uppercase">{{ __('Want to visit!') }}</a></h5>
+                                    <h5>
+                                        @include('includes.festival_buttons')
+                                    </h5>
                                 @endif
                                 <a href="{{ route('festivals.festival', ['festival' => $festival->url]) }}"><img
                                             src="{{ asset($festival->image) }}" class="img-fluid img-thumbnail rounded"

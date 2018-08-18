@@ -73,10 +73,8 @@
                             $festival->end_date)
                                         - {{ \Carbon\Carbon::parse($festival->end_date)->format('d.m.Y') }} @endif</h3>
                                 <h4 class="mt-3">{{ __('Cost of visit') }}: {{ $festival->price }}</h4>
-                                <h3 class="mt-3"><a href="#"
-                                                    class="btn btn-lg btn-primary text-uppercase mb-1">{{ __('Participate!') }}</a>
-                                    <a href="#"
-                                       class="btn btn-lg btn-success text-uppercase">{{ __('Want to visit!') }}</a>
+                                <h3 class="mt-3">
+                                    @include('includes.festival_buttons')
                                 </h3>
                                 <h5 class="mt-3">
                                     <a href="{{ asset('img/festivals/presentations/grand_fashion_weekend_2018/grand_fashion_weekend_2018_afisha.png') }}"
@@ -535,10 +533,10 @@
                                             Лучшая Nail Studio
                                         </li>
                                         <li>
-                                            Лучший fitness центр
+                                            Лучший fitness-центр
                                         </li>
                                         <li>
-                                            Лучшая fitness студия
+                                            Лучшая fitness-студия
                                         </li>
                                         <li>
                                             Лучший ресторан
@@ -584,7 +582,7 @@
                                         <li>Persona Instagram
                                         </li>
                                         <li>
-                                            Лучший beauty Instagram
+                                            Лучший beauty-Instagram
                                         </li>
                                         <li>
                                             Лучший стилист по прическам
@@ -783,10 +781,7 @@
             </section>
 
             <div class="mt-3">
-                <a href="#"
-                   class="btn btn-lg btn-primary text-uppercase mb-1">{{ __('Participate!') }}</a>
-                <a href="#"
-                   class="btn btn-lg btn-success text-uppercase">{{ __('Want to visit!') }}</a>
+                @include('includes.festival_buttons')
             </div>
         </div>
     </div>

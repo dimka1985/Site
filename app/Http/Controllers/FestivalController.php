@@ -60,4 +60,38 @@ class FestivalController extends Controller
             ]);
         }
     }
+
+    /**
+     * Show the festival participate dashboard.
+     *
+     * @param Festival $festival
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\View\View
+     */
+    public function participate(Festival $festival)
+    {
+        if ($festival->passed == false) {
+            return view('active_festivals.' . $festival->url . '_participate', [
+                'festival' => $festival,
+            ]);
+        } else {
+            return back()->with('warning', __('This festival has already passed'));
+        }
+    }
+
+    /**
+     * Show the festival visit dashboard.
+     *
+     * @param Festival $festival
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\View\View
+     */
+    public function visit(Festival $festival)
+    {
+        if ($festival->passed == false) {
+            return view('active_festivals.' . $festival->url . '_visit', [
+                'festival' => $festival,
+            ]);
+        } else {
+            return back()->with('warning', __('This festival has already passed'));
+        }
+    }
 }

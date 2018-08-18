@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    @parent | {{ __('User profile page') }}
+    @parent | {{ $festival->name }} {{ __('Participate!') }}
 @endsection
 
 @section('keywords', 'ОК, OK, OK Event Group, OK Group, реклама, продвижение, smm, реклама и продвижение брендов в
@@ -15,7 +15,7 @@
 
         <div class="container">
             <br>
-            <h2 class="mt-5 text-center">{{ __('Promotion') }}</h2>
+            <h2 class="mt-5 text-center">{{ __('Registration for the festival') }} {{ $festival->name }}</h2>
             <hr>
         </div>
     </div>
@@ -37,6 +37,6 @@
         h.parentNode.insertBefore(s, h)
       })(window, document, 'https://ipnkuksar.bitrix24.by/bitrix/js/crm/form_loader.js', 'b24form')
 
-      b24form({'id': '13', 'lang': 'ru', 'sec': 'u74i68', 'type': 'inline'})
+      b24form({'id': '7', 'lang': 'ru', 'sec': '2gr28f', 'type': 'inline'})
     </script>
 @endsection

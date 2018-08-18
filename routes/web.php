@@ -36,6 +36,8 @@ Route::prefix('festivals')->group(function () {
     Route::name('festivals.')->group(function () {
         Route::get('/all', 'FestivalController@index')->name('all');
         Route::get('/{festival}', 'FestivalController@festival')->name('festival');
+        Route::get('/{festival}/participate', 'FestivalController@participate')->name('festival.participate');
+        Route::get('/{festival}/visit', 'FestivalController@visit')->name('festival.visit');
     });
 });
 

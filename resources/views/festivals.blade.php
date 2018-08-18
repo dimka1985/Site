@@ -10,8 +10,13 @@
 @section('description', 'OK Event Group, Реклама и продвижение брендов в Беларуси')
 
 @section('content')
-    <div id="app">
+    <div id="app mb-4">
         @include('includes.sessions')
 
+        <div class="container">
+            <br>
+            <h2 class="mt-5 text-center">{{ __('Events') }}</h2>
+            <hr>
+        </div>
     </div>
 @endsection

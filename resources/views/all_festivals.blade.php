@@ -52,10 +52,8 @@
                                         <u>{{ __('Cost of visit') }}</u>: <strong>{{ $festival->price }}</strong>
                                     </h5>
                                     @if ($festival->passed == false)
-                                        <h5><a href="#"
-                                               class="btn btn-primary text-uppercase mb-1">{{ __('Participate!') }}</a>
-                                            <a href="#"
-                                               class="btn btn-success text-uppercase">{{ __('Want to visit!') }}</a>
+                                        <h5>
+                                            @include('includes.festival_buttons')
                                         </h5>
                                     @endif
                                     <hr>
