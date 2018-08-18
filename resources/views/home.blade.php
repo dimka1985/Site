@@ -197,7 +197,7 @@
                                                 - {{ \Carbon\Carbon::parse($festival->end_date)->format('d.m.Y') }}@endif)
                                         </a></strong></h5>
                                 <h5>{{ $festival->place }} {{ $festival->address }}</h5>
-                                <h5>{{ __('Cost of visit') }}: {{ $festival->price }}</h5>
+                                <h6>{{ __('Cost of visit') }}: {{ $festival->price }}</h6>
                                 @if ($festival->passed == false)
                                     <h5><a href="#" class="btn btn-primary text-uppercase">{{ __('Participate!') }}</a>
                                         <a href="#"
