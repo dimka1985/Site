@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Tiding;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\File;
 
 class NewsController extends Controller
@@ -24,8 +25,8 @@ class NewsController extends Controller
      */
     public function index()
     {
-        return view('news', [
-            'news' => Tiding::where('is_active', true)->paginate(10),
+        return view('all_news', [
+            'news' => Tiding::where('is_active', true)->orderBy('id', 'desc')->paginate(5),
         ]);
     }
 
@@ -37,13 +38,16 @@ class NewsController extends Controller
      */
     public function tiding(Tiding $tiding)
     {
-        // dima Make Cache "images" !?
-        $files = File::allFiles('../public/img/news/' . $tiding->url);
-        $images = [];
+        $images = Cache::rememberForever('news_' . $tiding->url, function () use ($tiding) {
+            $files = File::allFiles('../public/img/news/' . $tiding->url);
+            $images = [];
 
-        foreach ($files as $f => $file) {
-            $images[] = $files[$f]->getFilename();
-        }
+            foreach ($files as $f => $file) {
+                $images[] = $files[$f]->getFilename();
+            }
+
+            return $images;
+        });
 
         return view('tiding', [
             'tiding' => $tiding,

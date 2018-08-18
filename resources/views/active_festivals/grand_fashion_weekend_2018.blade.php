@@ -17,7 +17,7 @@
         }
 
         .header-text {
-            font-size: .8rem;
+            font-size: .7rem;
         }
 
         tr, th, td {

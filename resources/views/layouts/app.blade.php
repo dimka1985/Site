@@ -78,38 +78,38 @@
 
                     <div class="dropdown-menu" aria-labelledby="servicesDropdown">
                         @if (Route::currentRouteName() == 'advertising')
-                            {!! Html::linkWithHtml('#', '<i class="fas fa-star"></i> ' . __('Advertising') . '
-                            <span class="sr-only">(' . __('Current') . ')</span>', ['class' => 'dropdown-item active']) !!}
+                            {!! Html::linkWithHtml('/advertising', '<i class="fas fa-star"></i> ' .
+                            __('Advertising') . ' <span class="sr-only">(' . __('Current') . ')</span>', ['class' => 'dropdown-item active']) !!}
                         @else
-                            {!! Html::linkWithHtml('#', '<i class="fas fa-star"></i> ' . __('Advertising'),
-                            ['class' => 'dropdown-item']) !!}
+                            {!! Html::linkWithHtml('/advertising', '<i class="fas fa-star"></i> '
+                            . __('Advertising'), ['class' => 'dropdown-item']) !!}
                         @endif
 
                         @if (Route::currentRouteName() == 'promotion')
-                            {!! Html::linkWithHtml('#', '<i class="fas fa-thumbs-up"></i> '
+                            {!! Html::linkWithHtml('/promotion', '<i class="fas fa-thumbs-up"></i> '
                             . __('Promotion') . ' <span class="sr-only">(' . __('Current') . ')</span>', ['class' =>
                             'dropdown-item active']) !!}
                         @else
-                            {!! Html::linkWithHtml('#', '<i class="fas fa-thumbs-up"></i> '
+                            {!! Html::linkWithHtml('/promotion', '<i class="fas fa-thumbs-up"></i> '
                             . __('Promotion'), ['class' => 'dropdown-item']) !!}
                         @endif
 
                         <div class="dropdown-divider"></div>
                         @if (Route::currentRouteName() == 'events')
-                            {!! Html::linkWithHtml('#', '<i class="fas fa-calendar-alt"></i> '
+                            {!! Html::linkWithHtml('/events', '<i class="fas fa-calendar-alt"></i> '
                             . __('Events') . ' <span class="sr-only">(' . __('Current') . ')</span>', ['class' => 'dropdown-item active']) !!}
                         @else
-                            {!! Html::linkWithHtml('#', '<i class="fas fa-calendar-alt"></i> '
+                            {!! Html::linkWithHtml('/events', '<i class="fas fa-calendar-alt"></i> '
                             . __('Events'), ['class' => 'dropdown-item']) !!}
                         @endif
 
                         @if (Route::currentRouteName() == 'festivals')
-                                {!! Html::linkWithHtml('#', '<i class="fas fa-globe"></i> '
-                                . __('Festivals') . ' <span class="sr-only">(' . __('Current') . ')</span>', ['class' =>
-                                'dropdown-item active']) !!}
+                            {!! Html::linkWithHtml('/festivals', '<i class="fas fa-globe"></i> '
+                            . __('Festivals') . ' <span class="sr-only">(' . __('Current') . ')</span>', ['class' =>
+                            'dropdown-item active']) !!}
                         @else
-                                {!! Html::linkWithHtml('#', '<i class="fas fa-globe"></i> '
-                                . __('Festivals'), ['class' => 'dropdown-item']) !!}
+                            {!! Html::linkWithHtml('/festivals', '<i class="fas fa-globe"></i> '
+                            . __('Festivals'), ['class' => 'dropdown-item']) !!}
                         @endif
                     </div>
                 </li>
@@ -126,27 +126,27 @@
 
                         <div class="dropdown-menu" aria-labelledby="infoDropdown">
                             @if (Route::currentRouteName() == 'festivals.all')
-                                {!! Html::linkWithHtml('/festivals', '<i class="fas fa-globe"></i> '
+                                {!! Html::linkWithHtml('/festivals/all', '<i class="fas fa-globe"></i> '
                                 . __('Our festivals') . ' <span class="sr-only">(' . __('Current') . ')</span>', ['class' => 'dropdown-item active']) !!}
                             @else
-                                {!! Html::linkWithHtml('/festivals', '<i class="fas fa-globe"></i> '
+                                {!! Html::linkWithHtml('/festivals/all', '<i class="fas fa-globe"></i> '
                                 . __('Our festivals'), ['class' => 'dropdown-item']) !!}
                             @endif
 
                             @if (Route::currentRouteName() == 'events.all')
-                                {!! Html::linkWithHtml('/events', '<i class="far fa-calendar-alt"></i> '
+                                {!! Html::linkWithHtml('/events/all', '<i class="far fa-calendar-alt"></i> '
                                 . __('Our events') . ' <span class="sr-only">(' . __('Current') . ')</span>', ['class' => 'dropdown-item active']) !!}
                             @else
-                                {!! Html::linkWithHtml('/events', '<i class="far fa-calendar-alt"></i> '
+                                {!! Html::linkWithHtml('/events/all', '<i class="far fa-calendar-alt"></i> '
                                 . __('Our events'), ['class' => 'dropdown-item']) !!}
                             @endif
 
                             @if (Route::currentRouteName() == 'news.all')
-                                {!! Html::linkWithHtml('/news', '<i class="fas fa-newspaper"></i> ' . __('Our news') . '
-                                <span class="sr-only">(' . __('Current') . ')</span>', ['class' => 'dropdown-item active']) !!}
+                                {!! Html::linkWithHtml('/news/all', '<i class="fas fa-newspaper"></i> '
+                                . __('Our news') . ' <span class="sr-only">(' . __('Current') . ')</span>', ['class' => 'dropdown-item active']) !!}
                             @else
-                                {!! Html::linkWithHtml('/news', '<i class="fas fa-newspaper"></i> ' . __('Our news'),
-                                ['class' => 'dropdown-item']) !!}
+                                {!! Html::linkWithHtml('/news/all', '<i class="fas fa-newspaper"></i> '
+                                . __('Our news'), ['class' => 'dropdown-item']) !!}
                             @endif
                         </div>
                     </li>
@@ -283,7 +283,8 @@
                         Юр. адрес: г.Минск, ул. Филимонова, 12, к.40<br>
                         УНП 193087259<br>
                         р/с BY31 ALFA 3013 2350 6700 1027 0000 BYN<br>
-                        ЗАО "Альфа-Банк", ул. Сурганова, 43-47</p>
+                        ЗАО "Альфа-Банк", ул. Сурганова, 43-47<br>
+                        <a href="{{ asset('img/license.jpg') }}" target="_blank">Свидетельство о регистрации</a></p>
                 </div>
                 <div class="col-xl-3 col-md-6 mb-3">
                     <h5>{{ __('Subscribe to our newsletter') }}:</h5>
@@ -315,26 +316,22 @@
                     </div>
                     {{ Form::close() }}
                 </div>
-                <hr>
+            </div>
+            <hr>
+            <div class="row">
                 @php
                     date('Y') != 2018 ? $text = ' - ' . date('Y') : $text = ''
                 @endphp
-                <p class="text-center">Copyright © 2018{{ $text }}. {{ __('All rights reserved') }}. {{ __('Design') }}
-                    <a
-                            href="mailto:dmitrytsibylskiy@gmail.com">okgroup.by dmitry</a></p>
+                <div class="col">
+                    <div class="text-center">Copyright © 2018{{ $text }}. {{ __('All rights reserved') }}. {{
+                    __('Design') }} <a href="mailto:dmitrytsibylskiy@gmail.com">okgroup.by dmitry</a></div>
+                </div>
             </div>
         </div>
+    </div>
 </footer>
 
-<script data-skip-moving="true">
-  (function (w, d, u) {
-    let s = d.createElement('script')
-    s.async = 1
-    s.src = u + '?' + (Date.now() / 60000 | 0)
-    let h = d.getElementsByTagName('script')[0]
-    h.parentNode.insertBefore(s, h)
-  })(window, document, 'https://cdn.bitrix24.by/b7454297/crm/site_button/loader_1_6n1kz7.js')
-</script>
+@include('includes.chat')
 
 </body>
 </html>

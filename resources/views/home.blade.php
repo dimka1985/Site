@@ -10,7 +10,7 @@
     <link href="{{ asset('css/home.css') }}" rel="stylesheet">
 @endsection
 
-@section('keywords', 'ОК, OK, OK Event Group,  OK Group, реклама, продвижение, smm, реклама и продвижение брендов в
+@section('keywords', 'ОК, OK, OK Event Group, OK Group, реклама, продвижение, smm, реклама и продвижение брендов в
 Беларуси')
 
 @section('description', 'OK Event Group, Реклама и продвижение брендов в Беларуси')
@@ -47,7 +47,7 @@
         <section>
             <div class="jumbotron jumbotron-fluid">
                 <div class="container">
-                    <h1 class="text-center">{{ __('Why choose us?') }}</h1>
+                    <h2 class="text-center">{{ __('Why choose us?') }}</h2>
                     <hr class="my-4">
                     <div class="row">
                         <div class="col-lg-6">
@@ -104,7 +104,7 @@
 
         <main>
             <div class="container text-center">
-                <h1 class="my-4">{{ __('We offer the following services') }}:</h1>
+                <h2>{{ __('We offer the following services') }}:</h2>
                 <hr class="my-4">
                 <div class="row">
                     <div class="card-deck">
@@ -118,7 +118,8 @@
                                         широкой целевой аудитории.</p>
                                 </div>
                                 <div class="card-footer">
-                                    <a href="#" class="card-link">{{ __('Learn more') }}</a>
+                                    {{ Html::linkRoute('advertising', __('Learn more'), null, ['class' =>
+                                    'card-link']) }}
                                     <hr>
                                     <a href="#" class="btn btn-primary text-uppercase">{{ __('Order now!') }}</a>
                                 </div>
@@ -134,7 +135,8 @@
                                         сетях Интернета.</p>
                                 </div>
                                 <div class="card-footer">
-                                    <a href="#" class="card-link">{{ __('Learn more') }}</a>
+                                    {{ Html::linkRoute('promotion', __('Learn more'), null, ['class' =>
+                                    'card-link']) }}
                                     <hr>
                                     <a href="#" class="btn btn-primary text-uppercase">{{ __('Order now!') }}</a>
                                 </div>
@@ -144,13 +146,14 @@
                             <div class="card border-primary">
                                 <h4 class="card-header bg-light text-primary"><i class="fas fa-users"></i></h4>
                                 <div class="card-body">
-                                    <h4 class="card-title">Продвижение мероприятий</h4>
+                                    <h4 class="card-title">Организация мероприятий</h4>
                                     <hr class="my-3">
-                                    <p class="card-text">Осуществляем подготовку и продвижение Ваших рекламных
+                                    <p class="card-text">Осуществляем подготовку, продвижение и проведение Ваших
                                         мероприятий.</p>
                                 </div>
                                 <div class="card-footer">
-                                    <a href="#" class="card-link">{{ __('Learn more') }}</a>
+                                    {{ Html::linkRoute('events', __('Learn more'), null, ['class' =>
+                                    'card-link']) }}
                                     <hr>
                                     <a href="#" class="btn btn-primary text-uppercase">{{ __('Order now!') }}</a>
                                 </div>
@@ -162,11 +165,12 @@
                                 <div class="card-body">
                                     <h4 class="card-title">Крупные фестивали</h4>
                                     <hr class="my-3">
-                                    <p class="card-text">Проводим крупные рекламные мероприятия с участием
+                                    <p class="card-text">Проводим крупные рекламные фестивали с участием
                                         разнообразных компаний.</p>
                                 </div>
                                 <div class="card-footer">
-                                    <a href="#" class="card-link">{{ __('Learn more') }}</a>
+                                    {{ Html::linkRoute('festivals', __('Learn more'), null, ['class' =>
+                                    'card-link']) }}
                                     <hr>
                                     <a href="#" class="btn btn-primary text-uppercase">{{ __('Participate!') }}</a>
                                 </div>
@@ -180,7 +184,8 @@
         <section>
             <div class="img-galery jumbotron jumbotron-fluid">
                 <div class="container text-center">
-                    <h1><strong><a href="{{ route('festivals.all') }}">{{ __('Our festivals') }}</a></strong></h1>
+                    <h2><strong><a href="{{ route('festivals.all') }}">{{ __('Our festivals')
+                    }}</a></strong></h2>
                     <hr class="my-4">
                     <div class="row">
                         @foreach($festivals as $festival)
@@ -199,8 +204,7 @@
                                            class="btn btn-success text-uppercase">{{ __('Want to visit!') }}</a></h5>
                                 @endif
                                 <a href="{{ route('festivals.festival', ['festival' => $festival->url]) }}"><img
-                                            src="{{ asset($festival->image) }}" class="img-fluid img-thumbnail
-                                            rounded"
+                                            src="{{ asset($festival->image) }}" class="img-fluid img-thumbnail rounded"
                                             alt="{{ $festival->name }}" width="30%"></a>
                             </div>
                         @endforeach
@@ -212,7 +216,7 @@
         <section>
             <div class="img-galery">
                 <div class="container text-center">
-                    <h1><strong><a href="{{ route('events.all') }}">{{ __('History of our events') }}</a></strong></h1>
+                    <h2><strong><a href="{{ route('events.all') }}">{{ __('History of our events') }}</a></strong></h2>
                     <hr class="my-4">
                     @foreach($events as $e => $event)
                         @if ($e / 4 == 0)
@@ -237,8 +241,8 @@
         <section>
             <div class="jumbotron jumbotron-fluid">
                 <div class="container">
-                    <h1 class="my-4 text-center"><strong><a href="{{ route('news.all') }}">{{ __('Last news')
-                    }}</a></strong></h1>
+                    <h2 class="text-center"><strong><a href="{{ route('news.all') }}">{{ __('Last news')
+                    }}</a></strong></h2>
                     <hr class="my-4">
                     <div class="card-group">
                         <div class="row no-gutters">
@@ -273,23 +277,5 @@
         </section>
     </div>
 
-    <script id="bx24_form_inline" data-skip-moving="true">
-      (function (w, d, u, b) {
-        w['Bitrix24FormObject'] = b
-        w[b] = w[b] || function () {
-          arguments[0].ref = u;
-          (w[b].forms = w[b].forms || []).push(arguments[0])
-        }
-        if (w[b]['forms']) {
-          return
-        }
-        let s = d.createElement('script')
-        s.async = 1
-        s.src = u + '?' + (1 * new Date())
-        let h = d.getElementsByTagName('script')[0]
-        h.parentNode.insertBefore(s, h)
-      })(window, document, 'https://ipnkuksar.bitrix24.by/bitrix/js/crm/form_loader.js', 'b24form')
-
-      b24form({'id': '4', 'lang': 'ru', 'sec': 'den8dk', 'type': 'inline'})
-    </script>
+    @include('includes.partnership')
 @endsection

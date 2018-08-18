@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Event;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\File;
 
 class EventController extends Controller
@@ -24,8 +25,8 @@ class EventController extends Controller
      */
     public function index()
     {
-        return view('events', [
-            'events' => Event::where('is_active', true)->paginate(10),
+        return view('all_events', [
+            'events' => Event::where('is_active', true)->orderBy('id', 'desc')->paginate(5),
         ]);
     }
 
@@ -37,13 +38,16 @@ class EventController extends Controller
      */
     public function event(Event $event)
     {
-        // dima Make Cache "images" !?
-        $files = File::allFiles('../public/img/events/' . $event->url);
-        $images = [];
+        $images = Cache::rememberForever('events_' . $event->url, function () use ($event) {
+            $files = File::allFiles('../public/img/events/' . $event->url);
+            $images = [];
 
-        foreach ($files as $f => $file) {
-            $images[] = $files[$f]->getFilename();
-        }
+            foreach ($files as $f => $file) {
+                $images[] = $files[$f]->getFilename();
+            }
+
+            return $images;
+        });
 
         return view('event', [
             'event' => $event,

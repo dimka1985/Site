@@ -1,4 +1,5 @@
 {
+  "Company page": "Страница компании",
   "Register page": "Страница регистрации",
   "Register": "Регистрация",
   "Asterisk marked the required fields": "Звёздочкой отмечены обязательные поля",
@@ -74,7 +75,7 @@
   "Cost of visit": "Стоимость посещения",
   "Address": "Адрес",
   "Location": "Место проведения",
-  "Время проведения": "Time",
+  "Time": "Время проведения",
   "Whoops!": "Упс!",
   "Hello!": "Здравствуйте!",
   "Regards": "С уважением",
@@ -84,6 +85,5 @@
   "Cancel": "Отмена",
   "This application will be able to": "Это приложение сможет",
   "is requesting permission to access your account": "запрашивает разрешение на доступ к вашему аккаунту",
-  "Verify E-Mail": "Подтвердить E-Mail",
   "Thanks": "Спасибо"
 }

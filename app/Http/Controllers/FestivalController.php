@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Festival;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\File;
 
 class FestivalController extends Controller
@@ -24,8 +25,8 @@ class FestivalController extends Controller
      */
     public function index()
     {
-        return view('festivals', [
-            'festivals' => Festival::where('is_active', true)->paginate(10),
+        return view('all_festivals', [
+            'festivals' => Festival::where('is_active', true)->orderBy('id', 'desc')->paginate(5),
         ]);
     }
 
@@ -38,13 +39,16 @@ class FestivalController extends Controller
     public function festival(Festival $festival)
     {
         if ($festival->passed == true) {
-            // dima Make Cache "images" !?
-            $files = File::allFiles('../public/img/festivals/' . $festival->url);
-            $images = [];
+            $images = Cache::rememberForever('festivals_' . $festival->url, function () use ($festival) {
+                $files = File::allFiles('../public/img/festivals/' . $festival->url);
+                $images = [];
 
-            foreach ($files as $f => $file) {
-                $images[] = $files[$f]->getFilename();
-            }
+                foreach ($files as $f => $file) {
+                    $images[] = $files[$f]->getFilename();
+                }
+
+                return $images;
+            });
 
             return view('festival', [
                 'festival' => $festival,

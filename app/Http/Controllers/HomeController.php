@@ -29,10 +29,60 @@ class HomeController extends Controller
     public function index()
     {
         return view('home', [
-            'festivals' => Festival::where('is_active', true)->take(3)->get(),
-            'events' => Event::where('is_active', true)->take(8)->get(),
-            'news' => Tiding::where('is_active', true)->take(3)->get(),
+            'festivals' => Festival::where('is_active', true)->orderBy('id', 'desc')->take(3)->get(),
+            'events' => Event::where('is_active', true)->orderBy('id', 'desc')->take(8)->get(),
+            'news' => Tiding::where('is_active', true)->orderBy('id', 'desc')->take(3)->get(),
         ]);
+    }
+
+    /**
+     * Show the company dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function company()
+    {
+        return view('company');
+    }
+
+    /**
+     * Show the advertising dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function advertising()
+    {
+        return view('advertising');
+    }
+
+    /**
+     * Show the promotion dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function promotion()
+    {
+        return view('promotion');
+    }
+
+    /**
+     * Show the events dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function events()
+    {
+        return view('events');
+    }
+
+    /**
+     * Show the festivals dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function festivals()
+    {
+        return view('festivals');
     }
 
     /**
