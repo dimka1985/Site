@@ -42,7 +42,12 @@ class HomeController extends Controller
      */
     public function company()
     {
-        return view('company');
+        return view('company', [
+            'festival' => Festival::where([
+                ['is_active', true],
+                ['passed', false],
+            ])->orderBy('id', 'desc')->take(1)->first(),
+        ]);
     }
 
     /**

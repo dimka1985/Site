@@ -57,7 +57,15 @@
                             </p>
                         </li>
                         <li class="text-primary">
-                            <p><a href="#" class="btn btn-sm btn-primary text-uppercase">{{ __('Participate!') }}</a>
+                            <p>
+                                @if (!empty($festival))
+                                    {{ Html::linkRoute('festivals.festival.participate', __('Participate!'),
+                                    ['festival' => $festival], ['class' => 'btn btn-sm btn-primary text-uppercase']) }}
+                                @else
+                                    <button type="button" class="btn btn-sm btn-primary text-uppercase"
+                                            disabled>Ждите новостей!
+                                    </button>
+                                @endif
                                 <i class="far fa-check-circle"></i> {{ Html::linkRoute('festivals', __('We spend large advertising festivals'), null, ['class' => 'card-link']) }}
                             </p>
                         </li>
