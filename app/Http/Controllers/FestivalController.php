@@ -94,4 +94,17 @@ class FestivalController extends Controller
             return back()->with('warning', __('This festival has already passed'));
         }
     }
+
+    /**
+     * Show the festival award dashboard.
+     *
+     * @param Festival $festival
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\View\View
+     */
+    public function award(Festival $festival)
+    {
+        return view('awards.' . $festival->url . '_award', [
+            'festival' => $festival,
+        ]);
+    }
 }

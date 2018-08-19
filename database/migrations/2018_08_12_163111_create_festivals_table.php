@@ -19,6 +19,7 @@ class CreateFestivalsTable extends Migration
             $table->string('place');
             $table->string('address');
             $table->string('url');
+            $table->string('bg');
             $table->string('heading');
             $table->text('text');
             $table->string('image');
@@ -26,6 +27,8 @@ class CreateFestivalsTable extends Migration
             $table->date('end_date');
             $table->string('time');
             $table->string('price');
+            $table->string('award')->nullable();
+            $table->string('award_image')->nullable();
             $table->boolean('passed')->default(false);
             $table->boolean('is_active')->default(true);
             $table->timestamps();

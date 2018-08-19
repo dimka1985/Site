@@ -24,12 +24,12 @@
                     <div class="jumbotron">
                         <div class="container">
                             <h5 class="text-center"><strong><a
-                                            href="{{ route('events.event', ['event' => $event->url]) }}">{{
+                                            href="{{ route('events.event', ['event' => $event]) }}">{{
                             $event->name }}</a></strong></h5>
                             <hr>
                             <div class="row">
                                 <div class="col-lg-6 mb-3">
-                                    <a href="{{ route('events.event', ['event' => $event->url]) }}"><img
+                                    <a href="{{ route('events.event', ['event' => $event]) }}"><img
                                                 src="{{ asset($event->image) }}" class="img-fluid img-thumbnail rounded"
                                                 alt="{{ $event->name }}"></a>
                                 </div>
@@ -38,7 +38,7 @@
                                     <hr>
                                     {!! str_limit($event->text, 300, '...') !!}
                                     <br><br>
-                                    <a href="{{ route('events.event', ['event' => $event->url]) }}">{{
+                                    <a href="{{ route('events.event', ['event' => $event]) }}">{{
                                     __('Read more') }}</a>
                                 </div>
                             </div>

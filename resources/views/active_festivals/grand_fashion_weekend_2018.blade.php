@@ -9,7 +9,7 @@
 
     <style>
         header {
-            background: url("{{ asset($festival->image) }}") no-repeat fixed top left/cover;
+            background: url("{{ asset($festival->bg) }}") no-repeat fixed top left/cover;
         }
 
         section {
@@ -67,21 +67,17 @@
                         <div class="row">
                             <div class="col-md-10 offset-md-1">
                                 <h1 class="mb-4">{{ $festival->name }}</h1>
-                                <h3>{{ $festival->place }} {{ $festival->address }}</h3>
-                                <h3>{{ $festival->time }} {{ \Carbon\Carbon::parse
+                                <h3>{{ $festival->place }}</h3>
+                                <h3>{{ $festival->address }}</h3>
+                                <h3>{{ \Carbon\Carbon::parse
                             ($festival->begin_date)->format('d.m.Y') }} @if ($festival->begin_date !=
                             $festival->end_date)
                                         - {{ \Carbon\Carbon::parse($festival->end_date)->format('d.m.Y') }} @endif</h3>
+                                <h4>{{ $festival->time }}</h4>
                                 <h4 class="mt-3">{{ __('Cost of visit') }}: {{ $festival->price }}</h4>
                                 <h3 class="mt-3">
                                     @include('includes.festival_buttons')
                                 </h3>
-                                <h5 class="mt-3">
-                                    <a href="{{ asset('img/festivals/presentations/grand_fashion_weekend_2018/grand_fashion_weekend_2018_afisha.png') }}"
-                                       target="_blank" class="text-white">Посмотреть афишу фестиваля</a> | <a
-                                            href="{{ asset
-                        ('img/festivals/presentations/grand_fashion_weekend_2018/grand_fashion_weekend_2018_top.jpg') }}"
-                                            target="_blank" class="text-white">Посмотреть афишу премии</a></h5>
                             </div>
                         </div>
                     </div>
@@ -90,6 +86,30 @@
         </header>
 
         <div class="container">
+            <main class="my-3">
+                <div class="row">
+                    <div class="col-12 col-lg-3 col-xl-2">
+                        <div class="row">
+                            <div class="col-12 col-sm-6 col-lg-12 mb-3">
+                                <a href="{{ route('festivals.festival', ['festival' => $festival]) }}"><img
+                                            src="{{ asset($festival->image) }}"
+                                            class="img-fluid img-thumbnail rounded"
+                                            alt="{{ $festival->name }}"></a>
+                            </div>
+                            <div class="col-12 col-sm-6 col-lg-12 mb-3">
+                                <a href="{{ route('festivals.festival.award', ['festival' => $festival]) }}"><img
+                                            src="{{ asset($festival->award_image) }}"
+                                            class="img-fluid img-thumbnail rounded" alt="{{ $festival->award
+                                                }}"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-9 col-xl-10">
+                        {!! $festival->text !!}
+                    </div>
+                </div>
+            </main>
+
             <section class="slide1">
                 <img src="{{ asset('img/festivals/presentations/grand_fashion_weekend_2018/grand_fashion_weekend_2018_1.jpg') }}"
                      alt="{{ $festival->name }}" class="full">
@@ -438,19 +458,22 @@
             </section>
 
             <section class="slide12 overlay-header position-relative">
-                <img src="{{ asset('img/festivals/presentations/grand_fashion_weekend_2018/grand_fashion_weekend_2018_top_small.jpg') }}"
+                <img src="{{ asset('img/festivals/presentations/grand_fashion_weekend_2018/grand_fashion_weekend_2018_15.jpg') }}"
                      alt="{{ $festival->name }}" class="full">
 
                 <div class="header-text position-absolute text-white">
                     <div class="row">
                         <div class="col-10 offset-1" style="opacity: .8; background: black;">
-                            <h4 class="text-center">Премия «Top of Belarus-2018»</h4>
+                            <h4 class="text-center">
+                                {{ Html::linkRoute('festivals.festival.award', __('Award') . $festival->award,
+                                ['festival' => $festival], ['class' => 'card-link']) }}
+                            </h4>
                             <div class="row">
                                 <div class="col-6">
                                     <p>Премия «Top of Belarus-2018» - это мероприятие конкурсного типа, основанное на
                                         голосовании
                                         Потребителей.
-                                        Премия «Top of Belarus-2018»
+                                        Она
                                         определяет общественное
                                         признание лучшего товара или
                                         услуги с присвоением по итогам отбора
@@ -473,250 +496,218 @@
                 </div>
             </section>
 
-            <section class="slide13 overlay-header position-relative">
-                <img src="{{ asset('img/festivals/presentations/grand_fashion_weekend_2018/grand_fashion_weekend_2018_top_small.jpg') }}"
-                     alt="{{ $festival->name }}" class="full">
+            {{--            <section class="slide13 overlay-header position-relative">
+                            <img src="{{ asset('img/festivals/presentations/grand_fashion_weekend_2018/grand_fashion_weekend_2018_top_small.jpg') }}"
+                                 alt="{{ $festival->name }}" class="full">
 
-                <div class="header-text position-absolute text-white">
-                    <div class="row">
-                        <div class="col-10 offset-1" style="opacity: .8; background: black;">
-                            <h4 class="text-center">Премия «Top of Belarus-2018»</h4>
-                            <h6 class="text-center">Номинации</h6>
-                            <div class="row">
-                                <div class="col-6">
-                                    <ul>
-                                        <li>Лучший магазин женской одежды
-                                        </li>
-                                        <li>
-                                            Лучший магазин вечерних платьев
-                                        </li>
-                                        <li>
-                                            Лучший дизайнер женской одежды
-                                        </li>
-                                        <li>
-                                            Лучший магазин мужской одежды
-                                        </li>
-                                        <li>
-                                            Лучший дизайнер мужской одежды
-                                        </li>
-                                        <li>
-                                            Лучший магазин женской обуви
-                                        </li>
-                                        <li>
-                                            Лучший магазин мужской обуви
-                                        </li>
-                                        <li>
-                                            Лучший салон красоты
-                                        </li>
-                                        <li>
-                                            Лучший салон красоты премиум-класса
-                                        </li>
-                                        <li>
-                                            Лучший Barbershop
-                                        </li>
-                                        <li>
-                                            Лучший Spa-салон премиум-класса
-                                        </li>
-                                        <li>
-                                            Лучшая Beauty Studio
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-6">
-                                    <ul>
-                                        <li>Лучшая студия перманентного макияжа
-                                        </li>
-                                        <li>
-                                            Лучший Brow Bar
-                                        </li>
-                                        <li>
-                                            Лучшая Nail Studio
-                                        </li>
-                                        <li>
-                                            Лучший fitness-центр
-                                        </li>
-                                        <li>
-                                            Лучшая fitness-студия
-                                        </li>
-                                        <li>
-                                            Лучший ресторан
-                                        </li>
-                                        <li>
-                                            Лучшее место для проведения свадеб/банкетов
-                                        </li>
-                                        <li>
-                                            Лучшее кафе
-                                        </li>
-                                        <li>
-                                            Лучшая кофейня
-                                        </li>
-                                        <li>
-                                            Лучшее кафе-мороженое
-                                        </li>
-                                        <li>
-                                            Лучший торговый центр
-                                        </li>
-                                        <li>
-                                            Открытие года
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="slide14 overlay-header position-relative">
-                <img src="{{ asset('img/festivals/presentations/grand_fashion_weekend_2018/grand_fashion_weekend_2018_top_small.jpg') }}"
-                     alt="{{ $festival->name }}" class="full">
-
-                <div class="header-text position-absolute text-white">
-                    <div class="row">
-                        <div class="col-10 offset-1" style="opacity: .8; background: black;">
-                            <h4 class="text-center">Премия «Top of Belarus-2018»</h4>
-                            <h6 class="text-center">Номинации</h6>
-                            <div class="row">
-                                <div class="col-6">
-                                    <ul>
-                                        <li>Persona Instagram
-                                        </li>
-                                        <li>
-                                            Лучший beauty-Instagram
-                                        </li>
-                                        <li>
-                                            Лучший стилист по прическам
-                                        </li>
-                                        <li>
-                                            Лучший визажист
-                                        </li>
-                                        <li>
-                                            Лучший косметолог
-                                        </li>
-                                        <li>
-                                            Лучший fitness тренер (мужчина)
-                                        </li>
-                                        <li>
-                                            Лучший fitness тренер (женщина)
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-6">
-                                    <ul>
-                                        <li>Лучшая ведущая
-                                        </li>
-                                        <li>
-                                            Лучший ведущий
-                                        </li>
-                                        <li>
-                                            Лучшая музыкальная группа
-                                        </li>
-                                        <li>
-                                            Лучшее семейное заведение
-                                        </li>
-                                        <li>
-                                            Лучший Candy Bar
-                                        </li>
-                                        <li>
-                                            Лучший семейный бизнес
-                                        </li>
-                                        <li>
-                                            Лучшее клиентоориентированное заведение
-                                        </li>
-                                    </ul>
+                            <div class="header-text position-absolute text-white">
+                                <div class="row">
+                                    <div class="col-10 offset-1" style="opacity: .8; background: black;">
+                                        <h4 class="text-center">Премия «Top of Belarus-2018»</h4>
+                                        <h6 class="text-center">Номинации</h6>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <ul>
+                                                    <li>Лучший магазин женской одежды
+                                                    </li>
+                                                    <li>
+                                                        Лучший магазин вечерних платьев
+                                                    </li>
+                                                    <li>
+                                                        Лучший дизайнер женской одежды
+                                                    </li>
+                                                    <li>
+                                                        Лучший магазин мужской одежды
+                                                    </li>
+                                                    <li>
+                                                        Лучший дизайнер мужской одежды
+                                                    </li>
+                                                    <li>
+                                                        Лучший магазин женской обуви
+                                                    </li>
+                                                    <li>
+                                                        Лучший магазин мужской обуви
+                                                    </li>
+                                                    <li>
+                                                        Лучший салон красоты
+                                                    </li>
+                                                    <li>
+                                                        Лучший салон красоты премиум-класса
+                                                    </li>
+                                                    <li>
+                                                        Лучший Barbershop
+                                                    </li>
+                                                    <li>
+                                                        Лучший Spa-салон премиум-класса
+                                                    </li>
+                                                    <li>
+                                                        Лучшая Beauty Studio
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-6">
+                                                <ul>
+                                                    <li>Лучшая студия перманентного макияжа
+                                                    </li>
+                                                    <li>
+                                                        Лучший Brow Bar
+                                                    </li>
+                                                    <li>
+                                                        Лучшая Nail Studio
+                                                    </li>
+                                                    <li>
+                                                        Лучший fitness-центр
+                                                    </li>
+                                                    <li>
+                                                        Лучшая fitness-студия
+                                                    </li>
+                                                    <li>
+                                                        Лучший ресторан
+                                                    </li>
+                                                    <li>
+                                                        Лучшее место для проведения свадеб/банкетов
+                                                    </li>
+                                                    <li>
+                                                        Лучшее кафе
+                                                    </li>
+                                                    <li>
+                                                        Лучшая кофейня
+                                                    </li>
+                                                    <li>
+                                                        Лучшее кафе-мороженое
+                                                    </li>
+                                                    <li>
+                                                        Лучший торговый центр
+                                                    </li>
+                                                    <li>
+                                                        Открытие года
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+                        </section>
 
-            <section class="slide15 overlay-header position-relative">
-                <img src="{{ asset('img/festivals/presentations/grand_fashion_weekend_2018/grand_fashion_weekend_2018_top_small.jpg') }}"
-                     alt="{{ $festival->name }}" class="full">
+                        <section class="slide14 overlay-header position-relative">
+                            <img src="{{ asset('img/festivals/presentations/grand_fashion_weekend_2018/grand_fashion_weekend_2018_top_small.jpg') }}"
+                                 alt="{{ $festival->name }}" class="full">
 
-                <div class="header-text position-absolute text-white">
-                    <div class="row">
-                        <div class="col-10 offset-1" style="opacity: .8; background: black;">
-                            <h4 class="text-center">Премия «Top of Belarus-2018»</h4>
-                            <h5 class="text-center">Категория: «MAMA AWARD» специально ко Дню Матери</h5>
-                            <h6 class="text-center">Номинации</h6>
-                            <div class="row">
-                                <div class="col-6">
-                                    <ul>
-                                        <li>Искусство
-                                        </li>
-                                        <li>
-                                            Политика
-                                        </li>
-                                        <li>
-                                            Бизнес
-                                        </li>
-                                        <li>
-                                            Музыка
-                                        </li>
-                                        <li>
-                                            Туризм и отдых
-                                        </li>
-                                        <li>
-                                            Медицина
-                                        </li>
-                                        <li>
-                                            Спорт
-                                        </li>
-                                        <li>
-                                            Благотворительность
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-6">
-                                    <p>Специальная номинация будет организована для поддержки и развития семейных
-                                        ценностей с целью показать, как много могут достичь женщины, у которых есть
-                                        дети. Эта премия для мам, которые успевают заниматься своими детьми, являются
-                                        любящими и заботливыми матерями, и при этом остаются активными женщинами,
-                                        реализуют свой потенциал в профессии и активно участвуют в культурной, светской
-                                        и даже политической жизни страны.
-                                    </p>
+                            <div class="header-text position-absolute text-white">
+                                <div class="row">
+                                    <div class="col-10 offset-1" style="opacity: .8; background: black;">
+                                        <h4 class="text-center">Премия «Top of Belarus-2018»</h4>
+                                        <h6 class="text-center">Номинации</h6>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <ul>
+                                                    <li>Persona Instagram
+                                                    </li>
+                                                    <li>
+                                                        Лучший beauty-Instagram
+                                                    </li>
+                                                    <li>
+                                                        Лучший стилист по прическам
+                                                    </li>
+                                                    <li>
+                                                        Лучший визажист
+                                                    </li>
+                                                    <li>
+                                                        Лучший косметолог
+                                                    </li>
+                                                    <li>
+                                                        Лучший fitness тренер (мужчина)
+                                                    </li>
+                                                    <li>
+                                                        Лучший fitness тренер (женщина)
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-6">
+                                                <ul>
+                                                    <li>Лучшая ведущая
+                                                    </li>
+                                                    <li>
+                                                        Лучший ведущий
+                                                    </li>
+                                                    <li>
+                                                        Лучшая музыкальная группа
+                                                    </li>
+                                                    <li>
+                                                        Лучшее семейное заведение
+                                                    </li>
+                                                    <li>
+                                                        Лучший Candy Bar
+                                                    </li>
+                                                    <li>
+                                                        Лучший семейный бизнес
+                                                    </li>
+                                                    <li>
+                                                        Лучшее клиентоориентированное заведение
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+                        </section>
 
-            <section class="slide16 overlay-header position-relative">
-                <img src="{{ asset('img/festivals/presentations/grand_fashion_weekend_2018/grand_fashion_weekend_2018_15.jpg') }}"
-                     alt="{{ $festival->name }}" class="full">
+                        <section class="slide15 overlay-header position-relative">
+                            <img src="{{ asset('img/festivals/presentations/grand_fashion_weekend_2018/grand_fashion_weekend_2018_top_small.jpg') }}"
+                                 alt="{{ $festival->name }}" class="full">
 
-                <div class="header-text position-absolute text-white">
-                    <div class="row">
-                        <div class="col-10 offset-1" style="opacity: .8; background: black;">
-                            <h4 class="text-center">Рекламная кампания</h4>
-                            <h5 class="text-center">Более 30 информационных партнеров:</h5>
-                            <ul>
-                                <li>Журнал «Город Женщин», «Женский журнал», журнал «Where Minsk» и др.;
-                                </li>
-                                <li>
-                                    Таргетированная реклама (SMM-продвижение с охватом более 200 000 человек вашей ЦА)
-                                </li>
-                                <li>
-                                    Размещение анонса мероприятия на ведущих порталах нашего города (Relax.by, TUT.by);
-                                </li>
-                                <li>
-                                    Размещение афиш и флаеров в местах прохождения целевой аудитории, а также, у
-                                    партнеров и участников мероприятия;
-                                </li>
-                                <li>
-                                    Приглашение на мероприятие специальных гостей, VIP персон, популярных блогеров,
-                                    медийных персон
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
+                            <div class="header-text position-absolute text-white">
+                                <div class="row">
+                                    <div class="col-10 offset-1" style="opacity: .8; background: black;">
+                                        <h4 class="text-center">Премия «Top of Belarus-2018»</h4>
+                                        <h5 class="text-center">Категория: «MAMA AWARD» специально ко Дню Матери</h5>
+                                        <h6 class="text-center">Номинации</h6>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <ul>
+                                                    <li>Искусство
+                                                    </li>
+                                                    <li>
+                                                        Политика
+                                                    </li>
+                                                    <li>
+                                                        Бизнес
+                                                    </li>
+                                                    <li>
+                                                        Музыка
+                                                    </li>
+                                                    <li>
+                                                        Туризм и отдых
+                                                    </li>
+                                                    <li>
+                                                        Медицина
+                                                    </li>
+                                                    <li>
+                                                        Спорт
+                                                    </li>
+                                                    <li>
+                                                        Благотворительность
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-6">
+                                                <p>Специальная номинация будет организована для поддержки и развития семейных
+                                                    ценностей с целью показать, как много могут достичь женщины, у которых есть
+                                                    дети. Эта премия для мам, которые успевают заниматься своими детьми, являются
+                                                    любящими и заботливыми матерями, и при этом остаются активными женщинами,
+                                                    реализуют свой потенциал в профессии и активно участвуют в культурной, светской
+                                                    и даже политической жизни страны.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>--}}
 
-            <section class="slide17 text-uppercase">
+            {{--<section class="slide17 text-uppercase">
                 <h1 class="text-center my-3">Стоимость участия для юр. лиц:</h1>
                 <div class="table-responsive">
                     <table class="table table-striped table-bordered table-hover">
@@ -778,11 +769,17 @@
                         </tbody>
                     </table>
                 </div>
-            </section>
+            </section>--}}
 
             <div class="mt-3">
                 @include('includes.festival_buttons')
             </div>
+            {{--<h5 class="mt-3 d-none d-lg-block">
+                <a href="{{ asset('img/festivals/presentations/grand_fashion_weekend_2018/grand_fashion_weekend_2018_afisha.png') }}"
+                   target="_blank">Посмотреть афишу фестиваля</a> | <a
+                        href="{{ asset
+                        ('img/festivals/presentations/grand_fashion_weekend_2018/grand_fashion_weekend_2018_top.jpg') }}"
+                        target="_blank">Посмотреть афишу премии</a></h5>--}}
         </div>
     </div>
 @endsection

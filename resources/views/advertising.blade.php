@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    @parent | {{ __('User profile page') }}
+    @parent | {{ __('Advertising') }}
 @endsection
 
 @section('keywords', 'ОК, OK, OK Event Group, OK Group, реклама, продвижение, smm, реклама и продвижение брендов в

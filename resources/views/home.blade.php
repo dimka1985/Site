@@ -32,9 +32,9 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-10 offset-md-1">
-                                <h1 class="mb-5">{{ config('app.name') }}</h1>
-                                <p class="lead mb-4">Мы занимаемся рекламой и продвижением брендов, помогаем в
-                                    организации мероприятий для вашей компании и проводим крупные фестивали!</p>
+                                <h1>{{ config('app.name') }}</h1>
+                                <h4 class="mb-5">{{ __('Say yes to your success!') }}</h4>
+                                <p class="lead mb-4">{{__('We are engaged in advertising and promotion of brands, we help in organize events for your company and hold big festivals!') }}</p>
                                 <a class="btn btn-lg btn-primary" href="{{ route('company') }}" role="button">{{
                                 __('Learn more') }}</a>
                             </div>
@@ -51,28 +51,37 @@
                     <hr class="my-4">
                     <div class="row">
                         <div class="col-lg-6">
-                            <p class="lead">Мы молодой целеустремлённый коллектив, который тратит все свои силы для
-                                достижения поставленных целей.</p>
+                            <p class="lead">{{ __('We are a team of ambitious professionals with extensive experience and an interesting portfolio.') }}</p>
                             <ul class="jumbotron-list pl-0">
                                 <li class="text-primary">
-                                    <p><i class="far fa-check-circle"></i> 100% гарантия качества</p>
+                                    <p><i class="far fa-check-circle"></i> {{ __('100% quality guarantee') }}</p>
                                 </li>
                                 <li class="text-primary">
-                                    <p><i class="far fa-check-circle"></i> Лучшие специалисты только для Вас</p>
+                                    <p><i class="far fa-check-circle"></i> {{
+                                    __('The best specialists are just for You') }}</p>
                                 </li>
                                 <li class="text-primary">
-                                    <p><i class="far fa-check-circle"></i> Рассмотрим любые варианты
-                                        рекламы и продвижения</p>
+                                    <p>
+                                        <i class="far fa-check-circle"></i> {{ __('Individual approach to each client') }}
+                                    </p>
                                 </li>
                                 <li class="text-primary">
-                                    <p><i class="far fa-check-circle"></i> Поможем подготовить и провести Ваше
-                                        мероприятие</p>
+                                    <p>
+                                        <i class="far fa-check-circle"></i> {{ __('We will develop a creative concept promoting your brand') }}
+                                    </p>
                                 </li>
                                 <li class="text-primary">
-                                    <p><i class="far fa-check-circle"></i> Проводим крупнейшие фестивали</p>
+                                    <p>
+                                        <i class="far fa-check-circle"></i> {{ __('We will help in realization of your image event') }}
+                                    </p>
                                 </li>
                                 <li class="text-primary">
-                                    <p><i class="far fa-check-circle"></i> И многое другое</p>
+                                    <p>
+                                        <i class="far fa-check-circle"></i> {{ __('We organize festivals unique for our country') }}
+                                    </p>
+                                </li>
+                                <li class="text-primary">
+                                    <p><i class="far fa-check-circle"></i> {{ __('And much more') }}</p>
                                 </li>
                             </ul>
                         </div>
@@ -112,16 +121,16 @@
                             <div class="card border-primary">
                                 <h4 class="card-header bg-light text-primary"><i class="fas fa-certificate"></i></h4>
                                 <div class="card-body">
-                                    <h4 class="card-title">Реклама компаний</h4>
+                                    <h4 class="card-title">{{ __('Advertising companies') }}</h4>
                                     <hr class="my-3">
-                                    <p class="card-text">Осуществляем разноплановую рекламу Ваших брендов среди
-                                        широкой целевой аудитории.</p>
+                                    <p class="card-text">{{ __('We carry out complex advertising campaigns, we select the optimal variants of placing your advertisement on any media.') }}</p>
                                 </div>
                                 <div class="card-footer">
                                     {{ Html::linkRoute('advertising', __('Learn more'), null, ['class' =>
                                     'card-link']) }}
                                     <hr>
-                                    <a href="#" class="btn btn-primary text-uppercase">{{ __('Order now!') }}</a>
+                                    {{ Html::link('/advertising#bx24_form_inline', __('Order now!'), ['class' => 'btn
+                                     btn-primary text-uppercase']) }}
                                 </div>
                             </div>
                         </div>
@@ -129,16 +138,33 @@
                             <div class="card border-primary">
                                 <h4 class="card-header bg-light text-primary"><i class="fab fa-instagram"></i></h4>
                                 <div class="card-body">
-                                    <h4 class="card-title">SMM продвижение</h4>
+                                    <h4 class="card-title">{{ __('SMM-promotion') }}</h4>
                                     <hr class="my-3">
-                                    <p class="card-text">Выполняем продвижение Ваших брендов в различных социальных
-                                        сетях Интернета.</p>
+                                    <p class="card-text">{{ __('We are developing a creative concept for promoting your brand, helping to increase the popularity and loyalty of customers.') }}</p>
                                 </div>
                                 <div class="card-footer">
                                     {{ Html::linkRoute('promotion', __('Learn more'), null, ['class' =>
                                     'card-link']) }}
                                     <hr>
-                                    <a href="#" class="btn btn-primary text-uppercase">{{ __('Order now!') }}</a>
+                                    {{ Html::link('/promotion#bx24_form_inline', __('Order now!'), ['class' => 'btn
+                                    btn-primary text-uppercase']) }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-3 mb-3">
+                            <div class="card border-primary">
+                                <h4 class="card-header bg-light text-primary"><i class="far fa-chart-bar"></i></h4>
+                                <div class="card-body">
+                                    <h4 class="card-title">{{ __('BTL-advertising and BTL-marketing') }}</h4>
+                                    <hr class="my-3">
+                                    <p class="card-text">{{ __('We conduct promotions and event-events in support of your brands in places of mass concentration of your target audience.') }}</p>
+                                </div>
+                                <div class="card-footer">
+                                    {{ Html::linkRoute('btl', __('Learn more'), null, ['class' =>
+                                    'card-link']) }}
+                                    <hr>
+                                    {{ Html::link('/btl#bx24_form_inline', __('Order now!'), ['class' => 'btn
+                                    btn-primary text-uppercase']) }}
                                 </div>
                             </div>
                         </div>
@@ -146,33 +172,16 @@
                             <div class="card border-primary">
                                 <h4 class="card-header bg-light text-primary"><i class="fas fa-users"></i></h4>
                                 <div class="card-body">
-                                    <h4 class="card-title">Организация мероприятий</h4>
+                                    <h4 class="card-title">{{ __('Organization of events') }}</h4>
                                     <hr class="my-3">
-                                    <p class="card-text">Осуществляем подготовку, продвижение и проведение Ваших
-                                        мероприятий.</p>
+                                    <p class="card-text">{{ __('We are looking for unique ideas for preparation and implementation memorable event-events in the best European traditions.') }}</p>
                                 </div>
                                 <div class="card-footer">
                                     {{ Html::linkRoute('events', __('Learn more'), null, ['class' =>
                                     'card-link']) }}
                                     <hr>
-                                    <a href="#" class="btn btn-primary text-uppercase">{{ __('Order now!') }}</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-xl-3 mb-3">
-                            <div class="card border-primary">
-                                <h4 class="card-header bg-light text-primary"><i class="fas fa-globe"></i></h4>
-                                <div class="card-body">
-                                    <h4 class="card-title">Крупные фестивали</h4>
-                                    <hr class="my-3">
-                                    <p class="card-text">Проводим крупные рекламные фестивали с участием
-                                        разнообразных компаний.</p>
-                                </div>
-                                <div class="card-footer">
-                                    {{ Html::linkRoute('festivals', __('Learn more'), null, ['class' =>
-                                    'card-link']) }}
-                                    <hr>
-                                    <a href="#" class="btn btn-primary text-uppercase">{{ __('Participate!') }}</a>
+                                    {{ Html::link('/events#bx24_form_inline', __('Order now!'), ['class' => 'btn
+                                    btn-primary text-uppercase']) }}
                                 </div>
                             </div>
                         </div>
@@ -190,12 +199,12 @@
                     <div class="row">
                         @foreach($festivals as $festival)
                             <div class="col">
-                                <h5><strong><a href="{{ route('festivals.festival', ['festival' => $festival->url])
-                                }}">{{ $festival->name }}
-                                            ({{ $festival->time }} {{ \Carbon\Carbon::parse($festival->begin_date)
+                                <h4><strong><a href="{{ route('festivals.festival', ['festival' => $festival])
+                                }}">{{ $festival->name }}</a></strong></h4>
+                                <h5>{{ $festival->time }} {{ \Carbon\Carbon::parse($festival->begin_date)
                                             ->format('d.m.Y') }}@if ($festival->begin_date != $festival->end_date)
-                                                - {{ \Carbon\Carbon::parse($festival->end_date)->format('d.m.Y') }}@endif)
-                                        </a></strong></h5>
+                                        - {{ \Carbon\Carbon::parse($festival->end_date)->format('d.m.Y') }}@endif
+                                </h5>
                                 <h5>{{ $festival->place }} {{ $festival->address }}</h5>
                                 <h6>{{ __('Cost of visit') }}: {{ $festival->price }}</h6>
                                 @if ($festival->passed == false)
@@ -203,9 +212,14 @@
                                         @include('includes.festival_buttons')
                                     </h5>
                                 @endif
-                                <a href="{{ route('festivals.festival', ['festival' => $festival->url]) }}"><img
-                                            src="{{ asset($festival->image) }}" class="img-fluid img-thumbnail rounded"
-                                            alt="{{ $festival->name }}" width="30%"></a>
+                                <a href="{{ route('festivals.festival', ['festival' => $festival]) }}"><img
+                                            src="{{ asset($festival->image) }}" class="img-fluid img-thumbnail
+                                            rounded w-25"
+                                            alt="{{ $festival->name }}"></a>
+                                <a href="{{ route('festivals.festival.award', ['festival' => $festival]) }}"><img
+                                            src="{{ asset($festival->award_image) }}"
+                                            class="img-fluid img-thumbnail rounded w-25"
+                                            alt="{{ $festival->award }}"></a>
                             </div>
                         @endforeach
                     </div>
@@ -223,9 +237,9 @@
                             <div class="row">
                                 @endif
                                 <div class="col-md-6 col-xl-3 mb-5">
-                                    <h5><strong><a href="{{ route('events.event', ['event' => $event->url]) }}">{{
+                                    <h5><strong><a href="{{ route('events.event', ['event' => $event]) }}">{{
                                     $event->name }}</a></strong></h5>
-                                    <a href="{{ route('events.event', ['event' => $event->url]) }}"><img
+                                    <a href="{{ route('events.event', ['event' => $event]) }}"><img
                                                 src="{{ asset($event->image) }}" class="img-fluid img-thumbnail
                                                 rounded" alt="{{ $event->name }}"></a>
                                 </div>
@@ -249,16 +263,16 @@
                             @foreach($news as $tiding)
                                 <div class="col-lg">
                                     <div class="card">
-                                        <a href="{{ route('news.tiding', ['tiding' => $tiding->url]) }}"><img
+                                        <a href="{{ route('news.tiding', ['tiding' => $tiding]) }}"><img
                                                     class="card-img-top img-fit-25" src="{{ asset($tiding->image) }}"
                                                     alt="{{ $tiding->name }}"></a>
                                         <div class="card-body">
-                                            <h5 class="card-title"><strong><a href="{{ route('news.tiding', ['tiding' =>
-                                    $tiding->url]) }}">{{ $tiding->name }}</a></strong>
+                                            <h5 class="card-title"><strong><a
+                                                            href="{{ route('news.tiding', ['tiding' => $tiding]) }}">{{ $tiding->name }}</a></strong>
                                             </h5>
                                             <hr>
                                             <p class="card-text">{!! str_limit($tiding->text, 200, '...') !!}</p>
-                                            <a href="{{ route('news.tiding', ['tiding' => $tiding->url]) }}">{{ __('Read more') }}</a>
+                                            <a href="{{ route('news.tiding', ['tiding' => $tiding]) }}">{{ __('Read more') }}</a>
                                         </div>
                                         <div class="card-footer">
                                             <p class="card-text">

@@ -24,18 +24,31 @@
                     <div class="jumbotron">
                         <div class="container">
                             <h5 class="text-center"><strong><a
-                                            href="{{ route('festivals.festival', ['festival' => $festival->url])
+                                            href="{{ route('festivals.festival', ['festival' => $festival])
                                             }}">{{ $festival->name }}</a></strong></h5>
                             <hr>
                             <div class="row">
-                                <div class="col-lg-4 mb-3">
-                                    <a href="{{ route('festivals.festival', ['festival' => $festival->url]) }}"><img
-                                                src="{{ asset($festival->image) }}"
-                                                class="img-fluid img-thumbnail rounded"
-                                                alt="{{ $festival->name }}"></a>
+                                <div class="col-lg-3 mb-3">
+                                    <div class="row">
+                                        <div class="col-6 col-lg-12 mb-1">
+                                            <a href="{{ route('festivals.festival', ['festival' => $festival]) }}"><img
+                                                        src="{{ asset($festival->image) }}"
+                                                        class="img-fluid img-thumbnail rounded"
+                                                        alt="{{ $festival->name }}"></a>
+                                        </div>
+                                        <div class="col-6 col-lg-12">
+                                            <a href="{{ route('festivals.festival.award', ['festival' => $festival]) }}"><img
+                                                        src="{{ asset($festival->award_image) }}"
+                                                        class="img-fluid img-thumbnail rounded" alt="{{ $festival->award
+                                                }}"></a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-lg-8">
-                                    <h5><u>{{ __('Name') }}</u>: <strong>{{ $festival->heading }}</strong></h5>
+                                <div class="col-lg-9">
+                                    <h5><u>{{ __('Name of the festival') }}</u>:
+                                        <strong>{{ $festival->heading }}</strong></h5>
+                                    <h5><u>{{ __('Award name') }}</u>: <strong>{{ __('Award') }} {{ $festival->award
+                                    }}</strong></h5>
                                     <h5><u>{{ __('Date') }}</u>: <strong>{{ \Carbon\Carbon::parse
                             ($festival->begin_date)->format('d.m.Y') }} @if ($festival->begin_date !=
                             $festival->end_date)
@@ -52,15 +65,15 @@
                                         <u>{{ __('Cost of visit') }}</u>: <strong>{{ $festival->price }}</strong>
                                     </h5>
                                     @if ($festival->passed == false)
-                                        <h5>
+                                        <h5 class="mt-3">
                                             @include('includes.festival_buttons')
                                         </h5>
                                     @endif
                                     <hr>
-                                    {!! str_limit($festival->text, 300, '...') !!}
+                                    {!! str_limit($festival->text, 500, '...') !!}
                                     <br><br>
-                                    <a href="{{ route('festivals.festival', ['festival' => $festival->url]) }}">{{
-                                    __('Read more') }}</a>
+                                    <a href="{{ route('festivals.festival', ['festival' => $festival]) }}">{{
+                                    __('Learn more') }}</a>
                                 </div>
                             </div>
                         </div>

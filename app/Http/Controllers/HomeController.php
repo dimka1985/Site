@@ -29,7 +29,7 @@ class HomeController extends Controller
     public function index()
     {
         return view('home', [
-            'festivals' => Festival::where('is_active', true)->orderBy('id', 'desc')->take(3)->get(),
+            'festivals' => Festival::where('is_active', true)->orderBy('id', 'desc')->take(1)->get(),
             'events' => Event::where('is_active', true)->orderBy('id', 'desc')->take(8)->get(),
             'news' => Tiding::where('is_active', true)->orderBy('id', 'desc')->take(3)->get(),
         ]);
@@ -63,6 +63,16 @@ class HomeController extends Controller
     public function promotion()
     {
         return view('promotion');
+    }
+
+    /**
+     * Show the btl dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function btl()
+    {
+        return view('btl');
     }
 
     /**

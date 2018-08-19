@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    @parent | {{ __('User profile page') }}
+    @parent | {{ __('Festivals') }}
 @endsection
 
 @section('keywords', 'ОК, OK, OK Event Group, OK Group, реклама, продвижение, smm, реклама и продвижение брендов в
@@ -15,7 +15,7 @@
 
         <div class="container">
             <br>
-            <h2 class="mt-5 text-center">{{ __('Events') }}</h2>
+            <h2 class="mt-5 text-center">{{ __('Festivals') }}</h2>
             <hr>
         </div>
     </div>

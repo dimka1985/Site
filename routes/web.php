@@ -21,6 +21,7 @@ Route::post('/subscribe', 'HomeController@subscribe')->name('subscribe');
 Route::get('/company', 'HomeController@company')->name('company');
 Route::get('/advertising', 'HomeController@advertising')->name('advertising');
 Route::get('/promotion', 'HomeController@promotion')->name('promotion');
+Route::get('/btl', 'HomeController@btl')->name('btl');
 Route::get('/events', 'HomeController@events')->name('events');
 Route::get('/festivals', 'HomeController@festivals')->name('festivals');
 Route::get('/profile/{user}', 'UserController@profile')->name('profile');
@@ -38,6 +39,7 @@ Route::prefix('festivals')->group(function () {
         Route::get('/{festival}', 'FestivalController@festival')->name('festival');
         Route::get('/{festival}/participate', 'FestivalController@participate')->name('festival.participate');
         Route::get('/{festival}/visit', 'FestivalController@visit')->name('festival.visit');
+        Route::get('/{festival}/award', 'FestivalController@award')->name('festival.award');
     });
 });
 

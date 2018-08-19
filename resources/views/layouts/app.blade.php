@@ -94,6 +94,15 @@
                             . __('Promotion'), ['class' => 'dropdown-item']) !!}
                         @endif
 
+                            @if (Route::currentRouteName() == 'btl')
+                                {!! Html::linkWithHtml('/btl', '<i class="fas fa-chart-bar"></i> '
+                                . __('BTL') . ' <span class="sr-only">(' . __('Current') . ')</span>', ['class' =>
+                                'dropdown-item active']) !!}
+                            @else
+                                {!! Html::linkWithHtml('/btl', '<i class="fas fa-chart-bar"></i> '
+                                . __('BTL'), ['class' => 'dropdown-item']) !!}
+                            @endif
+
                         <div class="dropdown-divider"></div>
                         @if (Route::currentRouteName() == 'events')
                             {!! Html::linkWithHtml('/events', '<i class="fas fa-calendar-alt"></i> '
@@ -262,18 +271,21 @@
                     <h5>{{ __('Our services') }}:</h5>
                     <hr>
                     <ul class="jumbotron-list pl-0">
-                        <li><i class="fas fa-star"></i> <a href="#">
-                                {{ __('Advertising') }}</a>
+                        <li><i class="fas fa-star"></i>
+                            {{ Html::linkRoute('advertising', __('Advertising')) }}
                         </li>
-                        <li><i class="fas fa-thumbs-up"></i> <a href="#">
-                                {{ __('Promotion') }}
-                            </a></li>
-                        <li><i class="fas fa-calendar-alt"></i> <a href="#">
-                                {{ __('Events') }}
-                            </a></li>
-                        <li><i class="fas fa-globe"></i> <a href="#">
-                                {{ __('Festivals') }}
-                            </a></li>
+                        <li><i class="fas fa-thumbs-up"></i>
+                            {{ Html::linkRoute('promotion', __('Promotion')) }}
+                        </li>
+                        <li><i class="fas fa-chart-bar"></i>
+                            {{ Html::linkRoute('btl', __('BTL')) }}
+                        </li>
+                        <li><i class="fas fa-calendar-alt"></i>
+                            {{ Html::linkRoute('events', __('Events')) }}
+                        </li>
+                        <li><i class="fas fa-globe"></i>
+                            {{ Html::linkRoute('festivals', __('Festivals')) }}
+                        </li>
                     </ul>
                 </div>
                 <div class="col-xl-4 col-md-6">
@@ -292,7 +304,7 @@
 
                     {{ Form::open(['route' => 'subscribe']) }}
                     <div class="row">
-                        <div class="col-6 col-md-12 mb-1">
+                        <div class="col-12 col-sm-6 col-md-12 mb-1">
                             <div class="input-group">
                                 {{ Form::email('sub_email', old('sub_email'), ['class' => 'form-control' .
                                 ($errors->has('sub_email') ? ' is-invalid' : ''), 'placeholder' =>
@@ -310,7 +322,7 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="col-6 col-md-12">
+                        <div class="col-12 col-sm-6 col-md-12">
                             {{ Form::submit(__('Subscribe!'), ['class' => 'btn btn-primary']) }}
                         </div>
                     </div>

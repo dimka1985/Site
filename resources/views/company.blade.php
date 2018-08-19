@@ -24,27 +24,41 @@
                     <hr class="my-4">
                     <ul class="jumbotron-list pl-0">
                         <li class="text-primary">
-                            <p><a href="#" class="btn btn-sm btn-primary text-uppercase">{{ __('Order now!') }}</a>
-                                <i class="far fa-check-circle"></i> {{ Html::linkRoute('advertising', 'Осуществляем
-                                разноплановую рекламу Ваших брендов среди широкой целевой аудитории', null, ['class'
-                                => 'card-link']) }}
+                            <p>
+                                {{ Html::link('/advertising#bx24_form_inline', __('Order now!'), ['class' => 'btn
+                                btn-sm btn-primary text-uppercase']) }}
+                                <i class="far fa-check-circle"></i>
+                                {{ Html::linkRoute('advertising', __('We carry out complex advertising campaigns, we select the optimal variants of placing your advertisement on any media.'), null,
+                                ['class' => 'card-link']) }}
                             </p>
                         </li>
                         <li class="text-primary">
-                            <p><a href="#" class="btn btn-sm btn-primary text-uppercase">{{ __('Order now!') }}</a>
-                                <i class="far fa-check-circle"></i> {{ Html::linkRoute('promotion', 'Выполняем
-                                продвижение Ваших брендов в различных социальных сетях Интернета', null, ['class' =>
-                                'card-link']) }}</p>
+                            <p>
+                                {{ Html::link('/promotion#bx24_form_inline', __('Order now!'), ['class' => 'btn
+                                btn-sm btn-primary text-uppercase']) }}
+                                <i class="far fa-check-circle"></i>
+                                {{ Html::linkRoute('promotion', __('We are developing a creative concept for promoting your brand, helping to increase the popularity and loyalty of customers.'), null, ['class' => 'card-link']) }}
+                            </p>
                         </li>
                         <li class="text-primary">
-                            <p><a href="#" class="btn btn-sm btn-primary text-uppercase">{{ __('Order now!') }}</a>
-                                <i class="far fa-check-circle"></i> {{ Html::linkRoute('events', 'Осуществляем подготовку, продвижение и проведение Ваших мероприятий', null, ['class' => 'card-link']) }}
+                            <p>
+                                {{ Html::link('/btl#bx24_form_inline', __('Order now!'), ['class' => 'btn
+                                btn-sm btn-primary text-uppercase']) }}
+                                <i class="far fa-check-circle"></i>
+                                {{ Html::linkRoute('btl', __('We are looking for unique ideas for preparation and implementation memorable event-events in the best European traditions.'), null, ['class' => 'card-link']) }}
+                            </p>
+                        </li>
+                        <li class="text-primary">
+                            <p>
+                                {{ Html::link('/events#bx24_form_inline', __('Order now!'), ['class' => 'btn
+                                btn-sm btn-primary text-uppercase']) }}
+                                <i class="far fa-check-circle"></i>
+                                {{ Html::linkRoute('events', __('We conduct promotions and event-events in support of your brands in places of mass concentration of your target audience.'), null, ['class' => 'card-link']) }}
                             </p>
                         </li>
                         <li class="text-primary">
                             <p><a href="#" class="btn btn-sm btn-primary text-uppercase">{{ __('Participate!') }}</a>
-                                <i class="far fa-check-circle"></i> {{ Html::linkRoute('festivals', 'Проводим крупные
-                                 рекламные фестивали с участием разнообразных компаний', null, ['class' => 'card-link']) }}
+                                <i class="far fa-check-circle"></i> {{ Html::linkRoute('festivals', __('We spend large advertising festivals'), null, ['class' => 'card-link']) }}
                             </p>
                         </li>
                     </ul>
