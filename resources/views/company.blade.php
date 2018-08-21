@@ -20,7 +20,26 @@
 
             <div class="jumbotron jumbotron-fluid">
                 <div class="container">
-                    <h2 class="text-center mt-0">{{ __('Our services') }}</h2>
+                    <h3 class="text-center mt-0">{{ config('app.name') }}</h3>
+                    <hr class="my-4">
+                    <p><strong>{{ config('app.name') }}</strong> — это команда профессионалов, влюбленных в свое дело.
+                        Мы собрались вместе, чтобы создать и воплотить в жизнь Ваши самые смелые идеи.
+                        Мы предлагаем своим клиентам расширить возможности рекламы товаров и услуг, максимально охватив
+                        целевую аудиторию! В зависимости от поставленных целей и задач наши специалисты всегда подберут
+                        оптимальные варианты размещения или создания рекламной информации, помогут оптимизировать
+                        бюджеты, добившись максимально высоких показателей отдачи.</p>
+                    <div class="row">
+                        <div class="col-12 col-sm-6 offset-xl-1 col-xl-4">
+                            <h5 class="text-center">{{ __('Catherine') }}</h5>
+                            <img src="{{ asset('img/kate.jpg') }}" alt="{{ config('app.name') }}"
+                                 class="img-fluid img-thumbnail rounded mb-1"></div>
+                        <div class="col-12 col-sm-6 offset-xl-2 col-xl-4">
+                            <h5 class="text-center">{{ __('Nikita') }}</h5>
+                            <img src="{{ asset('img/nikita.jpg') }}" alt="{{ config('app.name') }}"
+                                 class="img-fluid img-thumbnail rounded mb-1"></div>
+                    </div>
+                    <hr class="my-4">
+                    <h3 class="text-center mt-0">{{ __('Our services') }}</h3>
                     <hr class="my-4">
                     <ul class="jumbotron-list pl-0">
                         <li class="text-primary">
@@ -63,7 +82,7 @@
                                     ['festival' => $festival], ['class' => 'btn btn-sm btn-primary text-uppercase']) }}
                                 @else
                                     <button type="button" class="btn btn-sm btn-primary text-uppercase"
-                                            disabled>Ждите новостей!
+                                            disabled>{{ __('Wait for news!') }}
                                     </button>
                                 @endif
                                 <i class="far fa-check-circle"></i> {{ Html::linkRoute('festivals', __('We spend large advertising festivals'), null, ['class' => 'card-link']) }}
@@ -76,12 +95,11 @@
                         <strong><a href="{{ route('festivals.all') }}">{{ __('Our festivals') }}</a></strong>
                     </h4>
                     <hr>
-                    <h5 class="text-center">Действуем на основании свидетельства о государственной регистрации от
-                        01.06.2018</h5>
+                    <h5 class="text-center">{{ __('We act on the basis of the certificate of state registration') }}</h5>
                     <div class="row">
-                        <div class="offset-3 col-3">
-                            <img src="{{ asset('img/license.jpg') }}" alt="{{ config('app.name') }}" class="img-fluid
-                             img-thumbnail rounded w-100">
+                        <div class="offset-md-4 col-md-4">
+                            <img src="{{ asset('img/certificate.jpg') }}" alt="{{ config('app.name') }}"
+                                 class="img-fluid img-thumbnail rounded w-100">
                         </div>
                     </div>
                 </div>

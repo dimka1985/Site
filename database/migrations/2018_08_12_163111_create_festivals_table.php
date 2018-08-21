@@ -29,6 +29,8 @@ class CreateFestivalsTable extends Migration
             $table->string('price');
             $table->string('award')->nullable();
             $table->string('award_image')->nullable();
+            $table->string('award_date')->nullable();
+            $table->string('award_time')->nullable();
             $table->boolean('passed')->default(false);
             $table->boolean('is_active')->default(true);
             $table->timestamps();

@@ -14,31 +14,37 @@ class SocialprovidersTableSeeder extends Seeder
         DB::table('socialproviders')->insert([
             [
                 'provider' => 'bitbucket',
+                'is_active' => true,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
                 'provider' => 'facebook',
+                'is_active' => true,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
                 'provider' => 'github',
+                'is_active' => true,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
                 'provider' => 'google',
+                'is_active' => true,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
                 'provider' => 'linkedin',
+                'is_active' => true,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
                 'provider' => 'twitter',
+                'is_active' => false,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],

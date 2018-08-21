@@ -87,7 +87,9 @@ class HomeController extends Controller
      */
     public function events()
     {
-        return view('events');
+        return view('events', [
+            'events' => Event::where('is_active', true)->orderBy('id', 'desc')->take(4)->get(),
+        ]);
     }
 
     /**
@@ -97,7 +99,12 @@ class HomeController extends Controller
      */
     public function festivals()
     {
-        return view('festivals');
+        return view('festivals', [
+            'festival' => Festival::where([
+                ['is_active', true],
+                ['passed', false],
+            ])->orderBy('id', 'desc')->take(1)->first(),
+        ]);
     }
 
     /**

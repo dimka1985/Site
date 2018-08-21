@@ -95,13 +95,16 @@
                                 </ol>
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <img class="d-block w-100" src="{{ asset('img/slide1.jpg') }}" alt="Слайд">
+                                        <img class="d-block w-100 h-100" src="{{ asset('img/slide1.jpg') }}"
+                                             alt="Слайд">
                                     </div>
                                     <div class="carousel-item">
-                                        <img class="d-block w-100" src="{{ asset('img/slide2.jpg') }}" alt="Слайд">
+                                        <img class="d-block w-100 h-100" src="{{ asset('img/slide2.jpg') }}"
+                                             alt="Слайд">
                                     </div>
                                     <div class="carousel-item">
-                                        <img class="d-block w-100" src="{{ asset('img/slide3.jpg') }}" alt="Слайд">
+                                        <img class="d-block w-100 h-100" src="{{ asset('img/slide3.jpg') }}"
+                                             alt="Слайд">
                                     </div>
                                 </div>
                             </div>
@@ -118,7 +121,7 @@
                 <div class="row">
                     <div class="card-deck">
                         <div class="col-md-6 col-xl-3 mb-3">
-                            <div class="card border-primary">
+                            <div class="card border-primary h-100">
                                 <h4 class="card-header bg-light text-primary"><i class="fas fa-certificate"></i></h4>
                                 <div class="card-body">
                                     <h4 class="card-title">{{ __('Advertising companies') }}</h4>
@@ -135,7 +138,7 @@
                             </div>
                         </div>
                         <div class="col-md-6 col-xl-3 mb-3">
-                            <div class="card border-primary">
+                            <div class="card border-primary h-100">
                                 <h4 class="card-header bg-light text-primary"><i class="fab fa-instagram"></i></h4>
                                 <div class="card-body">
                                     <h4 class="card-title">{{ __('SMM-promotion') }}</h4>
@@ -152,7 +155,7 @@
                             </div>
                         </div>
                         <div class="col-md-6 col-xl-3 mb-3">
-                            <div class="card border-primary">
+                            <div class="card border-primary h-100">
                                 <h4 class="card-header bg-light text-primary"><i class="far fa-chart-bar"></i></h4>
                                 <div class="card-body">
                                     <h4 class="card-title">{{ __('BTL-advertising and BTL-marketing') }}</h4>
@@ -169,7 +172,7 @@
                             </div>
                         </div>
                         <div class="col-md-6 col-xl-3 mb-3">
-                            <div class="card border-primary">
+                            <div class="card border-primary h-100">
                                 <h4 class="card-header bg-light text-primary"><i class="fas fa-users"></i></h4>
                                 <div class="card-body">
                                     <h4 class="card-title">{{ __('Organization of events') }}</h4>
@@ -198,10 +201,10 @@
                     <hr class="my-4">
                     <div class="row">
                         @foreach($festivals as $festival)
-                            <div class="col">
+                            <div class="col h-100">
                                 <h4><strong><a href="{{ route('festivals.festival', ['festival' => $festival])
                                 }}">{{ $festival->name }}</a></strong></h4>
-                                <h5>{{ $festival->time }} {{ \Carbon\Carbon::parse($festival->begin_date)
+                                <h5>{{ $festival->time }} ~ {{ \Carbon\Carbon::parse($festival->begin_date)
                                             ->format('d.m.Y') }}@if ($festival->begin_date != $festival->end_date)
                                         - {{ \Carbon\Carbon::parse($festival->end_date)->format('d.m.Y') }}@endif
                                 </h5>
@@ -232,22 +235,7 @@
                 <div class="container text-center">
                     <h2><strong><a href="{{ route('events.all') }}">{{ __('History of our events') }}</a></strong></h2>
                     <hr class="my-4">
-                    @foreach($events as $e => $event)
-                        @if ($e / 4 == 0)
-                            <div class="row">
-                                @endif
-                                <div class="col-md-6 col-xl-3 mb-5">
-                                    <h5><strong><a href="{{ route('events.event', ['event' => $event]) }}">{{
-                                    $event->name }}</a></strong></h5>
-                                    <a href="{{ route('events.event', ['event' => $event]) }}"><img
-                                                src="{{ asset($event->image) }}" class="img-fluid img-thumbnail
-                                                rounded" alt="{{ $event->name }}"></a>
-                                </div>
-
-                                @if (($e != 0) && ($e / 3 == 0))
-                            </div>
-                        @endif
-                    @endforeach
+                    @include('includes.events')
                 </div>
             </div>
         </section>
@@ -262,7 +250,7 @@
                         <div class="row no-gutters">
                             @foreach($news as $tiding)
                                 <div class="col-lg">
-                                    <div class="card">
+                                    <div class="card h-100">
                                         <a href="{{ route('news.tiding', ['tiding' => $tiding]) }}"><img
                                                     class="card-img-top img-fit-25" src="{{ asset($tiding->image) }}"
                                                     alt="{{ $tiding->name }}"></a>

@@ -44,6 +44,13 @@
                 <li>потрясающие световые, звуковые и спецэффекты любого уровня,</li>
                 <li>молодой и доброжелательный обслуживающий персонал!</li>
             </ul>
+            <hr class="my-4">
+            <div class="img-galery">
+                <div class="container text-center">
+                    <h4 class="text-center mb-4">{{ __('Last events') }}</h4>
+                    @include('includes.events')
+                </div>
+            </div>
         </div>
     </div>
 

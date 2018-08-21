@@ -50,6 +50,8 @@ class FestivalsTableSeeder extends Seeder
                 'price' => '5 руб.',
                 'award' => '«Top of Belarus-2018»',
                 'award_image' => 'img/festivals/presentations/grand_fashion_weekend_2018/grand_fashion_weekend_2018_top_small.jpg',
+                'award_date' => '2018-10-13',
+                'award_time' => 'Начало в 20:00',
                 'passed' => false,
                 'is_active' => true,
                 'created_at' => now(),
