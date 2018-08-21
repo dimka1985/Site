@@ -310,8 +310,8 @@
                         <li><i class="fas fa-envelope mr-1"></i> <a
                                     href="mailto:o_k_group@mail.ru">o_k_group@mail.ru</a>
                         </li>
-                        <li><i class="fab fa-instagram mr-1"></i> <a href="https://www.instagram
-                            .com/o_k_group/">OK Event Group Instagram</a></li>
+                        <li><i class="fab fa-instagram mr-1"></i> <a href="https://www.instagram.com/o_k_group/">OK
+                                Event Group Instagram</a></li>
                     </ul>
                 </div>
                 <div class="col-xl-2 col-md-6">

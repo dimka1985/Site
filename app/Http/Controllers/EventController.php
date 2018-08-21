@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App;
 use App\Event;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\File;
@@ -39,7 +40,12 @@ class EventController extends Controller
     public function event(Event $event)
     {
         $images = Cache::rememberForever('events_' . $event->url, function () use ($event) {
-            $files = File::allFiles('../public/img/events/' . $event->url);
+            if (App::environment('production')) {
+                $files = File::allFiles('../public_html/img/events/' . $event->url);
+            } else {
+                $files = File::allFiles('../public/img/events/' . $event->url);
+            }
+
             $images = [];
 
             foreach ($files as $f => $file) {

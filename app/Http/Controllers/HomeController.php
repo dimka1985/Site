@@ -36,6 +36,16 @@ class HomeController extends Controller
     }
 
     /**
+     * Show the advertising dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function terms()
+    {
+        return view('terms');
+    }
+
+    /**
      * Show the company dashboard.
      *
      * @return \Illuminate\Http\Response

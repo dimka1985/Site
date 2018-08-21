@@ -104,7 +104,7 @@ class NewsTableSeeder extends Seeder
             [
                 'name' => '13-14 октября пройдет первый в Беларуси семейный фестиваль «GRAND FASHION WEEKEND»',
                 'url' => 'grand_fashion_weekend_2018',
-                'heading' => 'Захватывающие развлечения весь день, музыка, вкусная еда ожидают посетителей ежегодного фестиваля «ХмельновFEST».',
+                'heading' => 'Фестиваль GRAND FASHION WEEKEND 2018',
                 'text' => '
 <p>Это новый формат проведения выходных в атмосфере, где царит красота, сплоченность и семейный уют (в преддверии всемирного дня матери)!</p>
 
@@ -113,7 +113,18 @@ class NewsTableSeeder extends Seeder
 <p>Это уникальная возможность представить свой бренд/услугу на фестивале, где будет сконцентрирована ваша целевая 
 аудитория.</p>
 
-<p>В программе : Beauty зона для женщин и мужчин, Fashion зона, Wellness зона, Business зона, Food&Drinks зона, модные показы в стиле Milan Fashion Week, мастер-классы, подарки, конкурсы от партнеров!</p>
+<h5>В программе:</h5> 
+<ul>
+<li>Beauty зона для женщин и мужчин,</li>
+<li>Fashion зона,</li>
+<li>Wellness зона,</li>
+<li>Business зона,</li>
+<li>Food&Drinks зона,</li> 
+<li>модные показы в стиле Milan Fashion Week,</li>
+<li>мастер-классы,</li>
+<li>подарки,</li>
+<li>конкурсы от партнеров!</li>
+</ul>
 
 <p>Приглашаем лучшие бренды к участию!</p>',
                 'image' => 'img/news/grand_fashion_weekend_2018/grand_fashion_weekend_2018_1.jpg',

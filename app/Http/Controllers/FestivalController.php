@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App;
 use App\Festival;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\File;
@@ -40,7 +41,11 @@ class FestivalController extends Controller
     {
         if ($festival->passed == true) {
             $images = Cache::rememberForever('festivals_' . $festival->url, function () use ($festival) {
-                $files = File::allFiles('../public/img/festivals/' . $festival->url);
+                if (App::environment('production')) {
+                    $files = File::allFiles('../public_html/img/festivals/' . $festival->url);
+                } else {
+                    $files = File::allFiles('../public/img/festivals/' . $festival->url);
+                }
                 $images = [];
 
                 foreach ($files as $f => $file) {

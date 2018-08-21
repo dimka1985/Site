@@ -211,8 +211,10 @@
                                         ($errors->has('terms') ? ' is-invalid' : ' is-valid') : ''), 'id' =>
                                         'terms', 'required']) }}
 
-                                        {{ Form::label('terms', __('I agree with terms') . '*', ['class' =>
-                                        'custom-control-label']) }}
+                                        {!! Form::label('terms', __('I agree with'), ['class' =>
+                                        'custom-control-label']) !!}
+                                        {{ Html::linkRoute('terms', __('terms'), null, ['target' => '_blank'])
+                                        }}*
 
                                         @if ($errors->has('terms'))
                                             <span class="invalid-feedback" role="alert">

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App;
 use App\Tiding;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\File;
@@ -39,7 +40,11 @@ class NewsController extends Controller
     public function tiding(Tiding $tiding)
     {
         $images = Cache::rememberForever('news_' . $tiding->url, function () use ($tiding) {
-            $files = File::allFiles('../public/img/news/' . $tiding->url);
+            if (App::environment('production')) {
+                $files = File::allFiles('../public_html/img/news/' . $tiding->url);
+            } else {
+                $files = File::allFiles('../public/img/news/' . $tiding->url);
+            }
             $images = [];
 
             foreach ($files as $f => $file) {
