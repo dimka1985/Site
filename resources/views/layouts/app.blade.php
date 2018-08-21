@@ -26,7 +26,54 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
-    <!-- Scripts -->
+    <!-- Metrics -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    @if (App::environment('production'))
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124219685-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || []
+
+          function gtag () {dataLayer.push(arguments)}
+
+          gtag('js', new Date())
+
+          gtag('config', 'UA-124219685-1')
+        </script>
+
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript">
+          (function (d, w, c) {
+            (w[c] = w[c] || []).push(function () {
+              try {
+                w.yaCounter50010073 = new Ya.Metrika2({
+                  id: 50010073,
+                  clickmap: true,
+                  trackLinks: true,
+                  accurateTrackBounce: true,
+                  webvisor: true
+                })
+              } catch (e) { }
+            })
+
+            let n = d.getElementsByTagName('script')[0],
+              s = d.createElement('script'),
+              f = function () { n.parentNode.insertBefore(s, n) }
+            s.type = 'text/javascript'
+            s.async = true
+            s.src = 'https://mc.yandex.ru/metrika/tag.js'
+
+            if (w.opera == '[object Opera]') {
+              d.addEventListener('DOMContentLoaded', f, false)
+            } else { f() }
+          })(document, window, 'yandex_metrika_callbacks2')
+        </script>
+        <noscript>
+            <div><img src="https://mc.yandex.ru/watch/50010073" style="position:absolute; left:-9999px;" alt=""/></div>
+        </noscript>
+        <!-- /Yandex.Metrika counter -->
+    @endif
+
+<!-- Scripts -->
     <script src="{{ mix('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
@@ -261,7 +308,7 @@
                             {{ __('Yuri') }}
                         </li>--}}
                         <li><i class="fas fa-envelope mr-1"></i> <a
-                                    href="mailto:okgroup@mail.ru">okgroup@mail.ru</a>
+                                    href="mailto:o_k_group@mail.ru">o_k_group@mail.ru</a>
                         </li>
                         <li><i class="fab fa-instagram mr-1"></i> <a href="https://www.instagram
                             .com/o_k_group/">OK Event Group Instagram</a></li>
@@ -296,6 +343,7 @@
                         УНП 193087259<br>
                         р/с BY31 ALFA 3013 2350 6700 1027 0000 BYN<br>
                         ЗАО "Альфа-Банк", ул. Сурганова, 43-47<br>
+                        БИК: ALFABY2X, УНП 101541947, ОКПО 37526626<br>
                         <a href="{{ asset('img/license.jpg') }}" target="_blank">Свидетельство о регистрации</a></p>
                 </div>
                 <div class="col-xl-3 col-md-6 mb-3">

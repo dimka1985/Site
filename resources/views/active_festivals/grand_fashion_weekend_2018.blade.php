@@ -771,9 +771,9 @@
                 </div>
             </section>--}}
 
-            <div class="mt-3">
+            <h3 class="mt-3 text-center">
                 @include('includes.festival_buttons')
-            </div>
+            </h3>
             {{--<h5 class="mt-3 d-none d-lg-block">
                 <a href="{{ asset('img/festivals/presentations/grand_fashion_weekend_2018/grand_fashion_weekend_2018_afisha.png') }}"
                    target="_blank">Посмотреть афишу фестиваля</a> | <a
