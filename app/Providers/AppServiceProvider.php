@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App;
 use Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider;
 use Html;
 use Illuminate\Support\ServiceProvider;
@@ -15,6 +16,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        if (App::environment('production')) {
+            $this->app->bind('path.public', function () {
+                return base_path() . '/../public_html';
+            });
+        }
+
         Html::macro('linkWithHtml', function ($url, $html, $attributes = []) {
             $text = '';
 
