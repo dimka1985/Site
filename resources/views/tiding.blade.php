@@ -42,7 +42,7 @@
         </header>
 
         <div class="container">
-            <h1 class="my-3 text-center">{{ $tiding->heading }}</h1>
+            <h1 class="my-3 text-center">{!! $tiding->heading !!}</h1>
             <hr class="my-4">
 
             {!! $tiding->text !!}

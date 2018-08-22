@@ -202,7 +202,8 @@
                     <div class="row">
                         @foreach($festivals as $festival)
                             <div class="col h-100">
-                                <h4><strong><a href="{{ route('festivals.festival', ['festival' => $festival])
+                                <h4><strong><a href="{{ $festival->instagram }}" target="_blank"><i class="fab
+                                fa-instagram mr-1"></i></a> <a href="{{ route('festivals.festival', ['festival' => $festival])
                                 }}">{{ $festival->name }}</a></strong></h4>
                                 <h5>{{ $festival->time }} ~ {{ \Carbon\Carbon::parse($festival->begin_date)
                                             ->format('d.m.Y') }}@if ($festival->begin_date != $festival->end_date)

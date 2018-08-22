@@ -104,7 +104,7 @@ class NewsTableSeeder extends Seeder
             [
                 'name' => '13-14 октября пройдет первый в Беларуси семейный фестиваль «GRAND FASHION WEEKEND»',
                 'url' => 'grand_fashion_weekend_2018',
-                'heading' => 'Фестиваль GRAND FASHION WEEKEND 2018',
+                'heading' => '<a href="https://okgroup.by/festivals/grand_fashion_weekend_2018">Фестиваль GRAND FASHION WEEKEND 2018</a>',
                 'text' => '
 <p>Это новый формат проведения выходных в атмосфере, где царит красота, сплоченность и семейный уют (в преддверии всемирного дня матери)!</p>
 
@@ -126,7 +126,10 @@ class NewsTableSeeder extends Seeder
 <li>конкурсы от партнеров!</li>
 </ul>
 
-<p>Приглашаем лучшие бренды к участию!</p>',
+<p>Приглашаем лучшие бренды к участию!</p>
+<h4><a href="https://okgroup.by/festivals/grand_fashion_weekend_2018">Узнать больше о GRAND FASHION WEEKEND 2018!</a></h4>
+<h5>Официальный инстаграм:
+<strong><a href="https://www.instagram.com/grand_fashion_weekend_/"><i class="fab fa-instagram mr-1"></i> Инстаграм GRAND FASHION WEEKEND</a></strong></h5>',
                 'image' => 'img/news/grand_fashion_weekend_2018/grand_fashion_weekend_2018_1.jpg',
                 'is_active' => true,
                 'created_at' => now(),

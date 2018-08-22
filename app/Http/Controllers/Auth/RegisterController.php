@@ -137,6 +137,7 @@ class RegisterController extends Controller
                 Rule::unique('users')->where(function ($query) {
                     return $query->whereNull('deleted_at');
                 }),
+                'not_regex:/^[A-Za-z0-9\.]*@(okgroup)[.](by)$/',
             ],
             'password' => 'required|string|min:6|max:30|confirmed',
             'password_confirmation' => 'required|string|min:6|max:30',

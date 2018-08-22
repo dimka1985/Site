@@ -310,8 +310,9 @@
                         <li><i class="fas fa-envelope mr-1"></i> <a
                                     href="mailto:o_k_group@mail.ru">o_k_group@mail.ru</a>
                         </li>
-                        <li><i class="fab fa-instagram mr-1"></i> <a href="https://www.instagram.com/o_k_group/">OK
-                                Event Group Instagram</a></li>
+                        <li><i class="fab fa-instagram mr-1"></i> <a href="https://www.instagram.com/o_k_group/"
+                                                                     target="_blank">{{ config('app.name') }} {{
+                                                                     __('Instagram') }}</a></li>
                     </ul>
                 </div>
                 <div class="col-xl-2 col-md-6">
@@ -344,7 +345,7 @@
                         р/с BY31 ALFA 3013 2350 6700 1027 0000 BYN<br>
                         ЗАО "Альфа-Банк", ул. Сурганова, 43-47<br>
                         БИК: ALFABY2X, УНП 101541947, ОКПО 37526626<br>
-                        <a href="{{ asset('img/license.jpg') }}" target="_blank">Свидетельство о регистрации</a></p>
+                        <a href="{{ asset('img/certificate.jpg') }}" target="_blank">Свидетельство о регистрации</a></p>
                 </div>
                 <div class="col-xl-3 col-md-6 mb-3">
                     <h5>{{ __('Subscribe to our newsletter') }}:</h5>

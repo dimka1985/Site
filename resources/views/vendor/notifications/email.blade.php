@@ -13,7 +13,6 @@
     {{-- Intro Lines --}}
     @foreach ($introLines as $line)
         {{ $line }}
-
     @endforeach
 
     {{-- Action Button --}}
@@ -38,7 +37,6 @@
     {{-- Outro Lines --}}
     @foreach ($outroLines as $line)
         {{ $line }}
-
     @endforeach
 
     {{-- Salutation --}}
@@ -52,8 +50,8 @@
     @isset($actionText)
         @component('mail::subcopy')
             @lang(
-                "If you’re having trouble clicking the \":actionText\" button, copy and paste the URL below\n".
-                'into your web browser: [:actionURL](:actionURL)',
+                "Если у Вас есть проблемы с нажатием на кнопку \":actionText\", скопируйте и вставьте в браузер\n".
+                'ссылку: [:actionURL](:actionURL)',
                 [
                     'actionText' => $actionText,
                     'actionURL' => $actionUrl

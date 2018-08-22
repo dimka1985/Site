@@ -35,7 +35,7 @@
                                                 alt="{{ $tiding->name }}"></a>
                                 </div>
                                 <div class="col-lg-6">
-                                    <h5><strong>{{ $tiding->heading }}</strong></h5>
+                                    <h5><strong>{!! $tiding->heading !!}</strong></h5>
                                     <hr>
                                     {!! str_limit($tiding->text, 300, '...') !!}
                                     <br><br>

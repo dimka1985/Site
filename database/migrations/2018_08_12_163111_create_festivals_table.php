@@ -16,6 +16,7 @@ class CreateFestivalsTable extends Migration
         Schema::create('festivals', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('instagram');
             $table->string('place');
             $table->string('address');
             $table->string('url');

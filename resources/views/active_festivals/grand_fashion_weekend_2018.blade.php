@@ -105,6 +105,9 @@
                         </div>
                     </div>
                     <div class="col-12 col-lg-9 col-xl-10">
+                        <h5><u>{{ __('Official Instagram') }}</u>:
+                            <strong><a href="{{ $festival->instagram }}" target="_blank"><i class="fab fa-instagram
+                                        mr-1"></i> {{ __('Instagram') }} {{ $festival->name }}</a></strong></h5>
                         {!! $festival->text !!}
                     </div>
                 </div>

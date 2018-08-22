@@ -14,6 +14,7 @@ class FestivalsTableSeeder extends Seeder
         DB::table('festivals')->insert([
             [
                 'name' => 'GRAND FASHION WEEKEND',
+                'instagram' => 'https://www.instagram.com/grand_fashion_weekend_/',
                 'place' => 'Ресторан-клуб «Усадьба»',
                 'address' => 'г.Минск, ул. Филимонова 24',
                 'url' => 'grand_fashion_weekend_2018',
