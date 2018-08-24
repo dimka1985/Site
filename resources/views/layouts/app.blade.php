@@ -299,7 +299,7 @@
                             {{ __('Nikita') }}
                         </li>
                         <li><i class="fas fa-phone mr-1"></i> <a href="tel:375445287252">+375 44 528 72 52</a>
-                            {{ __('Dmitry') }}
+                            {{ __('Yuri') }}
                         </li>
                         <li><i class="fas fa-phone mr-1"></i> <a href="tel:375445287253">+375 44 528 72 53</a>
                             {{ __('Catherine') }}
@@ -385,7 +385,7 @@
                 @endphp
                 <div class="col">
                     <div class="text-center">Copyright © 2018{{ $text }}. {{ __('All rights reserved') }}. {{
-                    __('Design') }} <a href="mailto:dmitrytsibylskiy@gmail.com">okgroup.by dmitry</a></div>
+                    __('Design') }} <a href="mailto:dmitrytsibylskiy@gmail.com">okgroup.by {{ __('Dmitry') }}</a></div>
                 </div>
             </div>
         </div>
