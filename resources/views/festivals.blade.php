@@ -4,10 +4,13 @@
     @parent | {{ __('Festivals') }}
 @endsection
 
-@section('keywords', 'ОК, OK, OK Event Group, OK Group, реклама, продвижение, smm, реклама и продвижение брендов в
-Беларуси')
+@section('keywords')
+    @parent
+@endsection
 
-@section('description', 'OK Event Group, Реклама и продвижение брендов в Беларуси')
+@section('description')
+    @parent
+@endsection
 
 @section('content')
     <div id="app mb-4">

@@ -14,8 +14,14 @@
         @show
     </title>
 
-    <meta name="keywords" content="@yield('keywords')">
-    <meta name="description" content="@yield('description')">
+    <meta name="keywords" content="@section('keywords') реклама, мероприятия под ключ, event, pr, продвижение,
+    продвижение брендов, дизайн, маркетинг, медиа портал, создание сайтов, фестиваль, маркет, продажа товаров,
+    продажа услуг, услуги, Минск, Беларусь, организация мероприятий в Минске @show">
+    <meta name="description"
+          content="@section('description') {{ config('app.name') }} - это команда профессионалов, влюбленных в свое дело. Мы собрались вместе, чтобы создать и воплотить в жизнь Ваши самые смелые идеи. Мы предлагаем своим клиентам расширить возможности рекламы товаров и услуг, максимально охватив целевую аудиторию! @show">
+
+    <meta name="title" content="@yield('title')">
+    <meta name="language" content="ru-RU">
 
     <!-- Favicons -->
     <link href="{{ asset('apple-touch-icon.png') }}" rel="apple-touch-icon" sizes="180x180">

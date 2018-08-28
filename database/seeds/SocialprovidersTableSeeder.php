@@ -44,7 +44,7 @@ class SocialprovidersTableSeeder extends Seeder
             ],
             [
                 'provider' => 'twitter',
-                'is_active' => false,
+                'is_active' => true,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],

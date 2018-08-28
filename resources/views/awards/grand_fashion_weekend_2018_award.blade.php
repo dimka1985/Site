@@ -4,6 +4,14 @@
     @parent | {{ $festival->name }} ~ {{ $festival->award }}
 @endsection
 
+@section('keywords')
+    @parent , {{ $festival->name }} , {{ $festival->award }}
+@endsection
+
+@section('description')
+    @parent
+@endsection
+
 @section('styles')
     @parent
 

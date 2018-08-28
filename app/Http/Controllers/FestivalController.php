@@ -112,4 +112,17 @@ class FestivalController extends Controller
             'festival' => $festival,
         ]);
     }
+
+    /**
+     * Show the festival award voting dashboard.
+     *
+     * @param Festival $festival
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\View\View
+     */
+    public function voting(Festival $festival)
+    {
+        return view('awards.' . $festival->url . '_award_voting', [
+            'festival' => $festival,
+        ]);
+    }
 }
