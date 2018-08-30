@@ -114,6 +114,11 @@ return [
     'url' => 'The :attribute format is invalid.',
 
     /*
+     * User's rules
+     */
+    'recaptcha' => 'Please ensure that you are a not a robot',
+
+    /*
     |--------------------------------------------------------------------------
     | Custom Validation Language Lines
     |--------------------------------------------------------------------------

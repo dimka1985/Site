@@ -120,14 +120,13 @@ class RegisterController extends Controller
             'name' => 'required|string|min:1|max:30',
             'company' => 'nullable|string|min:2|max:50',
             'code' => [
-                'nullable',
-                'required_with:phone',
+                'required',
                 'string',
                 'min:2',
                 'max:2',
                 'regex:/(17)|(25)|(29)|(33)|(44)/'
             ],
-            'phone' => 'nullable|required_with:code|string|min:7|max:7|regex:/[0-9]{7}/',
+            'phone' => 'required|string|min:7|max:7|regex:/[0-9]{7}/',
             'email' => [
                 'required',
                 'string',

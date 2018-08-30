@@ -29,6 +29,7 @@ class CreateFestivalsTable extends Migration
             $table->string('time');
             $table->string('price');
             $table->string('award')->nullable();
+            $table->string('award_nominations')->nullable();
             $table->string('award_image')->nullable();
             $table->string('award_date')->nullable();
             $table->string('award_time')->nullable();

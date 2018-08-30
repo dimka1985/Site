@@ -42,6 +42,7 @@ Route::prefix('festivals')->group(function () {
         Route::get('/{festival}/visit', 'FestivalController@visit')->name('festival.visit');
         Route::get('/{festival}/award', 'FestivalController@award')->name('festival.award');
         Route::get('/{festival}/award/voting', 'FestivalController@voting')->name('festival.award.voting');
+        Route::post('/{festival}/award/vote', 'VotingController@vote')->name('festival.award.vote');
     });
 });
 

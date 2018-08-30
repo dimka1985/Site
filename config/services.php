@@ -72,4 +72,9 @@ return [
         'redirect' => env('TWITTER_CLIENT_REDIRECT'),
     ],
 
+    'recaptcha' => [
+        'recaptcha_key' => env('GOOGLE_RECAPTCHA_KEY'),
+        'recaptcha_secret' => env('GOOGLE_RECAPTCHA_SECRET'),
+    ],
+
 ];

@@ -51,4 +51,12 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Socialprovider::class);
     }
+
+    /**
+     * Get the votings for the user.
+     */
+    public function votings()
+    {
+        return $this->hasMany(Vote::class);
+    }
 }

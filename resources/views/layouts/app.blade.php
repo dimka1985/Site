@@ -301,12 +301,12 @@
                     <h5>{{ __('Our contacts') }}:</h5>
                     <hr>
                     <ul class="jumbotron-list pl-0">
-                        <li><i class="fas fa-phone mr-1"></i> <a href="tel:375445287251">+375 44 528 72 51</a>
+                        {{--<li><i class="fas fa-phone mr-1"></i> <a href="tel:375445287251">+375 44 528 72 51</a>
                             {{ __('Nikita') }}
                         </li>
                         <li><i class="fas fa-phone mr-1"></i> <a href="tel:375445287252">+375 44 528 72 52</a>
                             {{ __('Yuri') }}
-                        </li>
+                        </li>--}}
                         <li><i class="fas fa-phone mr-1"></i> <a href="tel:375445287253">+375 44 528 72 53</a>
                             {{ __('Catherine') }}
                         </li>
