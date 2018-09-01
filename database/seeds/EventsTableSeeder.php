@@ -57,8 +57,8 @@ class EventsTableSeeder extends Seeder
         href="http://www.belta.by/society/view/reportazh-dana-fashion-day-v-dana-mall-modnye-pokazy-nauchnye-eksperimenty-i-naviband-255468-2017/">belta.by</a>, <a href="https://mag.relax.by/city/fotofacts/10521155-dana-fashion-day/">mag.relax.by</a></p>',
                 'image' => 'img/events/dana_fashion_day_2017/dana_fashion_day_2017_11.jpg',
                 'is_active' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
+                'created_at' => '2018-08-05 17:00:00',
+                'updated_at' => '2018-08-05 17:00:00',
             ],
             [
                 'name' => 'Шопинг в стиле «Карнавал» в «Galileo Mall»',
@@ -90,8 +90,8 @@ class EventsTableSeeder extends Seeder
         href="https://fashionbank.by/articles/style/modnyy_uikend_shoping_v_stile_karnaval/">fashionbank.by</a>, <a href="https://mag.relax.by/foto/10550473-shoping-v-stile-karnaval/">mag.relax.by</a></p>',
                 'image' => 'img/events/shopping_v_stile_karnaval_v_galileo_mall/shopping_v_stile_karnaval_22.jpg',
                 'is_active' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
+                'created_at' => '2018-08-05 17:00:00',
+                'updated_at' => '2018-08-05 17:00:00',
             ],
             [
                 'name' => 'Queen of beauty by RUSHKA (2 сезон)',
@@ -108,8 +108,8 @@ class EventsTableSeeder extends Seeder
         href="https://fashionbank.by/articles/style/queen_of_beauty_by_rushka_kto_stal_litsom_brenda/">fashionbank.by</a></p>',
                 'image' => 'img/events/queen_of_beauty_by_rushka_2_sezon/queen_of_beauty_by_rushka_2_sezon_1.jpg',
                 'is_active' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
+                'created_at' => '2018-08-05 17:00:00',
+                'updated_at' => '2018-08-05 17:00:00',
             ],
             [
                 'name' => 'Фестиваль «ХмельновFest» (2018)',
@@ -118,8 +118,8 @@ class EventsTableSeeder extends Seeder
                 'text' => 'Text',
                 'image' => 'img/events/festival_hmelnovfest_2018/festival_hmelnovfest_2018_1.jpg',
                 'is_active' => false,
-                'created_at' => now(),
-                'updated_at' => now(),
+                'created_at' => '2018-08-05 17:00:00',
+                'updated_at' => '2018-08-05 17:00:00',
             ],
         ]);
     }

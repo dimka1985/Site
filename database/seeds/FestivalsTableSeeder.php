@@ -41,7 +41,7 @@ class FestivalsTableSeeder extends Seeder
                     <li>подарки,</li>
                     <li>конкурсы от партнеров!</li>
                 </ul>
-
+<h5>Внимание! Конкурс для посетителей фестиваля! <a href="http://homestead.test/news/grand_fashion_weekend_2018_konkurs">Читать условия</a>!</h5>
 <p><strong>Призываем всех посетить наш фестиваль, а лучшие бренды приглашаем к участию!</strong></p>',
                 'image' => 'img/festivals/presentations/grand_fashion_weekend_2018/grand_fashion_weekend_2018_afisha_small.jpg',
                 'bg' => 'img/festivals/presentations/grand_fashion_weekend_2018/grand_fashion_weekend_2018_bg.png',
@@ -56,7 +56,7 @@ class FestivalsTableSeeder extends Seeder
                 'award_time' => 'Начало в 20:00',
                 'passed' => false,
                 'is_active' => true,
-                'created_at' => now(),
+                'created_at' => '2018-08-01 10:00:00',
                 'updated_at' => now(),
             ],
         ]);

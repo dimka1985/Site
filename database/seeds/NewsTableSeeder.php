@@ -98,8 +98,8 @@ class NewsTableSeeder extends Seeder
         href="http://hmelnovfest.by/">hmelnovfest.by</a>, <a href="https://afisha.tut.by/other/khmelnov-fest/">afisha.tut.by</a></p>',
                 'image' => 'img/news/festival_hmelnovfest_2018/festival_hmelnovfest_2018_1.jpg',
                 'is_active' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
+                'created_at' => '2018-08-01 13:00:00',
+                'updated_at' => '2018-08-01 13:00:00',
             ],
             [
                 'name' => '13-14 октября пройдет первый в Беларуси семейный фестиваль «GRAND FASHION WEEKEND»',
@@ -132,8 +132,32 @@ class NewsTableSeeder extends Seeder
 <strong><a href="https://www.instagram.com/grand_fashion_weekend_/"><i class="fab fa-instagram mr-1"></i> Инстаграм GRAND FASHION WEEKEND</a></strong></h5>',
                 'image' => 'img/news/grand_fashion_weekend_2018/grand_fashion_weekend_2018_1.jpg',
                 'is_active' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
+                'created_at' => '2018-08-03 12:00:00',
+                'updated_at' => '2018-08-03 12:00:00',
+            ],
+            [
+                'name' => 'Конкурс для гостей фестиваля «GRAND FASHION WEEKEND»',
+                'url' => 'grand_fashion_weekend_2018_konkurs',
+                'heading' => 'Объявляем о конкурсе для посетителей фестиваля <a href="https://okgroup.by/festivals/grand_fashion_weekend_2018">GRAND FASHION WEEKEND 2018</a>',
+                'text' => '
+<p>13-14 октября пройдет первый в Беларуси семейный фестиваль "GRAND FASHION WEEKEND"! Мы подготовили для Вас много сюрпризов и подарков, а прямо сейчас расскажем об условиях нашего конкурса!</p>
+<ul>
+<li>🍁Сделайте красивое осеннее фото/видео;</li>
+<li>🍁Добавьте его в Instagram с хэштегом <span class="text-primary">#grandfashionweekend</span>;</li>
+<li>🍁Продолжите фразу: «Эта осень будет особенной, потому что...»</li>
+<li>🍁Приходите 13/14 октября на наш фестиваль;</li>
+<li>🍁покажите публикацию и получите возможность достать из лототрона счастливую карточку, на которой будет написано пожелание или подарок, который Вы выиграли (подарков будет очень много)!😉</li>
+</ul>
+<p>Сохраняйте, чтобы не забыть: 13/14 октября встречаемся на самом семейном фестивале этой осени в Усадьбе Ваньковичей (Филимонова, 24)!</p>
+<h5>Вход свободный☝</h5>
+<h5>Приходите всей семьей!</h5>
+<h4><a href="https://okgroup.by/festivals/grand_fashion_weekend_2018">Узнать больше о GRAND FASHION WEEKEND 2018!</a></h4>
+<h5>Официальный инстаграм:
+<strong><a href="https://www.instagram.com/grand_fashion_weekend_/"><i class="fab fa-instagram mr-1"></i> Инстаграм GRAND FASHION WEEKEND</a></strong></h5>',
+                'image' => 'img/news/grand_fashion_weekend_2018_konkurs/grand_fashion_weekend_2018_konkurs_1.jpg',
+                'is_active' => true,
+                'created_at' => '2018-08-31 18:00:00',
+                'updated_at' => '2018-08-31 18:00:00',
             ],
         ]);
     }

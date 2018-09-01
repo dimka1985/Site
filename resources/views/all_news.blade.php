@@ -40,7 +40,7 @@
                                 <div class="col-lg-6">
                                     <h5><strong>{!! $tiding->heading !!}</strong></h5>
                                     <hr>
-                                    {!! str_limit($tiding->text, 300, '...') !!}
+                                    {!! str_limit($tiding->text, 350, '...') !!}
                                     <br><br>
                                     <a href="{{ route('news.tiding', ['tiding' => $tiding]) }}">{{
                                     __('Read more') }}</a>

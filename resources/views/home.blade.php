@@ -263,7 +263,7 @@
                                                             href="{{ route('news.tiding', ['tiding' => $tiding]) }}">{{ $tiding->name }}</a></strong>
                                             </h5>
                                             <hr>
-                                            <p class="card-text">{!! str_limit($tiding->text, 200, '...') !!}</p>
+                                            <p class="card-text">{!! str_limit($tiding->text, 220, '...') !!}</p>
                                             <a href="{{ route('news.tiding', ['tiding' => $tiding]) }}">{{ __('Read more') }}</a>
                                         </div>
                                         <div class="card-footer">
