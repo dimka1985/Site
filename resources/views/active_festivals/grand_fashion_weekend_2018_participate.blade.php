@@ -5,7 +5,7 @@
 @endsection
 
 @section('keywords')
-    @parent , {{ $festival->name }} , {{ $festival->award }}
+    @parent , {{ $festival->name }}, {{ $festival->award }}
 @endsection
 
 @section('description')
@@ -13,7 +13,7 @@
 @endsection
 
 @section('content')
-    <div id="app mb-4">
+    <div id="app" class="mb-4">
         @include('includes.sessions')
 
         <div class="container">

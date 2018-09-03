@@ -101,6 +101,19 @@ class FestivalController extends Controller
     }
 
     /**
+     * Show the festival visit dashboard.
+     *
+     * @param Festival $festival
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\View\View
+     */
+    public function speakers(Festival $festival)
+    {
+        return view('active_festivals.' . $festival->url . '_speakers', [
+            'festival' => $festival,
+        ]);
+    }
+
+    /**
      * Show the festival award dashboard.
      *
      * @param Festival $festival

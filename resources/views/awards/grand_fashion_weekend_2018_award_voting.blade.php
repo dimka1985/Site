@@ -5,7 +5,7 @@
 @endsection
 
 @section('keywords')
-    @parent , {{ $festival->name }} , {{ $festival->award }}
+    @parent , {{ $festival->name }}, {{ $festival->award }}
 @endsection
 
 @section('description')

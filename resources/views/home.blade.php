@@ -19,7 +19,7 @@
 @endsection
 
 @section('content')
-    <div id="app">
+    <div id="app" class="mb-4">
         @include('includes.sessions')
 
         <header class="full">
