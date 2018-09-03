@@ -42,7 +42,7 @@ class FestivalsTableSeeder extends Seeder
 <li>подарки,</li>
 <li>конкурсы от партнеров!</li>
                 </ul>
-<h5>Внимание! Конкурс для посетителей фестиваля! <a href="http://homestead.test/news/grand_fashion_weekend_2018_konkurs">Читать условия</a>!</h5>
+<h5>Внимание! Конкурс для посетителей фестиваля! <a href="https://okgroup.by/news/grand_fashion_weekend_2018_konkurs">Читать условия</a>!</h5>
 <p><strong>Призываем всех посетить наш фестиваль, а лучшие бренды приглашаем к участию!</strong></p>',
                 'image' => 'img/festivals/presentations/grand_fashion_weekend_2018/grand_fashion_weekend_2018_afisha_small.jpg',
                 'bg' => 'img/festivals/presentations/grand_fashion_weekend_2018/grand_fashion_weekend_2018_bg.png',

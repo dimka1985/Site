@@ -126,7 +126,7 @@ class NewsTableSeeder extends Seeder
 <li>подарки,</li>
 <li>конкурсы от партнеров!</li>
 </ul>
-<h5>Внимание! Конкурс для посетителей фестиваля! <a href="http://homestead.test/news/grand_fashion_weekend_2018_konkurs">Читать условия</a>!</h5>
+<h5>Внимание! Конкурс для посетителей фестиваля! <a href="https://okgroup.by/news/grand_fashion_weekend_2018_konkurs">Читать условия</a>!</h5>
 <p>Приглашаем лучшие бренды к участию!</p>
 <h4><a href="https://okgroup.by/festivals/grand_fashion_weekend_2018">Узнать больше о GRAND FASHION WEEKEND 2018!</a></h4>
 <h5>Официальный инстаграм:

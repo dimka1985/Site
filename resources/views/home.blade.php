@@ -256,8 +256,8 @@
                                 <div class="col-lg">
                                     <div class="card h-100">
                                         <a href="{{ route('news.tiding', ['tiding' => $tiding]) }}"><img
-                                                    class="card-img-top img-fit-25" src="{{ asset($tiding->image) }}"
-                                                    alt="{{ $tiding->name }}"></a>
+                                                    class="card-img-top img-thumbnail img-fit-25"
+                                                    src="{{ asset($tiding->image) }}" alt="{{ $tiding->name }}"></a>
                                         <div class="card-body">
                                             <h5 class="card-title"><strong><a
                                                             href="{{ route('news.tiding', ['tiding' => $tiding]) }}">{{ $tiding->name }}</a></strong>
