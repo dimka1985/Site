@@ -75,17 +75,19 @@
         <div class="container">
             <h4 class="text-center mt-3">Как записаться на выступления?</h4>
             <ol>
-                <li>Выберите спикеров, которых Вы желаете посетить, нажав на кнопки
-                    "<strong>{{ __('Sign up!') }}</strong>" под каждым из них (или поставьте нужные галочки под каждым
-                    спикером при заполнении <a href="#bx24_form_inline">анкеты</a> внизу страницы);
+                <li>Выберите спикеров, которых Вы желаете посетить, ознакомившись с информацией о выступающих
+                    (точная дата и
+                    время выступления будет указана на сайте до начала фестиваля);
                 </li>
-                <li>Когда выберите нужных Вам кандидатов -> в самом низу страницы заполните <a
-                            href="#bx24_form_inline">анкету</a> и нажмите кнопку "<strong>{{ __('Send') }}</strong>";
+                <li>Когда выберите нужных Вам кандидатов -> в самом низу страницы заполните <a href="#bx24_form_inline">анкету</a>,
+                    поставьте нужные галочки под каждым выбранным спикером и нажмите кнопку
+                    "<strong>{{ __('Send') }}</strong>";
                 </li>
                 <li>Данные, которые Вы указали при заполнении анкеты, будут использоваться Вами для посещения спикеров
                     на самом фестивале (указывайте настоящие данные)!
                 </li>
             </ol>
+            <h5><i>Информация по выступающим спикерам может обновляться до начала фестиваля!</i></h5>
 
             <main class="my-3">
                 <div class="card">
@@ -151,55 +153,8 @@
                                             </div>
                                         </div>
                                         <div class="card-footer text-center">
-                                            <button class="btn btn-success mb-1"
-                                                    type="button" onclick="checked();">{{ __('Sign up!')
-                                                    }}</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-lg-4 mb-1">
-                                    <div class="card h-100">
-                                        <div class="card-header text-center"><a
-                                                    href="https://www.instagram.com/artemrybakin/?hl=ru"
-                                                    target="_blank">Артём<br>Рыбакин</a>
-                                        </div>
-                                        <div class="card-body">
-                                            <img src="{{ asset('img/festivals/awards/top_of_belarus_2018/artem_rybakin.jpg') }}"
-                                                 class="rounded-circle img-thumbnail w-100"
-                                                 alt="Артём Рыбакин">
-                                        </div>
-                                        <div class="card-footer text-center">
-                                            <div class="custom-control custom-radio custom-control-inline">
-                                                <input type="radio" id="bestPresenter2"
-                                                       name="award_id[32]" class="custom-control-input"
-                                                       style="cursor: pointer;" value="2">
-                                                <label class="custom-control-label text-primary"
-                                                       for="bestPresenter2" style="cursor: pointer;">
-                                                    {{ __('Choose!') }}</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-lg-4 mb-1">
-                                    <div class="card h-100">
-                                        <div class="card-header text-center"><a
-                                                    href="https://www.instagram.com/navatsky/?hl=ru"
-                                                    target="_blank">Станислав<br>Навацкий</a>
-                                        </div>
-                                        <div class="card-body">
-                                            <img src="{{ asset('img/festivals/awards/top_of_belarus_2018/stanislav_navatsky.jpg') }}"
-                                                 class="rounded-circle img-thumbnail w-100"
-                                                 alt="Станислав Навацкий">
-                                        </div>
-                                        <div class="card-footer text-center">
-                                            <div class="custom-control custom-radio custom-control-inline">
-                                                <input type="radio" id="bestPresenter3"
-                                                       name="award_id[32]" class="custom-control-input"
-                                                       style="cursor: pointer;" value="3">
-                                                <label class="custom-control-label text-primary"
-                                                       for="bestPresenter3" style="cursor: pointer;">
-                                                    {{ __('Choose!') }}</label>
-                                            </div>
+                                            {{ __('Date of presentation') }}: {{
+                                            __('Will be announced later') }}
                                         </div>
                                     </div>
                                 </div>
@@ -233,12 +188,5 @@
               b24form({'id': '19', 'lang': 'ru', 'sec': 'ega147', 'type': 'inline'})
             </script>
         </div>
-
-        <script>
-          function checked () {
-            let frame = document.getElementById('bx_form_iframe_19')
-            frame.contentWindow.document.getElementById('LEAD_UF_CRM_1535984488_0').checked = true
-          }
-        </script>
     @endif
 @endsection
