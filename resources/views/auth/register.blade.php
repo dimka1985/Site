@@ -23,7 +23,7 @@
                     <div class="card-body">
                         @include('includes.sessions')
 
-                        {{ Form::open(['route' => 'register', 'aria-label' => __('Register'), 'files' => true]) }}
+                        {{ Form::open(['route' => 'register', 'files' => true]) }}
 
                         <div class="row">
                             <div class="offset-lg-2 col-lg-8 mb-3">

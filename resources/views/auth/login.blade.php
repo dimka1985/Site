@@ -23,7 +23,7 @@
                     <div class="card-body">
                         @include('includes.sessions')
 
-                        {{ Form::open(['route' => 'login', 'aria-label' => __('Login')]) }}
+                        {{ Form::open(['route' => 'login']) }}
 
                         <div class="form-group row">
                             {{ Form::label('email', __('E-Mail address'), ['class' => 'col-lg-4 col-form-label
@@ -90,8 +90,7 @@
                             <div class="col-lg-8 offset-lg-4">
                                 {{ Form::submit(__('Login'), ['class' => 'btn btn-primary']) }}
 
-                                {{ Html::linkRoute('password.request', __('Forgot your password?'), [], ['class'
-                                => 'btn btn-link']) }}
+                                {{ Html::linkRoute('password.request', __('Forgot your password?'), [], ['class' => 'btn btn-link']) }}
                             </div>
                         </div>
 

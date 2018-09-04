@@ -23,7 +23,7 @@
                     <div class="card-body">
                         @include('includes.sessions')
 
-                        {{ Form::open(['route' => 'password.email', 'aria-label' => __('Reset password request')]) }}
+                        {{ Form::open(['route' => 'password.email']) }}
 
                         <div class="form-group row">
                             {{ Form::label('email', __('E-Mail address'), ['class' => 'col-lg-4 col-form-label

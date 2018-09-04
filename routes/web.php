@@ -11,7 +11,7 @@
 |
 */
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('auth/{socialprovider}', 'Auth\RegisterController@redirectToProvider');
 Route::get('auth/{socialprovider}/callback', 'Auth\RegisterController@handleProviderCallback');

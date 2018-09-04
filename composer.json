@@ -14,7 +14,7 @@
     "fideloper/proxy": "^4.0",
     "genealabs/laravel-model-caching": "^0.2.64",
     "guzzlehttp/guzzle": "^6.3",
-    "laravel/framework": "5.6.*",
+    "laravel/framework": "5.7.*",
     "laravel/passport": "^6.0",
     "laravel/scout": "^5.0",
     "laravel/socialite": "^3.0",
@@ -25,6 +25,7 @@
   "require-dev": {
     "barryvdh/laravel-debugbar": "^3.1",
     "barryvdh/laravel-ide-helper": "^2.4",
+    "beyondcode/laravel-dump-server": "^1.0",
     "filp/whoops": "^2.0",
     "fzaninotto/faker": "^1.4",
     "laravel/dusk": "^3.0",

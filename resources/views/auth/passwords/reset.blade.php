@@ -23,7 +23,7 @@
                     <div class="card-body">
                         @include('includes.sessions')
 
-                        {{ Form::open(['route' => 'password.request', 'aria-label' => __('Reset password')]) }}
+                        {{ Form::open(['route' => 'password.request']) }}
 
                         {{ Form::hidden('token', $token) }}
 
