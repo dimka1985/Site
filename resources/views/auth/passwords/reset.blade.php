@@ -28,15 +28,11 @@
                         {{ Form::hidden('token', $token) }}
 
                         <div class="form-group row">
-                            {{ Form::label('email', __('E-Mail address'), ['class' => 'col-lg-4 col-form-label
-                            text-lg-right']) }}
+                            {{ Form::label('email', __('E-Mail address'), ['class' => 'col-lg-4 col-form-label text-lg-right']) }}
 
                             <div class="col-lg-6">
                                 <div class="input-group">
-                                    {{ Form::email('email', ($email ?? old('email')), ['class' => 'form-control'
-                                    . ($errors->has('email') ? ' is-invalid' : ''), 'placeholder' =>
-                                    __('Enter your E-Mail address'), 'minlength' => '3', 'maxlength' => '255',
-                                    'required', 'autofocus']) }}
+                                    {{ Form::email('email', ($email ?? old('email')), ['class' => 'form-control' . ($errors->has('email') ? ' is-invalid' : ''), 'placeholder' => __('Enter your E-Mail address'), 'minlength' => '3', 'maxlength' => '255', 'required', 'autofocus']) }}
 
                                     <div class="input-group-append">
                                         <span class="input-group-text"><i class="fas fa-envelope"></i></span>
@@ -52,13 +48,11 @@
                         </div>
 
                         <div class="form-group row">
-                            {{ Form::label('password', __('Password'), ['class' => 'col-lg-4 col-form-label
-                            text-lg-right']) }}
+                            {{ Form::label('password', __('Password'), ['class' => 'col-lg-4 col-form-label text-lg-right']) }}
 
                             <div class="col-lg-6">
                                 <div class="input-group">
-                                    {{ Form::password('password', ['class' => 'form-control' . ($errors->has
-                                    ('password') ? ' is-invalid' : ''), 'placeholder' =>
+                                    {{ Form::password('password', ['class' => 'form-control' . ($errors->has('password') ? ' is-invalid' : ''), 'placeholder' =>
                                     __('Enter your password'), 'minlength' => '6', 'maxlength' => '30',
                                     'required']) }}
 
@@ -76,14 +70,11 @@
                         </div>
 
                         <div class="form-group row">
-                            {{ Form::label('password_confirmation', __('Confirm password'), ['class' => 'col-lg-4
-                            col-form-label text-lg-right']) }}
+                            {{ Form::label('password_confirmation', __('Confirm password'), ['class' => 'col-lg-4 col-form-label text-lg-right']) }}
 
                             <div class="col-lg-6">
                                 <div class="input-group">
-                                    {{ Form::password('password_confirmation', ['class' => 'form-control',
-                                    'placeholder' => __('Confirm your password'), 'minlength' => '6', 'maxlength'
-                                     => '30', 'required']) }}
+                                    {{ Form::password('password_confirmation', ['class' => 'form-control', 'placeholder' => __('Confirm your password'), 'minlength' => '6', 'maxlength' => '30', 'required']) }}
 
                                     <div class="input-group-append">
                                         <span class="input-group-text"><i class="fa fa-key"></i></span>
@@ -111,9 +102,10 @@
                                 <h6 class="text-center">{{ __('Authorize with social networks') }}</h6>
                                 <hr class="my-4">
                                 @foreach($socialproviders as $socialprovider)
-                                    <a href="{{ url('/auth/' . $socialprovider->provider) }}" class="btn btn-sm
-                                    btn-outline-primary mb-1" role="button"><i class="fab fa-{{
-                                    $socialprovider->provider }}"></i> {{ ucfirst($socialprovider->provider) }}</a>
+                                    <a href="{{ url('/auth/' . $socialprovider->provider) }}"
+                                       class="btn btn-sm btn-outline-primary mb-1" role="button"><i
+                                            class="fab fa-{{ $socialprovider->provider }}"></i> {{ ucfirst($socialprovider->provider) }}
+                                    </a>
                                 @endforeach
                             </div>
                         </div>

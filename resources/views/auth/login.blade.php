@@ -26,15 +26,13 @@
                         {{ Form::open(['route' => 'login']) }}
 
                         <div class="form-group row">
-                            {{ Form::label('email', __('E-Mail address'), ['class' => 'col-lg-4 col-form-label
-                            text-lg-right']) }}
+                            {{ Form::label('email', __('E-Mail address'), ['class' => 'col-lg-4 col-form-label text-lg-right']) }}
 
                             <div class="col-lg-6">
                                 <div class="input-group">
                                     {{ Form::email('email', old('email'), ['class' => 'form-control' .
                                     ($errors->has('email') ? ' is-invalid' : ''), 'placeholder' =>
-                                    __('Enter your E-Mail address'), 'minlength' => '3', 'maxlength' => '255',
-                                    'required', 'autofocus']) }}
+                                    __('Enter your E-Mail address'), 'minlength' => '3', 'maxlength' => '255', 'required', 'autofocus']) }}
 
                                     <div class="input-group-append">
                                         <span class="input-group-text"><i class="fas fa-envelope"></i></span>
@@ -50,13 +48,11 @@
                         </div>
 
                         <div class="form-group row">
-                            {{ Form::label('password', __('Password'), ['class' => 'col-lg-4 col-form-label
-                            text-lg-right']) }}
+                            {{ Form::label('password', __('Password'), ['class' => 'col-lg-4 col-form-label text-lg-right']) }}
 
                             <div class="col-lg-6">
                                 <div class="input-group">
-                                    {{ Form::password('password', ['class' => 'form-control' . ($errors->has
-                                    ('password') ? ' is-invalid' : ''), 'placeholder' =>
+                                    {{ Form::password('password', ['class' => 'form-control' . ($errors->has('password') ? ' is-invalid' : ''), 'placeholder' =>
                                     __('Enter your password'), 'minlength' => '6', 'maxlength' => '30',
                                     'required']) }}
 

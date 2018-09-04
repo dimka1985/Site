@@ -26,15 +26,13 @@
                         {{ Form::open(['route' => 'password.email']) }}
 
                         <div class="form-group row">
-                            {{ Form::label('email', __('E-Mail address'), ['class' => 'col-lg-4 col-form-label
-                            text-lg-right']) }}
+                            {{ Form::label('email', __('E-Mail address'), ['class' => 'col-lg-4 col-form-label text-lg-right']) }}
 
                             <div class="col-lg-6">
                                 <div class="input-group">
                                     {{ Form::email('email', old('email'), ['class' => 'form-control' .
                                     ($errors->has('email') ? ' is-invalid' : ''), 'placeholder' =>
-                                    __('Enter your E-Mail address'), 'minlength' => '3', 'maxlength' => '255',
-                                    'required', 'autofocus']) }}
+                                    __('Enter your E-Mail address'), 'minlength' => '3', 'maxlength' => '255', 'required', 'autofocus']) }}
 
                                     <div class="input-group-append">
                                         <span class="input-group-text"><i class="fas fa-envelope"></i></span>
@@ -62,8 +60,8 @@
                                 <h6 class="text-center">{{ __('Authorize with social networks') }}</h6>
                                 <hr class="my-4">
                                 @foreach($socialproviders as $socialprovider)
-                                    <a href="{{ url('/auth/' . $socialprovider->provider) }}" class="btn btn-sm
-                                    btn-outline-primary mb-1" role="button"><i class="fab fa-{{
+                                    <a href="{{ url('/auth/' . $socialprovider->provider) }}"
+                                       class="btn btn-sm btn-outline-primary mb-1" role="button"><i class="fab fa-{{
                                     $socialprovider->provider }}"></i> {{ ucfirst($socialprovider->provider) }}</a>
                                 @endforeach
                             </div>

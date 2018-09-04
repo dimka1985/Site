@@ -32,15 +32,13 @@
                         </div>
 
                         <div class="form-group row">
-                            {{ Form::label('name', __('Full name') . '*', ['class' => 'col-lg-4 col-form-label
-                            text-lg-right']) }}
+                            {{ Form::label('name', __('Full name') . '*', ['class' => 'col-lg-4 col-form-label text-lg-right']) }}
 
                             <div class="col-lg-6">
                                 <div class="input-group">
                                     {{ Form::text('name', old('name'), ['class' => 'form-control' .
-                                    ((count($errors) > 0) ? ($errors->has('name') ? ' is-invalid' : ' is-valid') :
-                                    ''), 'placeholder' => __('Enter your name'), 'minlength' => '1', 'maxlength' =>
-                                    '30', 'required', 'autofocus']) }}
+                                    ((count($errors) > 0) ? ($errors->has('name') ? ' is-invalid'
+                                    : ' is-valid') : ''), 'placeholder' => __('Enter your name'), 'minlength' => '1', 'maxlength' => '30', 'required', 'autofocus']) }}
 
                                     <div class="input-group-append">
                                         <span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -63,8 +61,7 @@
                                 <div class="input-group">
                                     {{ Form::text('company', old('company'), ['class' => 'form-control' .
                                     ((count($errors) > 0) ? ($errors->has('company') ? ' is-invalid' :
-                                    ' is-valid') : ''), 'placeholder' => __('Enter your company'), 'minlength' =>
-                                    '2', 'maxlength' => '50']) }}
+                                    ' is-valid') : ''), 'placeholder' => __('Enter your company'), 'minlength' => '2', 'maxlength' => '50']) }}
 
                                     <div class="input-group-append">
                                         <span class="input-group-text"><i class="fas fa-building"></i></span>
@@ -80,8 +77,7 @@
                         </div>
 
                         <div class="form-group row">
-                            {{ Form::label('phone', __('Phone') . '* +375', ['class' => 'col-lg-4 col-form-label
-                            text-lg-right']) }}
+                            {{ Form::label('phone', __('Phone') . '* +375', ['class' => 'col-lg-4 col-form-label text-lg-right']) }}
 
                             <div class="col-lg-6">
                                 <div class="row">
@@ -101,8 +97,7 @@
                                     <div class="col-lg-9">
                                         <div class="input-group">
                                             {{ Form::text('phone', old('phone'), ['class' => 'form-control' .
-                                            ((count($errors) > 0) ? ($errors->has('phone') ? ' is-invalid' :
-                                            ' is-valid') : ''), 'placeholder' => __('Enter your phone'), 'minlength' => '7', 'maxlength' => '7', 'pattern' => '[0-9]{7}']) }}
+                                            ((count($errors) > 0) ? ($errors->has('phone') ? ' is-invalid' : ' is-valid') : ''), 'placeholder' => __('Enter your phone'), 'minlength' => '7', 'maxlength' => '7', 'pattern' => '[0-9]{7}']) }}
 
                                             <div class="input-group-append">
                                                 <span class="input-group-text"><i class="fas fa-phone"></i></span>
@@ -120,8 +115,7 @@
                         </div>
 
                         <div class="form-group row">
-                            {{ Form::label('email', __('E-Mail address') . '*', ['class' => 'col-lg-4 col-form-label
-                            text-lg-right']) }}
+                            {{ Form::label('email', __('E-Mail address') . '*', ['class' => 'col-lg-4 col-form-label text-lg-right']) }}
 
                             <div class="col-lg-6">
                                 <div class="input-group">
@@ -148,8 +142,7 @@
 
                             <div class="col-lg-6">
                                 <div class="input-group">
-                                    {{ Form::password('password', ['class' => 'form-control' . ((count($errors) > 0) ? ($errors->has('password') ? ' is-invalid' : ' is-valid') : ''),
-                                     'placeholder' => __('Enter your password'), 'minlength' => '6', 'maxlength' => '30', 'required']) }}
+                                    {{ Form::password('password', ['class' => 'form-control' . ((count($errors) > 0) ? ($errors->has('password') ? ' is-invalid' : ' is-valid') : ''), 'placeholder' => __('Enter your password'), 'minlength' => '6', 'maxlength' => '30', 'required']) }}
 
                                     <div class="input-group-append">
                                         <span class="input-group-text"><i class="fa fa-key"></i></span>
@@ -165,15 +158,11 @@
                         </div>
 
                         <div class="form-group row">
-                            {{ Form::label('password_confirmation', __('Confirm password') . '*', ['class' =>
-                            'col-lg-4 col-form-label text-lg-right']) }}
+                            {{ Form::label('password_confirmation', __('Confirm password') . '*', ['class' => 'col-lg-4 col-form-label text-lg-right']) }}
 
                             <div class="col-lg-6">
                                 <div class="input-group">
-                                    {{ Form::password('password_confirmation', ['class' => 'form-control' .
-                                    ((count($errors) > 0) ? ($errors->has('password_confirmation') ?
-                                    ' is-invalid' : ' is-valid') : ''), 'placeholder' =>
-                                    __('Confirm your password'), 'minlength' => '6', 'maxlength' => '30', 'required']) }}
+                                    {{ Form::password('password_confirmation', ['class' => 'form-control' . ((count($errors) > 0) ? ($errors->has('password_confirmation') ? ' is-invalid' : ' is-valid') : ''), 'placeholder' => __('Confirm your password'), 'minlength' => '6', 'maxlength' => '30', 'required']) }}
 
                                     <div class="input-group-append">
                                         <span class="input-group-text"><i class="fa fa-key"></i></span>
@@ -198,8 +187,7 @@
                                     ((count($errors) > 0) ? ($errors->has('avatar') ? ' is-invalid' :
                                     ' is-valid') : '')]) }}
 
-                                    {{ Form::label('avatar', __('Choose file'), ['class' => 'custom-file-label',
-                                    'lang' => 'ru']) }}
+                                    {{ Form::label('avatar', __('Choose file'), ['class' => 'custom-file-label', 'lang' => 'ru']) }}
 
                                     @if ($errors->has('avatar'))
                                         <span class="invalid-feedback pt-2" role="alert">
@@ -216,13 +204,11 @@
                                     <div class="custom-control custom-checkbox">
                                         {{ Form::checkbox('terms', null, (old('terms') ? true : false),
                                         ['class' => 'custom-control-input' . ((count($errors) > 0) ?
-                                        ($errors->has('terms') ? ' is-invalid' : ' is-valid') : ''), 'id' =>
-                                        'terms', 'required']) }}
+                                        ($errors->has('terms') ? ' is-invalid' : ' is-valid') : ''), 'id' => 'terms', 'required']) }}
 
                                         {!! Form::label('terms', __('I agree with'), ['class' =>
                                         'custom-control-label']) !!}
-                                        {{ Html::linkRoute('terms', __('terms'), null, ['target' => '_blank'])
-                                        }}*
+                                        {{ Html::linkRoute('terms', __('terms'), null, ['target' => '_blank']) }}*
 
                                         @if ($errors->has('terms'))
                                             <span class="invalid-feedback" role="alert">
