@@ -104,7 +104,7 @@
                                         <div class="card-header text-center">Елена<br>Горчакова</div>
                                         <div class="card-body">
                                             <h5 class="card-title
-                                            text-center">Мастер-класс<br>"<strong>Семья - Твой
+                                            text-center">Мастер-класс<br>"<strong>Семья - твой
                                                     личный маркетинговый проект</strong>"</h5>
                                             <img src="{{ asset
                                             ('img/festivals/speakers/grand_fashion_weekend_2018/helena_gorchakova.jpg') }}"
