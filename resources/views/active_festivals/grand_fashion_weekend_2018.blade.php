@@ -86,6 +86,10 @@
                                 <h3 class="mt-3">
                                     @include('includes.festival_buttons')
                                 </h3>
+                                <h3>
+                                    {{ Html::linkRoute('festivals.festival.speakers',
+                                    __('Sign up for speakers speech'), ['festival' => $festival], ['class' => 'btn btn-primary text-uppercase mb-1']) }}
+                                </h3>
                             </div>
                         </div>
                     </div>

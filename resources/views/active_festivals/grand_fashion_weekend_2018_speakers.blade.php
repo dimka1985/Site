@@ -63,7 +63,7 @@
                                     @include('includes.festival_buttons')
                                 </h3>
                                 <h3>
-                                    {{ Html::link('#speakers', __('Sign up for speakers speech'), ['class' => 'btn btn-primary text-uppercase mb-1']) }}
+                                    {{ Html::link('#speakers', __('Sign up for speakers speech'), ['class' => 'btn btn-warning text-uppercase mb-1']) }}
                                 </h3>
                             </div>
                         </div>
@@ -79,7 +79,7 @@
                     (точная дата и
                     время выступления будет указана на сайте до начала фестиваля);
                 </li>
-                <li>Когда выберите нужных Вам кандидатов -> в самом низу страницы заполните <a href="#bx24_form_inline">анкету</a>,
+                <li>Когда выберите нужных Вам кандидатов -> в самом низу страницы заполните <a href="#regSpeakers">анкету</a>,
                     поставьте нужные галочки под каждым выбранным спикером и нажмите кнопку
                     "<strong>{{ __('Send') }}</strong>";
                 </li>
@@ -167,7 +167,7 @@
     </div>
 
     @if ($festival->passed == false)
-        <div>
+        <div id="regSpeakers">
             <script id="bx24_form_inline" data-skip-moving="true">
               (function (w, d, u, b) {
                 w['Bitrix24FormObject'] = b

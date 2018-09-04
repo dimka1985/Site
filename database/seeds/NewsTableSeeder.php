@@ -128,7 +128,7 @@ class NewsTableSeeder extends Seeder
 </ul>
 <h5>Внимание! Конкурс для посетителей фестиваля! <a href="https://okgroup.by/news/grand_fashion_weekend_2018_konkurs">Читать условия</a>!</h5>
 <p>Приглашаем лучшие бренды к участию!</p>
-<h4><a href="https://okgroup.by/festivals/grand_fashion_weekend_2018">Узнать больше о GRAND FASHION WEEKEND 2018!</a></h4>
+<h4><a href="' . config('app.url') . '/festivals/grand_fashion_weekend_2018">Узнать больше о GRAND FASHION WEEKEND 2018!</a></h4>
 <h5>Официальный инстаграм:
 <strong><a href="https://www.instagram.com/grand_fashion_weekend_/"><i class="fab fa-instagram mr-1"></i> Инстаграм GRAND FASHION WEEKEND</a></strong></h5>',
                 'image' => 'img/news/grand_fashion_weekend_2018/grand_fashion_weekend_2018_1.jpg',
