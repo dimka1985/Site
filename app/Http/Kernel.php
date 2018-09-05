@@ -2,13 +2,14 @@
 
 namespace App\Http;
 
-use App\Http\Middleware\{CheckForMaintenanceMode,
+use App\Http\Middleware\{Authenticate,
+    CheckForMaintenanceMode,
     EncryptCookies,
     RedirectIfAuthenticated,
     TrimStrings,
     TrustProxies,
     VerifyCsrfToken};
-use Illuminate\Auth\Middleware\{Authenticate, AuthenticateWithBasicAuth, Authorize};
+use Illuminate\Auth\Middleware\{AuthenticateWithBasicAuth, Authorize};
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 use Illuminate\Foundation\Http\Middleware\{ConvertEmptyStringsToNull, ValidatePostSize};
