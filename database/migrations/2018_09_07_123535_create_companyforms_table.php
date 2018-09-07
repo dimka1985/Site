@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCompaniesTable extends Migration
+class CreateCompanyformsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateCompaniesTable extends Migration
      */
     public function up()
     {
-        Schema::connection('admin')->create('companies', function (Blueprint $table) {
+        Schema::connection('admin')->create('companyforms', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('companyform_id')->nullable();
-            $table->foreign('companyform_id')->references('id')->on('companyforms');
-            $table->string('name', 50);
+            $table->string('full_name', 50);
+            $table->string('short_name', 10)->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
@@ -30,6 +29,6 @@ class CreateCompaniesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('companies');
+        Schema::dropIfExists('companyforms');
     }
 }

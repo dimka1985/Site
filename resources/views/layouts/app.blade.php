@@ -390,8 +390,9 @@
                     date('Y') != 2018 ? $text = ' - ' . date('Y') : $text = ''
                 @endphp
                 <div class="col">
-                    <div class="text-center">Copyright © 2018{{ $text }}. {{ __('All rights reserved') }}. {{
-                    __('Design') }} <a href="mailto:dmitrytsibylskiy@gmail.com">okgroup.by {{ __('Dmitry') }}</a></div>
+                    <div class="text-center">Copyright © 2018{{ $text }}. {{ __('All rights reserved') }}
+                        . {{ __('Design') }} <a
+                            href="mailto:dmitrytsibylskiy@gmail.com">okgroup.by {{ __('Dmitry') }}</a></div>
                 </div>
             </div>
         </div>
