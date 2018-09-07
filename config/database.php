@@ -78,6 +78,21 @@ return [
             'prefix' => '',
         ],
 
+        'admin' => [
+            'driver' => 'mysql',
+            'host' => env('DB_ADMIN_HOST', '127.0.0.1'),
+            'port' => env('DB_ADMIN_PORT', '3306'),
+            'database' => env('DB_ADMIN_DATABASE', 'forge'),
+            'username' => env('DB_ADMIN_USERNAME', 'forge'),
+            'password' => env('DB_ADMIN_PASSWORD', ''),
+            'unix_socket' => env('DB_ADMIN_SOCKET', ''),
+            'charset' => 'utf8mb4',
+            'collation' => 'utf8mb4_unicode_ci',
+            'prefix' => '',
+            'strict' => true,
+            'engine' => null,
+        ],
+
     ],
 
     /*

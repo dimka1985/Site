@@ -27,6 +27,7 @@ class CreateUsersTable extends Migration
             $table->string('socialuser_email')->nullable();
             $table->string('socialuser_avatar')->nullable();
             $table->string('avatar')->nullable();
+            $table->boolean('is_admin')->nullable()->default(false);
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();

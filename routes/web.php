@@ -53,3 +53,16 @@ Route::prefix('news')->group(function () {
         Route::get('/{tiding}', 'NewsController@tiding')->name('tiding');
     });
 });
+
+// Admin routes
+Route::domain('{admin}.homestead.test')->group(function () {
+//    Route::middleware('auth')->group(function () {
+    Route::namespace('Admin')->group(function () {
+        Route::prefix('dashboard')->group(function () {
+            Route::name('admin.')->group(function () {
+                Route::get('/', 'DashboardController@index')->name('dashboard');
+            });
+        });
+    });
+//    });
+});
