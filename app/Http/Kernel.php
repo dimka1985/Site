@@ -15,7 +15,7 @@ use Illuminate\Foundation\Http\Kernel as HttpKernel;
 use Illuminate\Foundation\Http\Middleware\{ConvertEmptyStringsToNull, ValidatePostSize};
 use Illuminate\Http\Middleware\SetCacheHeaders;
 use Illuminate\Routing\Middleware\{SubstituteBindings, ThrottleRequests, ValidateSignature};
-use Illuminate\Session\Middleware\StartSession;
+use Illuminate\Session\Middleware\{AuthenticateSession, StartSession};
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Laravel\Passport\Http\Middleware\{CheckClientCredentials, CheckForAnyScope, CheckScopes};
 
@@ -46,7 +46,7 @@ class Kernel extends HttpKernel
             EncryptCookies::class,
             AddQueuedCookiesToResponse::class,
             StartSession::class,
-            // \Illuminate\Session\Middleware\AuthenticateSession::class,
+            // AuthenticateSession::class,
             ShareErrorsFromSession::class,
             VerifyCsrfToken::class,
             SubstituteBindings::class,
@@ -77,5 +77,21 @@ class Kernel extends HttpKernel
         'client' => CheckClientCredentials::class,
         'scopes' => CheckScopes::class,
         'scope' => CheckForAnyScope::class,
+    ];
+
+    /**
+     * The priority-sorted list of middleware.
+     *
+     * This forces the listed middleware to always be in the given order.
+     *
+     * @var array
+     */
+    protected $middlewarePriority = [
+        StartSession::class,
+        ShareErrorsFromSession::class,
+        Authenticate::class,
+        AuthenticateSession::class,
+        SubstituteBindings::class,
+        Authorize::class,
     ];
 }
