@@ -27,7 +27,7 @@
                     <div class="jumbotron">
                         <div class="container">
                             <h5 class="text-center"><strong><a
-                                            href="{{ route('festivals.festival', ['festival' => $festival])
+                                        href="{{ route('festivals.festival', ['festival' => $festival])
                                             }}">{{ $festival->name }}</a></strong></h5>
                             <hr>
                             <div class="row">
@@ -35,14 +35,14 @@
                                     <div class="row">
                                         <div class="col-6 col-lg-12 mb-1">
                                             <a href="{{ route('festivals.festival', ['festival' => $festival]) }}"><img
-                                                        src="{{ asset($festival->image) }}"
-                                                        class="img-fluid img-thumbnail rounded"
-                                                        alt="{{ $festival->name }}"></a>
+                                                    src="{{ asset($festival->image) }}"
+                                                    class="img-fluid img-thumbnail rounded"
+                                                    alt="{{ $festival->name }}"></a>
                                         </div>
                                         <div class="col-6 col-lg-12">
                                             <a href="{{ route('festivals.festival.award', ['festival' => $festival]) }}"><img
-                                                        src="{{ asset($festival->award_image) }}"
-                                                        class="img-fluid img-thumbnail rounded" alt="{{ $festival->award
+                                                    src="{{ asset($festival->award_image) }}"
+                                                    class="img-fluid img-thumbnail rounded" alt="{{ $festival->award
                                                 }}"></a>
                                         </div>
                                     </div>

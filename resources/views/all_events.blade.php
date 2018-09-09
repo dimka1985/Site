@@ -27,14 +27,14 @@
                     <div class="jumbotron">
                         <div class="container">
                             <h5 class="text-center"><strong><a
-                                            href="{{ route('events.event', ['event' => $event]) }}">{{
+                                        href="{{ route('events.event', ['event' => $event]) }}">{{
                             $event->name }}</a></strong></h5>
                             <hr>
                             <div class="row">
                                 <div class="col-lg-6 mb-3">
                                     <a href="{{ route('events.event', ['event' => $event]) }}"><img
-                                                src="{{ asset($event->image) }}" class="img-fluid img-thumbnail rounded"
-                                                alt="{{ $event->name }}"></a>
+                                            src="{{ asset($event->image) }}" class="img-fluid img-thumbnail rounded"
+                                            alt="{{ $event->name }}"></a>
                                 </div>
                                 <div class="col-lg-6">
                                     <h5><strong>{{ $event->heading }}</strong></h5>

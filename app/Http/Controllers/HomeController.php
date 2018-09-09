@@ -30,8 +30,8 @@ class HomeController extends Controller
     {
         return view('home', [
             'festivals' => Festival::where('is_active', true)->orderBy('id', 'desc')->take(1)->get(),
-            'events' => Event::where('is_active', true)->orderBy('id', 'desc')->take(8)->get(),
-            'news' => Tiding::where('is_active', true)->orderBy('id', 'desc')->take(3)->get(),
+            'events'    => Event::where('is_active', true)->orderBy('id', 'desc')->take(8)->get(),
+            'news'      => Tiding::where('is_active', true)->orderBy('id', 'desc')->take(3)->get(),
         ]);
     }
 

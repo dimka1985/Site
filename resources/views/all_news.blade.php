@@ -27,15 +27,15 @@
                     <div class="jumbotron">
                         <div class="container">
                             <h5 class="text-center"><strong><a
-                                            href="{{ route('news.tiding', ['tiding' => $tiding])
+                                        href="{{ route('news.tiding', ['tiding' => $tiding])
                                             }}">{{ $tiding->name }}</a></strong></h5>
                             <hr>
                             <div class="row">
                                 <div class="col-lg-6 mb-3">
                                     <a href="{{ route('news.tiding', ['tiding' => $tiding]) }}"><img
-                                                src="{{ asset($tiding->image) }}"
-                                                class="img-fluid img-thumbnail rounded"
-                                                alt="{{ $tiding->name }}"></a>
+                                            src="{{ asset($tiding->image) }}"
+                                            class="img-fluid img-thumbnail rounded"
+                                            alt="{{ $tiding->name }}"></a>
                                 </div>
                                 <div class="col-lg-6">
                                     <h5><strong>{!! $tiding->heading !!}</strong></h5>

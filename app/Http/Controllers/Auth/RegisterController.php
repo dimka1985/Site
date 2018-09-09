@@ -89,7 +89,7 @@ class RegisterController extends Controller
      * If a user has registered before using social auth, return the user
      * else, create a new user object.
      * @param \Laravel\Socialite\One\User|\Laravel\Socialite\Two\User $user Socialite user object
-     * @param Socialprovider $socialprovider
+     * @param Socialprovider                                          $socialprovider
      * @return \Illuminate\Database\Eloquent\Model
      */
     protected function findOrCreateUser($user, Socialprovider $socialprovider)
@@ -101,9 +101,9 @@ class RegisterController extends Controller
         }
 
         return $socialprovider->users()->create([
-            'name' => $user->getName(),
-            'socialuser_email' => $user->getEmail(),
-            'socialuser_id' => $user->getId(),
+            'name'              => $user->getName(),
+            'socialuser_email'  => $user->getEmail(),
+            'socialuser_id'     => $user->getId(),
             'socialuser_avatar' => $user->getAvatar(),
         ]);
     }
@@ -117,17 +117,17 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|string|min:1|max:30',
-            'company' => 'nullable|string|min:2|max:50',
-            'code' => [
+            'name'                  => 'required|string|min:1|max:30',
+            'company'               => 'nullable|string|min:2|max:50',
+            'code'                  => [
                 'required',
                 'string',
                 'min:2',
                 'max:2',
-                'regex:/(17)|(25)|(29)|(33)|(44)/'
+                'regex:/(17)|(25)|(29)|(33)|(44)/',
             ],
-            'phone' => 'required|string|min:7|max:7|regex:/[0-9]{7}/',
-            'email' => [
+            'phone'                 => 'required|string|min:7|max:7|regex:/[0-9]{7}/',
+            'email'                 => [
                 'required',
                 'string',
                 'email',
@@ -138,10 +138,10 @@ class RegisterController extends Controller
                 }),
                 'not_regex:/^[A-Za-z0-9\.]*@(okgroup)[.](by)$/',
             ],
-            'password' => 'required|string|min:6|max:30|confirmed',
+            'password'              => 'required|string|min:6|max:30|confirmed',
             'password_confirmation' => 'required|string|min:6|max:30',
-            'avatar' => 'nullable|image|mimes:jpeg,png|max:500',
-            'terms' => 'required|accepted',
+            'avatar'                => 'nullable|image|mimes:jpeg,png|max:500',
+            'terms'                 => 'required|accepted',
         ]);
     }
 
@@ -154,10 +154,10 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         $user = User::create([
-            'name' => $data['name'],
-            'company' => $data['company'],
-            'phone' => '375' . $data['code'] . $data['phone'],
-            'email' => $data['email'],
+            'name'     => $data['name'],
+            'company'  => $data['company'],
+            'phone'    => '375' . $data['code'] . $data['phone'],
+            'email'    => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
 

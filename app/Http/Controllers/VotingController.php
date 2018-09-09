@@ -12,7 +12,7 @@ class VotingController extends Controller
     /**
      * Post the festival award vote data.
      *
-     * @param Request $request
+     * @param Request  $request
      * @param Festival $festival
      * @return \Illuminate\Http\RedirectResponse
      */
@@ -24,18 +24,18 @@ class VotingController extends Controller
                     'required',
                     new Recaptcha(),
                 ],
-                'name' => 'required|string|min:1|max:30',
-                'code' => [
+                'name'                 => 'required|string|min:1|max:30',
+                'code'                 => [
                     'required',
                     'string',
                     'min:2',
                     'max:2',
                     'regex:/(17)|(25)|(29)|(33)|(44)/',
                 ],
-                'phone' => 'required|string|min:7|max:7|regex:/[0-9]{7}/',
-                'email' => 'required|string|email|min:3|max:255',
-                'award_id' => 'required|array|min:1|max:' . $festival->award_nominations,
-                'award_id.*' => 'string|min:1|max:1'
+                'phone'                => 'required|string|min:7|max:7|regex:/[0-9]{7}/',
+                'email'                => 'required|string|email|min:3|max:255',
+                'award_id'             => 'required|array|min:1|max:' . $festival->award_nominations,
+                'award_id.*'           => 'string|min:1|max:1'
                 /*Rule::unique('votes', 'award_id')->where(function ($query) use ($request) {
                     if (isset($request->user()->id)) {
                         return $query->where('user_id', $request->user()->id);
@@ -61,12 +61,12 @@ class VotingController extends Controller
                     if (($award > 0) && ($award <= $festival->award_nominations)) {
                         Vote::updateOrCreate(
                             [
-                                'phone' => '375' . $request->code . $request->phone,
-                                'email' => $request->email,
+                                'phone'    => '375' . $request->code . $request->phone,
+                                'email'    => $request->email,
                                 'award_id' => $award,
                             ],
                             [
-                                'name' => $request->name,
+                                'name'          => $request->name,
                                 'award_nominee' => $nominee,
                             ]
                         );

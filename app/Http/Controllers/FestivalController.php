@@ -57,7 +57,7 @@ class FestivalController extends Controller
 
             return view('festival', [
                 'festival' => $festival,
-                'images' => $images,
+                'images'   => $images,
             ]);
         } else {
             return view('active_festivals.' . $festival->url, [

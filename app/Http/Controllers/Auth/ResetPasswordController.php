@@ -46,8 +46,8 @@ class ResetPasswordController extends Controller
     protected function rules()
     {
         return [
-            'token' => 'required|string|min:64|max:64',
-            'email' => [
+            'token'                 => 'required|string|min:64|max:64',
+            'email'                 => [
                 'required',
                 'string',
                 'email',
@@ -57,7 +57,7 @@ class ResetPasswordController extends Controller
                     $query->whereNull('deleted_at');
                 }),
             ],
-            'password' => 'required|string|min:6|max:30|confirmed',
+            'password'              => 'required|string|min:6|max:30|confirmed',
             'password_confirmation' => 'required|string|min:6|max:30',
         ];
     }

@@ -13,10 +13,10 @@ class NewsTableSeeder extends Seeder
     {
         DB::table('tidings')->insert([
             [
-                'name' => '25 августа пройдёт ежегодный семейный фестиваль «ХмельновFest»',
-                'url' => 'festival_hmelnovfest_2018',
-                'heading' => 'Захватывающие развлечения весь день, музыка, вкусная еда ожидают посетителей ежегодного фестиваля «ХмельновFEST».',
-                'text' => '
+                'name'       => '25 августа пройдёт ежегодный семейный фестиваль «ХмельновFest»',
+                'url'        => 'festival_hmelnovfest_2018',
+                'heading'    => 'Захватывающие развлечения весь день, музыка, вкусная еда ожидают посетителей ежегодного фестиваля «ХмельновFEST».',
+                'text'       => '
 <p>25 августа в субботу столичный сквер «Старостинская слобода» перед гостиницей «Беларусь» станет местом отдыха для всей семьи.
 В финале праздника выступит легендарная группа «Машина времени».</p>
 
@@ -96,16 +96,16 @@ class NewsTableSeeder extends Seeder
 <p>Начало фестиваля в 12.00.</p>
 <p>Использованы информация и изображения с сайтов: <a 
         href="http://hmelnovfest.by/">hmelnovfest.by</a>, <a href="https://afisha.tut.by/other/khmelnov-fest/">afisha.tut.by</a></p>',
-                'image' => 'img/news/festival_hmelnovfest_2018/festival_hmelnovfest_2018_1.jpg',
-                'is_active' => true,
+                'image'      => 'img/news/festival_hmelnovfest_2018/festival_hmelnovfest_2018_1.jpg',
+                'is_active'  => true,
                 'created_at' => '2018-08-01 13:00:00',
                 'updated_at' => '2018-08-01 13:00:00',
             ],
             [
-                'name' => '13-14 октября пройдет первый в Беларуси семейный фестиваль «GRAND FASHION WEEKEND»',
-                'url' => 'grand_fashion_weekend_2018',
-                'heading' => 'Фестиваль <a href="https://okgroup.by/festivals/grand_fashion_weekend_2018">GRAND FASHION WEEKEND 2018</a>',
-                'text' => '
+                'name'       => '13-14 октября пройдет первый в Беларуси семейный фестиваль «GRAND FASHION WEEKEND»',
+                'url'        => 'grand_fashion_weekend_2018',
+                'heading'    => 'Фестиваль <a href="https://okgroup.by/festivals/grand_fashion_weekend_2018">GRAND FASHION WEEKEND 2018</a>',
+                'text'       => '
 <p>Это новый формат проведения выходных в атмосфере, где царит красота, сплоченность и семейный уют (в преддверии всемирного дня матери)!</p>
 
 <p>Это стильное городское масштабное мероприятие, посвященное развитию бизнеса, целевой аудиторией которого является современная семья.</p>
@@ -131,16 +131,16 @@ class NewsTableSeeder extends Seeder
 <h4><a href="' . config('app.url') . '/festivals/grand_fashion_weekend_2018">Узнать больше о GRAND FASHION WEEKEND 2018!</a></h4>
 <h5>Официальный инстаграм:
 <strong><a href="https://www.instagram.com/grand_fashion_weekend_/"><i class="fab fa-instagram mr-1"></i> Инстаграм GRAND FASHION WEEKEND</a></strong></h5>',
-                'image' => 'img/news/grand_fashion_weekend_2018/grand_fashion_weekend_2018_1.jpg',
-                'is_active' => true,
+                'image'      => 'img/news/grand_fashion_weekend_2018/grand_fashion_weekend_2018_1.jpg',
+                'is_active'  => true,
                 'created_at' => '2018-08-03 12:00:00',
                 'updated_at' => '2018-08-03 12:00:00',
             ],
             [
-                'name' => 'Конкурс для гостей фестиваля «GRAND FASHION WEEKEND»',
-                'url' => 'grand_fashion_weekend_2018_konkurs',
-                'heading' => 'Объявляем о конкурсе для посетителей фестиваля <a href="https://okgroup.by/festivals/grand_fashion_weekend_2018">GRAND FASHION WEEKEND 2018</a>',
-                'text' => '
+                'name'       => 'Конкурс для гостей фестиваля «GRAND FASHION WEEKEND»',
+                'url'        => 'grand_fashion_weekend_2018_konkurs',
+                'heading'    => 'Объявляем о конкурсе для посетителей фестиваля <a href="https://okgroup.by/festivals/grand_fashion_weekend_2018">GRAND FASHION WEEKEND 2018</a>',
+                'text'       => '
 <p>13-14 октября пройдет первый в Беларуси семейный фестиваль "GRAND FASHION WEEKEND"! Мы подготовили для Вас много сюрпризов и подарков, а прямо сейчас расскажем об условиях нашего конкурса!</p>
 <ul>
 <li>🍁Сделайте красивое осеннее фото/видео;</li>
@@ -155,8 +155,8 @@ class NewsTableSeeder extends Seeder
 <h4><a href="https://okgroup.by/festivals/grand_fashion_weekend_2018">Узнать больше о GRAND FASHION WEEKEND 2018!</a></h4>
 <h5>Официальный инстаграм:
 <strong><a href="https://www.instagram.com/grand_fashion_weekend_/"><i class="fab fa-instagram mr-1"></i> Инстаграм GRAND FASHION WEEKEND</a></strong></h5>',
-                'image' => 'img/news/grand_fashion_weekend_2018_konkurs/grand_fashion_weekend_2018_konkurs_1.jpg',
-                'is_active' => true,
+                'image'      => 'img/news/grand_fashion_weekend_2018_konkurs/grand_fashion_weekend_2018_konkurs_1.jpg',
+                'is_active'  => true,
                 'created_at' => '2018-08-31 18:00:00',
                 'updated_at' => '2018-08-31 18:00:00',
             ],

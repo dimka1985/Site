@@ -58,7 +58,7 @@ class LoginController extends Controller
                     $query->whereNull('deleted_at');
                 }),
             ],
-            'password' => 'required|string|min:6|max:30',
+            'password'        => 'required|string|min:6|max:30',
         ]);
     }
 }

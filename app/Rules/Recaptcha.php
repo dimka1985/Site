@@ -21,7 +21,7 @@ class Recaptcha implements Rule
      * Determine if the validation rule passes.
      *
      * @param  string $attribute
-     * @param  mixed $value
+     * @param  mixed  $value
      * @return bool
      */
     public function passes($attribute, $value)
@@ -33,14 +33,14 @@ class Recaptcha implements Rule
             [
                 'form_params' =>
                     [
-                        'secret' => config('services.recaptcha.recaptcha_secret'),
+                        'secret'   => config('services.recaptcha.recaptcha_secret'),
                         'remoteip' => $_SERVER['REMOTE_ADDR'],
-                        'response' => $value
-                    ]
+                        'response' => $value,
+                    ],
             ]
         );
 
-        $body = json_decode((string)$response->getBody());
+        $body = json_decode((string) $response->getBody());
 
         return $body->success;
     }

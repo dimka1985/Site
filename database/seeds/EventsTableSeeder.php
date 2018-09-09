@@ -13,10 +13,10 @@ class EventsTableSeeder extends Seeder
     {
         DB::table('events')->insert([
             [
-                'name' => 'Dana Fashion Day в «Dana Mall» (2017)',
-                'url' => 'dana_fashion_day_2017',
-                'heading' => 'Dana Fashion Day: модные показы, beauty-зона и выступление NaviBand',
-                'text' => '
+                'name'       => 'Dana Fashion Day в «Dana Mall» (2017)',
+                'url'        => 'dana_fashion_day_2017',
+                'heading'    => 'Dana Fashion Day: модные показы, beauty-зона и выступление NaviBand',
+                'text'       => '
     <p>Парк чудес EVRIKUM завораживал
         детей и
         родителей экспериментами. Гости в прямом смысле могли поджечь себе руки: с помощью специального раствора на
@@ -55,16 +55,16 @@ class EventsTableSeeder extends Seeder
         <p>Использованы информация и изображения с сайтов: <a href="https://dana-mall.com/dana-fashion-day.html">dana
         -mall.com</a>, <a 
         href="http://www.belta.by/society/view/reportazh-dana-fashion-day-v-dana-mall-modnye-pokazy-nauchnye-eksperimenty-i-naviband-255468-2017/">belta.by</a>, <a href="https://mag.relax.by/city/fotofacts/10521155-dana-fashion-day/">mag.relax.by</a></p>',
-                'image' => 'img/events/dana_fashion_day_2017/dana_fashion_day_2017_11.jpg',
-                'is_active' => true,
+                'image'      => 'img/events/dana_fashion_day_2017/dana_fashion_day_2017_11.jpg',
+                'is_active'  => true,
                 'created_at' => '2018-08-05 17:00:00',
                 'updated_at' => '2018-08-05 17:00:00',
             ],
             [
-                'name' => 'Шопинг в стиле «Карнавал» в «Galileo Mall»',
-                'url' => 'shopping_v_stile_karnaval_v_galileo_mall',
-                'heading' => '23 декабря 2017г. состоялось имиджевое мероприятие для трц Galileo Mall',
-                'text' => '
+                'name'       => 'Шопинг в стиле «Карнавал» в «Galileo Mall»',
+                'url'        => 'shopping_v_stile_karnaval_v_galileo_mall',
+                'heading'    => '23 декабря 2017г. состоялось имиджевое мероприятие для трц Galileo Mall',
+                'text'       => '
     <p>Гостям мы предложили окунуться в самое сердце fashion-индустрии: освоить актуальные модные тенденции, развлечься и получить море новых впечатлений в яркой творческой атмосфере!</p>
 
 <p>В течение дня гостей ожидало:
@@ -88,16 +88,16 @@ class EventsTableSeeder extends Seeder
 мероприятия унесли домой сюрпризы от Rushka, Lakbi, Mona Style, Navy, Кравт и Esotiq!</p>
         <p>Использованы информация и изображения с сайтов: <a href="http://galileomall.by/events/shoping-v-stile-karnaval.html">galileomall.by</a>, <a 
         href="https://fashionbank.by/articles/style/modnyy_uikend_shoping_v_stile_karnaval/">fashionbank.by</a>, <a href="https://mag.relax.by/foto/10550473-shoping-v-stile-karnaval/">mag.relax.by</a></p>',
-                'image' => 'img/events/shopping_v_stile_karnaval_v_galileo_mall/shopping_v_stile_karnaval_22.jpg',
-                'is_active' => true,
+                'image'      => 'img/events/shopping_v_stile_karnaval_v_galileo_mall/shopping_v_stile_karnaval_22.jpg',
+                'is_active'  => true,
                 'created_at' => '2018-08-05 17:00:00',
                 'updated_at' => '2018-08-05 17:00:00',
             ],
             [
-                'name' => 'Queen of beauty by RUSHKA (2 сезон)',
-                'url' => 'queen_of_beauty_by_rushka_2_sezon',
-                'heading' => 'Queen of beauty by RUSHKA: кто стал лицом бренда?',
-                'text' => '
+                'name'       => 'Queen of beauty by RUSHKA (2 сезон)',
+                'url'        => 'queen_of_beauty_by_rushka_2_sezon',
+                'heading'    => 'Queen of beauty by RUSHKA: кто стал лицом бренда?',
+                'text'       => '
     <p>Второй год подряд магазин женской одежды RUSHKA устраивал конкурс красоты – выбирал девушку, которая станет лицом бренда и получит звание «королевы красоты». Ограничений или требований для участия не было: каждая могла испытать удачу и получить корону. После онлайн-кастинга 10 девушек показали свою красоту и талант в реальности: 16 июня на площадке ТРЦ «Galileo» прошел финал конкурса.</p>
     <p>Во втором сезоне конкурса красоты среди 485 заявок выбрали всего 10 девушек. Две недели подготовки – и участницы наконец готовы показать себя поклонникам бренда и всем гостям торгового центра. Финальный вечер открылся танцевальным шоу, где девушки смогли показать свои умения дефиле и танца. Потанцевать смогли и гости вечера – для них организаторы подготовили конкурсы с призами от партнеров и магазина RUSHKA. Завершилось шоу дефиле в роскошных платьях бренда.</p>
     <p>По итогам конкурса каждая девушка получила свою заветную награду – среди участниц жюри (в котором свой голос 
@@ -106,23 +106,23 @@ class EventsTableSeeder extends Seeder
     beauty by RUSHKA – Марии Чечко. Она получила не только главную корону, но и весьма приятные подарки – норковую шубу и возможность стать лицом бренда на этот сезон.</p>
         <p>Использованы информация и изображения с сайтов: <a 
         href="https://fashionbank.by/articles/style/queen_of_beauty_by_rushka_kto_stal_litsom_brenda/">fashionbank.by</a></p>',
-                'image' => 'img/events/queen_of_beauty_by_rushka_2_sezon/queen_of_beauty_by_rushka_2_sezon_1.jpg',
-                'is_active' => true,
+                'image'      => 'img/events/queen_of_beauty_by_rushka_2_sezon/queen_of_beauty_by_rushka_2_sezon_1.jpg',
+                'is_active'  => true,
                 'created_at' => '2018-08-05 17:00:00',
                 'updated_at' => '2018-08-05 17:00:00',
             ],
             [
-                'name' => 'Фестиваль «ХмельновFest» (2018)',
-                'url' => 'festival_hmelnovfest_2018',
-                'heading' => 'Ежегодный фестиваль «Хмельнов Fest» прошёл в сквере «Старостинская слобода»',
-                'text' => '
+                'name'       => 'Фестиваль «ХмельновFest» (2018)',
+                'url'        => 'festival_hmelnovfest_2018',
+                'heading'    => 'Ежегодный фестиваль «Хмельнов Fest» прошёл в сквере «Старостинская слобода»',
+                'text'       => '
                 <p>В этом году площадка была разделена на несколько зон: мужскую, женскую и детскую. Для сильной половины устраивали забеги с любимыми девушками на спине, устраивали родео на механическом быке, давали возможность порыбачить голыми руками, посоревноваться в дартс и многое другое. Для женщин устроили мастер-классы по росписи пряников и посуды, учили танцам и проведению чайной церемонии. Особо везучим достался бесплатный макияж от профессиональных визажистов. Для детишек устроили настоящий парк развлечений: начиная от горок и батутов, и заканчивая огромным игрушечным городком с аниматорами.</p>
                 <p>Со сцены для гостей праздника играли различные кавер-бэнды, а также группы «Крамбамбуля», «Песняры», «Крама», OpenSpace. В финале праздника выступила легендарная группа «Машина времени».</p>
                 <p>Использованы информация и изображения с сайтов: <a 
         href="https://minsknews.by/fotofakt-v-tsentre-minska-gremit-hmelnovfest/">minsknews.by</a></p>
                 ',
-                'image' => 'img/events/festival_hmelnovfest_2018/festival_hmelnovfest_2018_1.jpg',
-                'is_active' => true,
+                'image'      => 'img/events/festival_hmelnovfest_2018/festival_hmelnovfest_2018_1.jpg',
+                'is_active'  => true,
                 'created_at' => '2018-08-30 17:00:00',
                 'updated_at' => '2018-08-30 17:00:00',
             ],

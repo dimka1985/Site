@@ -220,13 +220,13 @@
                                     </h5>
                                 @endif
                                 <a href="{{ route('festivals.festival', ['festival' => $festival]) }}"><img
-                                            src="{{ asset($festival->image) }}" class="img-fluid img-thumbnail
+                                        src="{{ asset($festival->image) }}" class="img-fluid img-thumbnail
                                             rounded w-25"
-                                            alt="{{ $festival->name }}"></a>
+                                        alt="{{ $festival->name }}"></a>
                                 <a href="{{ route('festivals.festival.award', ['festival' => $festival]) }}"><img
-                                            src="{{ asset($festival->award_image) }}"
-                                            class="img-fluid img-thumbnail rounded w-25"
-                                            alt="{{ $festival->award }}"></a>
+                                        src="{{ asset($festival->award_image) }}"
+                                        class="img-fluid img-thumbnail rounded w-25"
+                                        alt="{{ $festival->award }}"></a>
                             </div>
                         @endforeach
                     </div>
@@ -256,11 +256,11 @@
                                 <div class="col-lg">
                                     <div class="card h-100">
                                         <a href="{{ route('news.tiding', ['tiding' => $tiding]) }}"><img
-                                                    class="card-img-top img-thumbnail img-fit-25"
-                                                    src="{{ asset($tiding->image) }}" alt="{{ $tiding->name }}"></a>
+                                                class="card-img-top img-thumbnail img-fit-25"
+                                                src="{{ asset($tiding->image) }}" alt="{{ $tiding->name }}"></a>
                                         <div class="card-body">
                                             <h5 class="card-title"><strong><a
-                                                            href="{{ route('news.tiding', ['tiding' => $tiding]) }}">{{ $tiding->name }}</a></strong>
+                                                        href="{{ route('news.tiding', ['tiding' => $tiding]) }}">{{ $tiding->name }}</a></strong>
                                             </h5>
                                             <hr>
                                             <p class="card-text">{!! str_limit($tiding->text, 220, '...') !!}</p>

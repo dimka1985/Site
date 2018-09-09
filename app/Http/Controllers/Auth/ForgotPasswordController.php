@@ -50,7 +50,7 @@ class ForgotPasswordController extends Controller
                 Rule::exists('users')->where(function ($query) {
                     $query->whereNull('deleted_at');
                 }),
-            ]
+            ],
         ]);
     }
 }

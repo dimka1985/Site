@@ -56,7 +56,7 @@ class EventController extends Controller
         });
 
         return view('event', [
-            'event' => $event,
+            'event'  => $event,
             'images' => $images,
         ]);
     }
